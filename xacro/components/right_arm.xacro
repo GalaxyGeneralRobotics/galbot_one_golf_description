@@ -1,0 +1,349 @@
+<?xml version="1.0" ?>
+<robot name="galbot_one_golf_right_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="standalone" default="true"/>
+  <xacro:arg name="arm_camera" default="d405"/>
+  <xacro:arg name="collision_type" default="simple"/>
+
+    <xacro:property name="PI" value="3.141592653589793"/>
+    <xacro:include filename="wrist_camera.xacro"/>
+
+    <xacro:macro name="right_arm_links" params="name camera:=d405">
+
+        <xacro:property name="direction" value="-1"/>
+
+        <xacro:property name="prefix" value="${name + '_' if name else ''}"/>
+
+        <link name="${prefix}base_link">
+            <inertial>
+                <origin xyz="0.0 0.0 -0.10506"/>
+                <mass value="0.92"/>
+                <inertia ixx="0.01075595" ixy="9e-08" ixz="4.1e-07" iyy="0.01077842" iyz="1.896e-05"
+                         izz="0.0007042000000000001"/>
+            </inertial>
+        </link>
+
+        <link name="${prefix}link1">
+            <inertial>
+                <origin xyz="0.0 ${direction*0.0009699999999999999} -0.015390000000000001"/>
+                <mass value="1.6"/>
+                <inertia ixx="0.00332981" ixy="1.8920000000000002e-05" ixz="6.9e-07" iyy="0.00339121"
+                         iyz="2.9760000000000003e-05" izz="0.0016524"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/visual/arm/link1.glb"
+                          scale="1 ${direction} 1"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link1/link1_collision_01.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link1/link1_collision_02.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link1/link1_collision_03.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link1/link1_collision_04.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${prefix}joint1" type="revolute">
+            <origin rpy="0 0 ${direction*0.523598775598286}"/>
+            <parent link="${prefix}base_link"/>
+            <child link="${prefix}link1"/>
+            <axis xyz="0 0 1"/>
+            <limit acceleration="2" effort="60" jerk="12" lower="-3.00432619" upper="3.00432619" velocity="1.5"/>
+        </joint>
+
+        <link name="${prefix}link2">
+            <inertial>
+                <origin xyz="0.0 ${direction*0.09558} 0.010150000000000001"/>
+                <mass value="1.43"/>
+                <inertia ixx="0.01937881" ixy="2.0000000000000002e-07" ixz="1.2e-07" iyy="0.0015791400000000001"
+                         iyz="0.00019578"
+                         izz="0.018951810000000003"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <xacro:if value="${float(direction) == -1.0}">
+                        <mesh
+                                filename="package://galbot_one_golf_description/meshes/visual/arm/link2_right.glb"/>
+                    </xacro:if>
+                    <xacro:unless value="${float(direction) == -1.0}">
+                        <mesh
+                                filename="package://galbot_one_golf_description/meshes/visual/arm/link2.glb"/>
+                    </xacro:unless>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link2_right/link2_right_collision_01.stl"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link2_right/link2_right_collision_02.stl"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link2_right/link2_right_collision_03.stl"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${prefix}joint2" type="revolute">
+            <origin rpy="${direction*1.5707963267949} 0 3.14159265358979"/>
+            <parent link="${prefix}link1"/>
+            <child link="${prefix}link2"/>
+            <axis xyz="0 0 1"/>
+            <limit acceleration="2" effort="60" jerk="12" lower="-1.608062789" upper="1.608062789" velocity="1.5"/>
+        </joint>
+
+        <link name="${prefix}link3">
+            <inertial>
+                <origin xyz="0.0 ${direction*0.00088} -0.04936"/>
+                <mass value="1.43"/>
+                <inertia ixx="0.01187457" ixy="1.5e-07" ixz="8.5e-07" iyy="0.01178759" iyz="0.00010048"
+                         izz="0.0013715"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/visual/arm/link3.glb"
+                          scale="1 ${direction} 1"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link3/link3_collision_01.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link3/link3_collision_02.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link3/link3_collision_03.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${prefix}joint3" type="revolute">
+            <origin rpy="${direction*1.5707963267949} 1.04719755119629 -3.14159265358979" xyz="0 ${direction*0.35} 0"/>
+            <parent link="${prefix}link2"/>
+            <child link="${prefix}link3"/>
+            <axis xyz="0 0 1"/>
+            <limit acceleration="2" effort="30" jerk="12" lower="-2.916972222" upper="2.916972222" velocity="1.5"/>
+        </joint>
+
+        <link name="${prefix}link4">
+            <inertial>
+                <origin xyz="0.0 ${direction*0.05614} 0.019170000000000003"/>
+                <mass value="1.1"/>
+                <inertia ixx="0.00701388" ixy="3.2e-07" ixz="1.16e-06" iyy="0.00161854" iyz="0.00033944"
+                         izz="0.0065011999999999995"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/visual/arm/link4.glb"
+                          scale="1 ${direction} 1"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link4/link4_collision_01.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link4/link4_collision_02.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${prefix}joint4" type="revolute">
+            <origin rpy="${direction*1.57079632679459} 0 3.14159265358979"/>
+            <parent link="${prefix}link3"/>
+            <child link="${prefix}link4"/>
+            <axis xyz="0 0 1"/>
+            <limit acceleration="2" effort="30" jerk="12"
+                   lower="${-2.5679938779914944 if float(direction) == 1.0 else -1.869862177}"
+                   upper="${1.869862177 if float(direction) == 1.0 else 2.5679938779914944}" velocity="1.5"/>
+        </joint>
+
+        <link name="${prefix}link5">
+            <inertial>
+                <origin xyz="0.00044 0.0016899999999999999 -0.13306"/>
+                <mass value="1.15"/>
+                <inertia ixx="0.025809930000000002" ixy="1.98e-05" ixz="5.605e-05" iyy="0.02530313"
+                         iyz="0.00020931999999999998"
+                         izz="0.00115848"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh
+                            filename="package://galbot_one_golf_description/meshes/visual/arm/link5.glb"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link5/link5_collision_01.stl"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link5/link5_collision_02.stl"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link5/link5_collision_03.stl"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link5/link5_collision_04.stl"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link5/link5_collision_05.stl"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link5/link5_collision_06.stl"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${prefix}joint5" type="revolute">
+            <origin rpy="-1.5707963267949 0 ${direction*-1.5707963267949 + 1.5707963267949}"
+                    xyz="0 ${direction*0.36} 0"/>
+            <parent link="${prefix}link4"/>
+            <child link="${prefix}link5"/>
+            <axis xyz="0 0 1"/>
+            <limit acceleration="2" effort="10" jerk="12" lower="-2.916972222" upper="2.916972222" velocity="1.5"/>
+        </joint>
+
+        <link name="${prefix}link6">
+            <inertial>
+                <origin xyz="-0.00088 ${direction*-0.0072699999999999996} -0.00011999999999999999"/>
+                <mass value="0.47"/>
+                <inertia ixx="0.00027557" ixy="7.6e-07" ixz="1.44e-06" iyy="0.00028977999999999995" iyz="2.25e-06"
+                         izz="0.00029684"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/visual/arm/link6.glb"
+                          scale="1 ${direction} 1"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link6/link6_collision_01.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${prefix}joint6" type="revolute">
+            <origin rpy="1.5707963267949 1.5707963267949 0"/>
+            <parent link="${prefix}link5"/>
+            <child link="${prefix}link6"/>
+            <axis xyz="0 0 1"/>
+            <limit acceleration="2" effort="10" jerk="12"
+                   lower="${-0.8226646259971648 if float(direction) == 1.0 else -0.7353981633974483}"
+                   upper="${0.7353981633974483 if float(direction) == 1.0 else 0.8226646259971648}" velocity="1.5"/>
+        </joint>
+
+        <link name="${prefix}link7">
+            <inertial>
+                <origin xyz="-0.05751 ${direction*-0.00684} 0.011869999999999999"/>
+                <mass value="0.8"/>
+                <inertia ixx="0.00117613" ixy="0.00033793" ixz="0.0001662" iyy="0.00423935" iyz="8.589999999999999e-06"
+                         izz="0.00417642"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/visual/arm/link7.glb"
+                          scale="1 ${direction} 1"/>
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link7/link7_collision_01.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link7/link7_collision_02.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link7/link7_collision_03.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+            <collision>
+                <geometry>
+                    <mesh filename="package://galbot_one_golf_description/meshes/collision/arm/link7/link7_collision_04.stl" scale="1 ${direction} 1"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${prefix}joint7" type="revolute">
+            <origin rpy="${direction*1.5707963267949} 0 0"/>
+            <parent link="${prefix}link6"/>
+            <child link="${prefix}link7"/>
+            <axis xyz="0 0 1"/>
+            <limit acceleration="2" effort="10" jerk="12" lower="-1.538202778" upper="1.538202778" velocity="1.5"/>
+        </joint>
+
+        <link name="${prefix}end_effector_mount_link">
+            <inertial>
+                <origin xyz="0 0 0"/>
+                <mass value="0"/>
+                <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+            </inertial>
+        </link>
+
+        <joint name="${prefix}end_effector_mount_joint" type="fixed">
+            <origin rpy="${PI} 0 ${PI}" xyz="-0.10926 0 0"/>
+            <parent link="${prefix}link7"/>
+            <child link="${prefix}end_effector_mount_link"/>
+            <axis xyz="0 0 0"/>
+        </joint>
+
+        <xacro:property name="side" value="${name.replace('_arm', '')}"/>
+        <xacro:ArmCamera prefix="${prefix}" side="${side}" camera="${camera}"/>
+
+    </xacro:macro>
+
+  <xacro:macro name="right_arm" params="parent *origin name:=right_arm camera:=d405 collision_type:=simple">
+    <joint name="${name}_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${name}_base_link"/>
+    </joint>
+    <xacro:right_arm_links name="${name}" camera="${camera}"/>
+  </xacro:macro>
+
+  <xacro:if value="$(arg standalone)">
+    <link name="base_link"/>
+    <xacro:right_arm parent="base_link" name="right_arm" camera="$(arg arm_camera)" collision_type="$(arg collision_type)">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:right_arm>
+  </xacro:if>
+</robot>

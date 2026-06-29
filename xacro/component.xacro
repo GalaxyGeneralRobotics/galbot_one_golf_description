@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<robot name="galbot_one_golf_component" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="type" default="omni_chassis"/>
+  <xacro:arg name="arm_camera" default="d405"/>
+  <xacro:arg name="collision_type" default="simple"/>
+  <xacro:arg name="enable_wheel_joints" default="false"/>
+  <xacro:arg name="enable_joint5" default="true"/>
+  <xacro:property name="valid_component_types" value="${['omni_chassis', 'omniwheel', 'leg', 'torso', 'head', 'left_arm', 'right_arm', 'galbot_gripper', 'wrist_camera']}"/>
+
+  <xacro:if value="${'$(arg type)' not in valid_component_types}">
+    <xacro:include filename="invalid_component_type_$(arg type).xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'omni_chassis'}">
+    <xacro:include filename="components/omni_chassis.xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'omniwheel'}">
+    <xacro:include filename="components/omniwheel_10.xacro"/>
+    <xacro:wheel wheel_name="omniwheel_10" enable_passive_wheels="false"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'leg'}">
+    <xacro:include filename="components/leg.xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'torso'}">
+    <xacro:include filename="components/torso.xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'head'}">
+    <xacro:include filename="components/head.xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'left_arm'}">
+    <xacro:include filename="components/left_arm.xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'right_arm'}">
+    <xacro:include filename="components/right_arm.xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'galbot_gripper'}">
+    <xacro:include filename="components/galbot_gripper.xacro"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'wrist_camera'}">
+    <xacro:include filename="components/wrist_camera.xacro"/>
+    <xacro:property name="PI" value="3.141592653589793"/>
+    <link name="base_link"/>
+    <joint name="wrist_camera_mount_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="wrist_link7"/>
+    </joint>
+    <link name="wrist_link7"/>
+    <xacro:ArmCamera prefix="wrist_" side="wrist" camera="$(arg arm_camera)"/>
+  </xacro:if>
+</robot>

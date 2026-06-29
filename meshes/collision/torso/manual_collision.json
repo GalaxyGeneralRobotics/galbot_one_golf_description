@@ -1,0 +1,89 @@
+{
+  "python1": {
+    "location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "space": "world",
+    "collisions": [
+      {
+        "name": "_sn_python1_manual_collision_3",
+        "type": "mesh",
+        "source": "manual",
+        "file": "meshes/sn_python1_manual_collision_3.stl",
+        "center": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "space": "world",
+        "mesh_space": "world"
+      },
+      {
+        "name": "_sn_python1_manual_collision_4",
+        "type": "mesh",
+        "source": "manual",
+        "file": "meshes/sn_python1_manual_collision_4.stl",
+        "center": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "space": "world",
+        "mesh_space": "world"
+      }
+    ]
+  }
+}

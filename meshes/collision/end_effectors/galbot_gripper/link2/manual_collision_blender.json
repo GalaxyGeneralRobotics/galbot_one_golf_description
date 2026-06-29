@@ -1,0 +1,388 @@
+{
+  "schema": "simready_manual_collision_blender.v1",
+  "schema_version": 2,
+  "manual_collision_file": "manual_collision.json",
+  "manual_collision_xml_file": "manual_collision.xml",
+  "mesh_dir": "meshes",
+  "batch_id": "2142ee4c448a47815a23d24ccbbb53fac1bd84e3cf42e46e88c427e4fdd55943",
+  "world_geometry": "stl_vertices_are_world_space",
+  "mesh_groups": [
+    {
+      "name": "python1",
+      "object_type": "MESH",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "name": "_sn_python1_manual_collision_13",
+      "file": "meshes/sn_python1_manual_collision_13.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    },
+    {
+      "name": "_sn_python1_manual_collision_14",
+      "file": "meshes/sn_python1_manual_collision_14.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    },
+    {
+      "name": "_sn_python1_manual_collision_15",
+      "file": "meshes/sn_python1_manual_collision_15.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    },
+    {
+      "name": "_sn_python1_manual_collision_16",
+      "file": "meshes/sn_python1_manual_collision_16.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    },
+    {
+      "name": "_sn_python1_manual_collision_5",
+      "file": "meshes/sn_python1_manual_collision_5.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          -3.8941431057537557e-07,
+          3.2584142672931193e-07,
+          0.0
+        ],
+        [
+          -3.8941436741879443e-07,
+          -1.0,
+          1.509956746303942e-07,
+          0.0
+        ],
+        [
+          3.2584136988589307e-07,
+          -1.5099580252808664e-07,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    },
+    {
+      "name": "_sn_python1_manual_collision_5.001",
+      "file": "meshes/sn_python1_manual_collision_5.001.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          -3.8941431057537557e-07,
+          3.2584142672931193e-07,
+          0.0
+        ],
+        [
+          -3.8941436741879443e-07,
+          -1.0,
+          1.509956746303942e-07,
+          0.0
+        ],
+        [
+          3.2584136988589307e-07,
+          -1.5099580252808664e-07,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    },
+    {
+      "name": "_sn_python1_manual_collision_6",
+      "file": "meshes/sn_python1_manual_collision_6.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          -3.8941431057537557e-07,
+          3.2584142672931193e-07,
+          0.0
+        ],
+        [
+          -3.8941436741879443e-07,
+          -1.0,
+          1.509956746303942e-07,
+          0.0
+        ],
+        [
+          3.2584136988589307e-07,
+          -1.5099580252808664e-07,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    },
+    {
+      "name": "_sn_python1_manual_collision_6.001",
+      "file": "meshes/sn_python1_manual_collision_6.001.stl",
+      "source": "manual",
+      "collision_type": "manual_collision",
+      "tag": {
+        "type": "manual_collision",
+        "params": {}
+      },
+      "matrix_world": [
+        [
+          1.0,
+          -3.8941431057537557e-07,
+          3.2584142672931193e-07,
+          0.0
+        ],
+        [
+          -3.8941436741879443e-07,
+          -1.0,
+          1.509956746303942e-07,
+          0.0
+        ],
+        [
+          3.2584136988589307e-07,
+          -1.5099580252808664e-07,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_visual_name": "python1",
+      "composite_root_name": null,
+      "composite_type": "",
+      "composite_tag": null,
+      "composite_metadata": {},
+      "composite_matrix_world": null,
+      "mesh_space": "world_baked_stl"
+    }
+  ],
+  "composites": []
+}

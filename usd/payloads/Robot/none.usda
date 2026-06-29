@@ -1,0 +1,37 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, 0, 0)
+                double radius = 5
+            }
+            dictionary Perspective = {
+                double3 position = (1.0453179238059274, 1.0167778433570756, 1.4489239725993888)
+                double3 target = (-0.1250219965430832, -0.15356207699193503, 0.2785840801843207)
+            }
+            dictionary Right = {
+                double3 position = (0, -5, 0)
+                double radius = 5
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 5)
+                double radius = 5
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./galbot_one_golf.usd"
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "galbot_one_golf"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def "galbot_one_golf"
+{
+}
+

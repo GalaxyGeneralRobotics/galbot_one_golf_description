@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+
+<robot name="galbot_one_golf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:arg name="enable_wheel_joints" default="false"/>
+	<xacro:arg name="enable_passive_wheels" default="false"/>
+	<xacro:arg name="arm_camera" default="d405"/>
+	<xacro:arg name="enable_joint5" default="true"/>
+	<xacro:arg name="collider" default="simple"/>
+	<xacro:arg name="standalone" default="false"/>
+	<xacro:arg name="type" default="galbot_gripper"/>
+	<xacro:arg name="left_ee_type" default=""/>
+	<xacro:arg name="right_ee_type" default=""/>
+	<xacro:property name="type_arg" value="$(arg type)"/>
+	<xacro:property name="left_ee_type_arg" value="$(arg left_ee_type)"/>
+	<xacro:property name="right_ee_type_arg" value="$(arg right_ee_type)"/>
+	<xacro:property name="selected_left_ee_type" value="${type_arg}"/>
+	<xacro:property name="selected_right_ee_type" value="${type_arg}"/>
+	<xacro:if value="${left_ee_type_arg != ''}">
+		<xacro:property name="selected_left_ee_type" value="${left_ee_type_arg}"/>
+	</xacro:if>
+	<xacro:if value="${right_ee_type_arg != ''}">
+		<xacro:property name="selected_right_ee_type" value="${right_ee_type_arg}"/>
+	</xacro:if>
+	<xacro:property name="PI" value="3.141592653589793"/>
+
+	<xacro:include filename="components/omni_chassis.xacro"/>
+	<xacro:include filename="components/leg.xacro"/>
+	<xacro:include filename="components/torso.xacro"/>
+	<xacro:include filename="components/head.xacro"/>
+	<xacro:include filename="components/left_arm.xacro"/>
+	<xacro:include filename="components/right_arm.xacro"/>
+	<xacro:include filename="components/galbot_gripper.xacro"/>
+
+	<xacro:GalbotChassisV2 enable_wheel_joints="$(arg enable_wheel_joints)" enable_passive_wheels="$(arg enable_passive_wheels)"/>
+	<xacro:galbot_one_golf_head parent_link="torso_base_link"/>
+
+	<!-- Left Arm Mount -->
+	<link name="torso_left_arm_mount_link"/>
+	<joint name="torso_left_arm_mount_joint" type="fixed">
+		<origin rpy="0 1.5707963267948966 0" xyz="0.20843 0.172 0"/>
+		<parent link="torso_base_link"/>
+		<child link="torso_left_arm_mount_link"/>
+		<axis/>
+	</joint>
+
+	<!-- Right Arm Mount -->
+	<link name="torso_right_arm_mount_link"/>
+	<joint name="torso_right_arm_mount_joint" type="fixed">
+		<origin rpy="3.141592653589793 1.5707963267948966 0" xyz="-0.20843 0.172 0"/>
+		<parent link="torso_base_link"/>
+		<child link="torso_right_arm_mount_link"/>
+		<axis/>
+	</joint>
+
+	<xacro:right_arm parent="torso_right_arm_mount_link" name="right_arm" camera="$(arg arm_camera)">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+	</xacro:right_arm>
+
+	<xacro:if value="${selected_right_ee_type == 'galbot_gripper'}">
+		<joint name="right_gripper_mount_joint" type="fixed">
+			<origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
+			<parent link="right_arm_end_effector_mount_link"/>
+			<child link="right_gripper_flange_link"/>
+			<axis xyz="0 0 0"/>
+		</joint>
+		<xacro:Gripper name="right"/>
+	</xacro:if>
+	<xacro:left_arm parent="torso_left_arm_mount_link" name="left_arm" camera="$(arg arm_camera)">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+	</xacro:left_arm>
+
+	<xacro:if value="${selected_left_ee_type == 'galbot_gripper'}">
+		<joint name="left_gripper_mount_joint" type="fixed">
+			<origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
+			<parent link="left_arm_end_effector_mount_link"/>
+			<child link="left_gripper_flange_link"/>
+			<axis xyz="0 0 0"/>
+		</joint>
+		<xacro:Gripper name="left"/>
+	</xacro:if>
+</robot>

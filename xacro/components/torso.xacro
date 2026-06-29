@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<robot name="galbot_one_golf_torso" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:arg name="standalone" default="true"/>
+
+    <xacro:if value="$(arg standalone)">
+        <link name="leg_end_effector_mount_link"/>
+    </xacro:if>
+
+    <joint name="torso_joint" type="fixed">
+        <parent link="leg_end_effector_mount_link"/>
+        <child link="torso_base_link"/>
+    </joint>
+
+    <link name="torso_base_link">
+        <inertial>
+            <origin xyz="0.0053 0.1249 -0.00088"/>
+            <mass value="6.83"/>
+            <inertia ixx="0.12762873" ixy="0.00338332" ixz="0.00152351" iyy="0.04560482" iyz="0.0004879"
+                     izz="0.13469248"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://galbot_one_golf_description/meshes/visual/torso/torso.glb"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://galbot_one_golf_description/meshes/collision/torso/torso_collision_01.stl"/>
+            </geometry>
+        </collision>
+        <collision>
+            <geometry>
+                <mesh filename="package://galbot_one_golf_description/meshes/collision/torso/torso_collision_02.stl"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

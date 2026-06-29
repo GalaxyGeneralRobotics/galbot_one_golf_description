@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mujoco model="manual_collision">
+  <compiler angle="radian"/>
+  <default>
+    <default class="collision">
+      <geom type="mesh" group="0" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <mesh name="_sn_python1_manual_collision_5" file="meshes/sn_python1_manual_collision_5.stl"/>
+    <mesh name="_sn_python1_manual_collision_5.001" file="meshes/sn_python1_manual_collision_5.001.stl"/>
+    <mesh name="_sn_python1_manual_collision_6" file="meshes/sn_python1_manual_collision_6.stl"/>
+    <mesh name="_sn_python1_manual_collision_6.001" file="meshes/sn_python1_manual_collision_6.001.stl"/>
+    <mesh name="_sn_python1_prim_10_box" file="meshes/sn_python1_prim_10_box.stl"/>
+    <mesh name="_sn_python1_prim_11_box" file="meshes/sn_python1_prim_11_box.stl"/>
+    <mesh name="_sn_python1_prim_12_box" file="meshes/sn_python1_prim_12_box.stl"/>
+    <mesh name="_sn_python1_prim_9_box" file="meshes/sn_python1_prim_9_box.stl"/>
+  </asset>
+  <worldbody>
+    <body name="python1" pos="0 0 0" quat="1 0 0 0">
+      <inertial pos="0 0 0" mass="1" diaginertia="1e-4 1e-4 1e-4"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_manual_collision_5" pos="0 0 0" quat="1 0 0 0"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_manual_collision_5.001" pos="0 0 0" quat="1 0 0 0"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_manual_collision_6" pos="0 0 0" quat="1 0 0 0"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_manual_collision_6.001" pos="0 0 0" quat="1 0 0 0"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_prim_10_box" pos="0 0 0" quat="1 0 0 0"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_prim_11_box" pos="0 0 0" quat="1 0 0 0"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_prim_12_box" pos="0 0 0" quat="1 0 0 0"/>
+      <geom class="collision" type="mesh" mesh="_sn_python1_prim_9_box" pos="0 0 0" quat="1 0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>

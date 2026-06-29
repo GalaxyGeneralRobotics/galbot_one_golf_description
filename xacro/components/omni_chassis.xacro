@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="standalone" default="true"/>
+  <xacro:arg name="enable_wheel_joints" default="false"/>
+  <xacro:arg name="enable_passive_wheels" default="false"/>
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <xacro:include filename="omniwheel_10.xacro"/>
+
+  <xacro:macro name="GalbotChassisV2" params="enable_wheel_joints:='false' enable_passive_wheels:='false'">
+    <!-- Robot Base Link -->
+    <link name="base_footprint"/>
+    <joint name="base_footprint_joint" type="fixed">
+      <origin xyz="0 0 0.028166"/>
+      <parent link="base_footprint"/>
+      <child link="base_link"/>
+    </joint>
+
+    <link name="base_link"/>
+    <joint name="omni_chassis_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="omni_chassis_base_link"/>
+    </joint>
+
+    <link name="omni_chassis_base_link">
+      <inertial>
+        <origin xyz="0.02079 0.00615 0.07261"/>
+        <mass value="30.15"/>
+        <inertia ixx="0.3317069394" ixy="3.760583e-05" ixz="3.706221e-05" iyy="0.32081635568" iyz="1.303674e-05" izz="0.55833152838"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://galbot_one_golf_description/meshes/visual/chassis/chassis.glb"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://galbot_one_golf_description/meshes/collision/chassis/chassis_collision_01.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="omni_chassis_leg_mount_link"/>
+    <joint name="omni_chassis_leg_mount_joint" type="fixed">
+      <origin xyz="0.134 0 0.1325"/>
+      <parent link="omni_chassis_base_link"/>
+      <child link="omni_chassis_leg_mount_link"/>
+    </joint>
+
+    <xacro:wheel wheel_name="wheel_1" enable_passive_wheels="${enable_passive_wheels}"/>
+    <xacro:wheel wheel_name="wheel_2" enable_passive_wheels="${enable_passive_wheels}"/>
+    <xacro:wheel wheel_name="wheel_3" enable_passive_wheels="${enable_passive_wheels}"/>
+    <xacro:wheel wheel_name="wheel_4" enable_passive_wheels="${enable_passive_wheels}"/>
+
+    <xacro:property name="wheel_joint_type" value="fixed"/>
+    <xacro:if value="${enable_wheel_joints}">
+      <xacro:property name="wheel_joint_type" value="continuous"/>
+    </xacro:if>
+
+    <joint name="wheel1_joint" type="${wheel_joint_type}">
+      <origin rpy="0 0 ${-3*PI/4}" xyz="0.176493 0.176493 0.071834"/>
+      <parent link="omni_chassis_base_link"/>
+      <child link="wheel_1"/>
+      <xacro:if value="${enable_wheel_joints}">
+        <axis xyz="1 0 0"/>
+      </xacro:if>
+    </joint>
+
+    <joint name="wheel2_joint" type="${wheel_joint_type}">
+      <origin rpy="0 0 ${-PI/4}" xyz="-0.176493 0.176493 0.071834"/>
+      <parent link="omni_chassis_base_link"/>
+      <child link="wheel_2"/>
+      <xacro:if value="${enable_wheel_joints}">
+        <axis xyz="1 0 0"/>
+      </xacro:if>
+    </joint>
+
+    <joint name="wheel3_joint" type="${wheel_joint_type}">
+      <origin rpy="0 0 ${PI/4}" xyz="-0.176493 -0.176493 0.071834"/>
+      <parent link="omni_chassis_base_link"/>
+      <child link="wheel_3"/>
+      <xacro:if value="${enable_wheel_joints}">
+        <axis xyz="1 0 0"/>
+      </xacro:if>
+    </joint>
+
+    <joint name="wheel4_joint" type="${wheel_joint_type}">
+      <origin rpy="0 0 ${3*PI/4}" xyz="0.176493 -0.176493 0.071834"/>
+      <parent link="omni_chassis_base_link"/>
+      <child link="wheel_4"/>
+      <xacro:if value="${enable_wheel_joints}">
+        <axis xyz="1 0 0"/>
+      </xacro:if>
+    </joint>
+
+    <link name="chassis_lidar">
+      <visual>
+        <geometry>
+          <mesh filename="package://galbot_one_golf_description/meshes/visual/sensors/mid360/mid360.glb"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://galbot_one_golf_description/meshes/collision/sensors/mid360/mid360_collision_01.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://galbot_one_golf_description/meshes/collision/sensors/mid360/mid360_collision_02.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="chassis_lidar_joint" type="fixed">
+      <parent link="omni_chassis_base_link"/>
+      <child link="chassis_lidar"/>
+      <origin xyz="0.235 0 0.2144"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:if value="$(arg standalone)">
+    <xacro:GalbotChassisV2 enable_wheel_joints="$(arg enable_wheel_joints)" enable_passive_wheels="$(arg enable_passive_wheels)"/>
+  </xacro:if>
+</robot>

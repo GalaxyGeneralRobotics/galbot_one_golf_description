@@ -1,0 +1,59 @@
+{
+  "python1": {
+    "location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "space": "world",
+    "collisions": [
+      {
+        "name": "_sn_python1_coacd_h001",
+        "type": "mesh",
+        "source": "coacd",
+        "file": "meshes/sn_python1_coacd_h001.stl",
+        "center": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "space": "world",
+        "mesh_space": "world"
+      }
+    ]
+  }
+}

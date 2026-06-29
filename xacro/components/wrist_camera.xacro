@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:macro name="ArmCamera" params="prefix side camera:=d405">
+		<xacro:if value="${camera == 'none'}">
+			<joint name="${prefix}camera_stand_joint" type="fixed">
+				<parent link="${prefix}link7"/>
+				<child link="${prefix}wrist_camera_stand"/>
+			</joint>
+			<link name="${prefix}wrist_camera_stand"/>
+		</xacro:if>
+
+		<xacro:if value="${camera == 'd405'}">
+			<joint name="${prefix}camera_stand_joint" type="fixed">
+				<parent link="${prefix}link7"/>
+				<child link="${prefix}wrist_camera_stand"/>
+			</joint>
+
+			<link name="${prefix}wrist_camera_stand">
+				<inertial>
+					<origin xyz="-0.0621229724155358 -0.0628379837355285 -0.00140310958315455"/>
+					<mass value="0.0492751941348016"/>
+					<inertia ixx="3.66069470547417E-05" ixy="-3.55284385731841E-07" ixz="3.8533182318026E-07"
+							 iyy="3.08593710158624E-05" iyz="-3.07292981503681E-07" izz="8.80145863410975E-06"/>
+				</inertial>
+				<visual>
+					<geometry>
+						<mesh filename="package://galbot_one_golf_description/meshes/visual/arm/d405_stand.glb"/>
+					</geometry>
+				</visual>
+			</link>
+
+			<joint name="${prefix}camera_joint" type="fixed">
+				<origin xyz="-0.0822 0 -0.06842" rpy="0 ${PI/2 - 0.09} ${PI}"/>
+				<parent link="${prefix}wrist_camera_stand"/>
+				<child link="${side}_wrist_camera_link"/>
+			</joint>
+
+			<link name="${side}_wrist_camera_link">
+				<visual>
+					<geometry>
+						<mesh filename="package://galbot_one_golf_description/meshes/visual/sensors/realsense/d405.glb"/>
+					</geometry>
+				</visual>
+				<collision>
+					<geometry>
+						<mesh filename="package://galbot_one_golf_description/meshes/collision/sensors/realsense/d405/d405_collision_01.stl"/>
+					</geometry>
+				</collision>
+			</link>
+		</xacro:if>
+
+		<xacro:if value="${camera == 'd415'}">
+			<joint name="${prefix}camera_stand_joint" type="fixed">
+				<parent link="${prefix}link7"/>
+				<child link="${prefix}wrist_camera_stand"/>
+			</joint>
+
+			<link name="${prefix}wrist_camera_stand">
+				<inertial>
+					<origin xyz="-0.0621229724155358 -0.0628379837355285 -0.00140310958315455"/>
+					<mass value="0.0492751941348016"/>
+					<inertia ixx="3.66069470547417E-05" ixy="-3.55284385731841E-07" ixz="3.8533182318026E-07"
+							 iyy="3.08593710158624E-05" iyz="-3.07292981503681E-07" izz="8.80145863410975E-06"/>
+				</inertial>
+				<visual>
+					<geometry>
+						<mesh filename="package://galbot_one_golf_description/meshes/visual/arm/d415_stand.glb"/>
+					</geometry>
+				</visual>
+			</link>
+
+			<joint name="${prefix}camera_joint" type="fixed">
+				<origin xyz="-0.072414 0 -0.070816" rpy="${PI*105/180} 0 ${-PI/2}"/>
+				<parent link="${prefix}wrist_camera_stand"/>
+				<child link="${side}_wrist_camera_link"/>
+			</joint>
+
+			<link name="${side}_wrist_camera_link">
+				<visual>
+					<geometry>
+						<mesh filename="package://galbot_one_golf_description/meshes/visual/sensors/realsense/d415.glb"/>
+					</geometry>
+				</visual>
+				<collision>
+					<geometry>
+						<mesh filename="package://galbot_one_golf_description/meshes/collision/sensors/realsense/d415/d415_collision_01.stl"/>
+					</geometry>
+				</collision>
+				<collision>
+					<geometry>
+						<mesh filename="package://galbot_one_golf_description/meshes/collision/sensors/realsense/d415/d415_collision_02.stl"/>
+					</geometry>
+				</collision>
+			</link>
+		</xacro:if>
+	</xacro:macro>
+</robot>

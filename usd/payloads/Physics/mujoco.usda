@@ -1,0 +1,2451 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, 0, 0)
+                double radius = 5
+            }
+            dictionary Perspective = {
+                double3 position = (1.0453179238059274, 1.0167778433570756, 1.4489239725993888)
+                double3 target = (-0.1250219965430832, -0.15356207699193503, 0.2785840801843207)
+            }
+            dictionary Right = {
+                double3 position = (0, -5, 0)
+                double radius = 5
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 5)
+                double radius = 5
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./galbot_one_golf.usd"
+        }
+        dictionary renderSettings = {
+        }
+    }
+    doc = """Generated from Composed Stage of root layer /home/galbot/Downloads/galbot_one_golf_isaac6/galbot_one_golf.usd
+
+
+Generated from Composed Stage of root layer /home/galbot/Downloads/galbot_one_golf_isaac6/payloads/base.usd
+"""
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+over "galbot_one_golf"
+{
+    over "base_footprint"
+    {
+        over "base_link"
+        {
+            over "omni_chassis_base_link"
+            {
+                over "chassis_lidar"
+                {
+                }
+
+                over "omni_chassis_leg_mount_link"
+                {
+                    over "leg_base_link"
+                    {
+                    }
+                }
+            }
+        }
+
+        over "visuals"
+        {
+            over "chassis"
+            {
+            }
+
+            over "mid360"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "chassis_collision_01"
+            {
+            }
+
+            over "mid360_collision_01"
+            {
+            }
+
+            over "mid360_collision_02"
+            {
+            }
+        }
+    }
+
+    over "leg_link1"
+    {
+        over "visuals"
+        {
+            over "leg1"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link1_collision_01"
+            {
+            }
+
+            over "link1_collision_02"
+            {
+            }
+
+            over "link1_collision_03"
+            {
+            }
+        }
+    }
+
+    over "joints"
+    {
+        over "leg_joint1" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "leg_joint2" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "leg_joint3" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "leg_joint4" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "leg_joint5" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "head_joint1" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "head_joint2" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_arm_joint1" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_arm_joint2" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_arm_joint3" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_arm_joint4" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_arm_joint5" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_arm_joint6" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_arm_joint7" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_gripper_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "left_gripper_l_inner_knuckle_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "left_gripper_l_finger_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "left_gripper_l_knuckle_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "left_gripper_r_inner_knuckle_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "left_gripper_r_finger_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "right_arm_joint1" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_arm_joint2" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_arm_joint3" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_arm_joint4" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_arm_joint5" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_arm_joint6" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_arm_joint7" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_gripper_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+        }
+
+        over "right_gripper_l_inner_knuckle_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "right_gripper_l_finger_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "right_gripper_l_knuckle_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "right_gripper_r_inner_knuckle_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "right_gripper_r_finger_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel1_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_0_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_1_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_2_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_3_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_4_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_5_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_6_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_7_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_8_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_1_passive_9_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel2_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_0_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_1_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_2_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_3_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_4_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_5_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_6_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_7_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_8_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_2_passive_9_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel3_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_0_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_1_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_2_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_3_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_4_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_5_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_6_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_7_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_8_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_3_passive_9_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel4_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_0_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_1_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_2_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_3_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_4_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_5_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_6_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_7_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_8_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "wheel_4_passive_9_joint" (
+            delete apiSchemas = ["PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+    }
+
+    over "leg_link2"
+    {
+        over "visuals"
+        {
+            over "leg2"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link2_collision_01"
+            {
+            }
+
+            over "link2_collision_02"
+            {
+            }
+        }
+    }
+
+    over "leg_link3"
+    {
+        over "visuals"
+        {
+            over "leg3"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link3_collision_01"
+            {
+            }
+
+            over "link3_collision_02"
+            {
+            }
+        }
+    }
+
+    over "leg_link4"
+    {
+        over "visuals"
+        {
+            over "leg4"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link4_collision_01"
+            {
+            }
+        }
+    }
+
+    over "leg_link5"
+    {
+        over "leg_end_effector_mount_link"
+        {
+            over "torso_base_link"
+            {
+                over "torso_head_mount_link"
+                {
+                    over "head_base_link"
+                    {
+                    }
+                }
+
+                over "torso_left_arm_mount_link"
+                {
+                    over "left_arm_base_link"
+                    {
+                    }
+                }
+
+                over "torso_right_arm_mount_link"
+                {
+                    over "right_arm_base_link"
+                    {
+                    }
+                }
+            }
+        }
+
+        over "visuals"
+        {
+            over "torso"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "torso_collision_01"
+            {
+            }
+
+            over "torso_collision_02"
+            {
+            }
+        }
+    }
+
+    over "head_link1"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+        }
+    }
+
+    over "head_link2"
+    {
+        over "head_end_effector_mount_link"
+        {
+        }
+
+        over "visuals"
+        {
+            over "head_link2"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "head_link2_collision_01"
+            {
+            }
+        }
+    }
+
+    over "left_arm_link1"
+    {
+        over "visuals"
+        {
+            over "link1"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link1_collision_01"
+            {
+            }
+
+            over "link1_collision_02"
+            {
+            }
+
+            over "link1_collision_03"
+            {
+            }
+
+            over "link1_collision_04"
+            {
+            }
+        }
+    }
+
+    over "left_arm_link2"
+    {
+        over "visuals"
+        {
+            over "link2"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link2_collision_01"
+            {
+            }
+
+            over "link2_collision_02"
+            {
+            }
+
+            over "link2_collision_03"
+            {
+            }
+        }
+    }
+
+    over "left_arm_link3"
+    {
+        over "visuals"
+        {
+            over "link3"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link3_collision_01"
+            {
+            }
+
+            over "link3_collision_02"
+            {
+            }
+
+            over "link3_collision_03"
+            {
+            }
+        }
+    }
+
+    over "left_arm_link4"
+    {
+        over "visuals"
+        {
+            over "link4"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link4_collision_01"
+            {
+            }
+
+            over "link4_collision_02"
+            {
+            }
+        }
+    }
+
+    over "left_arm_link5"
+    {
+        over "visuals"
+        {
+            over "link5"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link5_collision_01"
+            {
+            }
+
+            over "link5_collision_02"
+            {
+            }
+
+            over "link5_collision_03"
+            {
+            }
+
+            over "link5_collision_04"
+            {
+            }
+
+            over "link5_collision_05"
+            {
+            }
+
+            over "link5_collision_06"
+            {
+            }
+        }
+    }
+
+    over "left_arm_link6"
+    {
+        over "visuals"
+        {
+            over "link6"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link6_collision_01"
+            {
+            }
+        }
+    }
+
+    over "left_arm_link7"
+    {
+        over "left_arm_end_effector_mount_link"
+        {
+            over "left_gripper_flange_link"
+            {
+                over "left_gripper_base_link"
+                {
+                    over "left_gripper_tcp_link"
+                    {
+                    }
+                }
+            }
+        }
+
+        over "left_arm_wrist_camera_stand"
+        {
+            over "left_wrist_camera_link"
+            {
+            }
+        }
+
+        over "visuals"
+        {
+            over "link7"
+            {
+            }
+
+            over "d405_stand"
+            {
+            }
+
+            over "d405"
+            {
+            }
+
+            over "flange"
+            {
+            }
+
+            over "base_link"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link7_collision_01"
+            {
+            }
+
+            over "link7_collision_02"
+            {
+            }
+
+            over "link7_collision_03"
+            {
+            }
+
+            over "link7_collision_04"
+            {
+            }
+
+            over "d405_collision_01"
+            {
+            }
+
+            over "base_link_collision_01"
+            {
+            }
+
+            over "base_link_collision_02"
+            {
+            }
+
+            over "base_link_collision_03"
+            {
+            }
+        }
+    }
+
+    over "left_gripper_r_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link1"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_1_collision_01"
+            {
+            }
+
+            over "link_1_collision_02"
+            {
+            }
+
+            over "link_1_collision_03"
+            {
+            }
+
+            over "link_1_collision_04"
+            {
+            }
+
+            over "link_1_collision_05"
+            {
+            }
+
+            over "link_1_collision_06"
+            {
+            }
+
+            over "link_1_collision_07"
+            {
+            }
+
+            over "link_1_collision_08"
+            {
+            }
+        }
+    }
+
+    over "left_gripper_l_inner_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link2"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_2_collision_01"
+            {
+            }
+
+            over "link_2_collision_02"
+            {
+            }
+
+            over "link_2_collision_03"
+            {
+            }
+
+            over "link_2_collision_04"
+            {
+            }
+
+            over "link_2_collision_05"
+            {
+            }
+
+            over "link_2_collision_06"
+            {
+            }
+
+            over "link_2_collision_07"
+            {
+            }
+
+            over "link_2_collision_08"
+            {
+            }
+        }
+    }
+
+    over "left_gripper_l_finger_link"
+    {
+        over "visuals"
+        {
+            over "link3"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_3_collision_01"
+            {
+            }
+
+            over "link_3_collision_02"
+            {
+            }
+
+            over "link_3_collision_03"
+            {
+            }
+        }
+    }
+
+    over "left_gripper_l_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link1"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_1_collision_01"
+            {
+            }
+
+            over "link_1_collision_02"
+            {
+            }
+
+            over "link_1_collision_03"
+            {
+            }
+
+            over "link_1_collision_04"
+            {
+            }
+
+            over "link_1_collision_05"
+            {
+            }
+
+            over "link_1_collision_06"
+            {
+            }
+
+            over "link_1_collision_07"
+            {
+            }
+
+            over "link_1_collision_08"
+            {
+            }
+        }
+    }
+
+    over "left_gripper_r_inner_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link2"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_2_collision_01"
+            {
+            }
+
+            over "link_2_collision_02"
+            {
+            }
+
+            over "link_2_collision_03"
+            {
+            }
+
+            over "link_2_collision_04"
+            {
+            }
+
+            over "link_2_collision_05"
+            {
+            }
+
+            over "link_2_collision_06"
+            {
+            }
+
+            over "link_2_collision_07"
+            {
+            }
+
+            over "link_2_collision_08"
+            {
+            }
+        }
+    }
+
+    over "left_gripper_r_finger_link"
+    {
+        over "visuals"
+        {
+            over "link3"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_3_collision_01"
+            {
+            }
+
+            over "link_3_collision_02"
+            {
+            }
+
+            over "link_3_collision_03"
+            {
+            }
+        }
+    }
+
+    over "right_arm_link1"
+    {
+        over "visuals"
+        {
+            over "link1"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link1_collision_01"
+            {
+            }
+
+            over "link1_collision_02"
+            {
+            }
+
+            over "link1_collision_03"
+            {
+            }
+
+            over "link1_collision_04"
+            {
+            }
+        }
+    }
+
+    over "right_arm_link2"
+    {
+        over "visuals"
+        {
+            over "link2_right"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link2_right_collision_01"
+            {
+            }
+
+            over "link2_right_collision_02"
+            {
+            }
+
+            over "link2_right_collision_03"
+            {
+            }
+        }
+    }
+
+    over "right_arm_link3"
+    {
+        over "visuals"
+        {
+            over "link3"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link3_collision_01"
+            {
+            }
+
+            over "link3_collision_02"
+            {
+            }
+
+            over "link3_collision_03"
+            {
+            }
+        }
+    }
+
+    over "right_arm_link4"
+    {
+        over "visuals"
+        {
+            over "link4"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link4_collision_01"
+            {
+            }
+
+            over "link4_collision_02"
+            {
+            }
+        }
+    }
+
+    over "right_arm_link5"
+    {
+        over "visuals"
+        {
+            over "link5"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link5_collision_01"
+            {
+            }
+
+            over "link5_collision_02"
+            {
+            }
+
+            over "link5_collision_03"
+            {
+            }
+
+            over "link5_collision_04"
+            {
+            }
+
+            over "link5_collision_05"
+            {
+            }
+
+            over "link5_collision_06"
+            {
+            }
+        }
+    }
+
+    over "right_arm_link6"
+    {
+        over "visuals"
+        {
+            over "link6"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link6_collision_01"
+            {
+            }
+        }
+    }
+
+    over "right_arm_link7"
+    {
+        over "right_arm_end_effector_mount_link"
+        {
+            over "right_gripper_flange_link"
+            {
+                over "right_gripper_base_link"
+                {
+                    over "right_gripper_tcp_link"
+                    {
+                    }
+                }
+            }
+        }
+
+        over "right_arm_wrist_camera_stand"
+        {
+            over "right_wrist_camera_link"
+            {
+            }
+        }
+
+        over "visuals"
+        {
+            over "link7"
+            {
+            }
+
+            over "d405_stand"
+            {
+            }
+
+            over "d405"
+            {
+            }
+
+            over "flange"
+            {
+            }
+
+            over "base_link"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link7_collision_01"
+            {
+            }
+
+            over "link7_collision_02"
+            {
+            }
+
+            over "link7_collision_03"
+            {
+            }
+
+            over "link7_collision_04"
+            {
+            }
+
+            over "d405_collision_01"
+            {
+            }
+
+            over "base_link_collision_01"
+            {
+            }
+
+            over "base_link_collision_02"
+            {
+            }
+
+            over "base_link_collision_03"
+            {
+            }
+        }
+    }
+
+    over "right_gripper_r_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link1"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_1_collision_01"
+            {
+            }
+
+            over "link_1_collision_02"
+            {
+            }
+
+            over "link_1_collision_03"
+            {
+            }
+
+            over "link_1_collision_04"
+            {
+            }
+
+            over "link_1_collision_05"
+            {
+            }
+
+            over "link_1_collision_06"
+            {
+            }
+
+            over "link_1_collision_07"
+            {
+            }
+
+            over "link_1_collision_08"
+            {
+            }
+        }
+    }
+
+    over "right_gripper_l_inner_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link2"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_2_collision_01"
+            {
+            }
+
+            over "link_2_collision_02"
+            {
+            }
+
+            over "link_2_collision_03"
+            {
+            }
+
+            over "link_2_collision_04"
+            {
+            }
+
+            over "link_2_collision_05"
+            {
+            }
+
+            over "link_2_collision_06"
+            {
+            }
+
+            over "link_2_collision_07"
+            {
+            }
+
+            over "link_2_collision_08"
+            {
+            }
+        }
+    }
+
+    over "right_gripper_l_finger_link"
+    {
+        over "visuals"
+        {
+            over "link3"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_3_collision_01"
+            {
+            }
+
+            over "link_3_collision_02"
+            {
+            }
+
+            over "link_3_collision_03"
+            {
+            }
+        }
+    }
+
+    over "right_gripper_l_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link1"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_1_collision_01"
+            {
+            }
+
+            over "link_1_collision_02"
+            {
+            }
+
+            over "link_1_collision_03"
+            {
+            }
+
+            over "link_1_collision_04"
+            {
+            }
+
+            over "link_1_collision_05"
+            {
+            }
+
+            over "link_1_collision_06"
+            {
+            }
+
+            over "link_1_collision_07"
+            {
+            }
+
+            over "link_1_collision_08"
+            {
+            }
+        }
+    }
+
+    over "right_gripper_r_inner_knuckle_link"
+    {
+        over "visuals"
+        {
+            over "link2"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_2_collision_01"
+            {
+            }
+
+            over "link_2_collision_02"
+            {
+            }
+
+            over "link_2_collision_03"
+            {
+            }
+
+            over "link_2_collision_04"
+            {
+            }
+
+            over "link_2_collision_05"
+            {
+            }
+
+            over "link_2_collision_06"
+            {
+            }
+
+            over "link_2_collision_07"
+            {
+            }
+
+            over "link_2_collision_08"
+            {
+            }
+        }
+    }
+
+    over "right_gripper_r_finger_link"
+    {
+        over "visuals"
+        {
+            over "link3"
+            {
+            }
+        }
+
+        over "collisions"
+        {
+            over "link_3_collision_01"
+            {
+            }
+
+            over "link_3_collision_02"
+            {
+            }
+
+            over "link_3_collision_03"
+            {
+            }
+        }
+    }
+
+    over "wheel_1"
+    {
+        over "collisions"
+        {
+        }
+
+        over "visuals"
+        {
+            over "omniwheel_10"
+            {
+            }
+        }
+    }
+
+    over "wheel_1_passive_0"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_1"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_2"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_3"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_4"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_5"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_6"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_7"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_8"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_1_passive_9"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2"
+    {
+        over "collisions"
+        {
+        }
+
+        over "visuals"
+        {
+            over "omniwheel_10"
+            {
+            }
+        }
+    }
+
+    over "wheel_2_passive_0"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_1"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_2"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_3"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_4"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_5"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_6"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_7"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_8"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_2_passive_9"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3"
+    {
+        over "collisions"
+        {
+        }
+
+        over "visuals"
+        {
+            over "omniwheel_10"
+            {
+            }
+        }
+    }
+
+    over "wheel_3_passive_0"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_1"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_2"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_3"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_4"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_5"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_6"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_7"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_8"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_3_passive_9"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4"
+    {
+        over "collisions"
+        {
+        }
+
+        over "visuals"
+        {
+            over "omniwheel_10"
+            {
+            }
+        }
+    }
+
+    over "wheel_4_passive_0"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_1"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_2"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_3"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_4"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_5"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_6"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_7"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_8"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "wheel_4_passive_9"
+    {
+        over "visuals"
+        {
+        }
+
+        over "collisions"
+        {
+            over "mesh_0"
+            {
+                over "sphere"
+                {
+                }
+            }
+        }
+    }
+
+    over "Looks"
+    {
+    }
+
+    over "holonomic_controller"
+    {
+        over "usd_setup_holonomic_robot"
+        {
+        }
+
+        over "holonomic_controller"
+        {
+        }
+
+        over "articulation_controller"
+        {
+        }
+
+        over "ros2_subscribe_twist"
+        {
+        }
+
+        over "break_3_vector"
+        {
+        }
+
+        over "break_3_vector_01"
+        {
+        }
+
+        over "make_3_vector"
+        {
+        }
+
+        over "on_playback_tick"
+        {
+        }
+    }
+
+    over "VisualMaterials"
+    {
+        over "M_gripper_physics"
+        {
+        }
+    }
+}
+
+over "Render"
+{
+    over "OmniverseKit"
+    {
+        over "HydraTextures"
+        {
+            over "omni_kit_widget_viewport_ViewportTexture_0"
+            {
+            }
+        }
+    }
+
+    over "OmniverseGlobalRenderSettings"
+    {
+    }
+
+    over "Vars"
+    {
+        over "LdrColor"
+        {
+        }
+    }
+}
+

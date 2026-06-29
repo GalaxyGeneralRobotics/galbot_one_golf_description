@@ -1,0 +1,24 @@
+<package format="2">
+  <name>galbot_one_golf_description</name>
+  <version>1.0.0</version>
+  <description>
+    <p>URDF Description package for Galbot One Golf</p>
+    <p>This package contains configuration data, 3D models and launch files
+      for Galbot One Golf robot, including usd and mjcf models.
+    </p>
+  </description>
+  <maintainer email="caochenyu@galbot.com">Chenyu Cao@Galbot</maintainer>
+  <license>Apache-2.0</license>
+  <author email="caochenyu@galbot.com">Chenyu Cao@Galbot</author>
+  <author email="hermanye233@icloud.com">Herman Ye@Galbot</author>
+  <author email="xujinghua03@126.com">Jinghua Xu@Galbot</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>

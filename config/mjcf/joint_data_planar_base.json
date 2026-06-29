@@ -1,0 +1,80 @@
+{
+  "extra_joints": [
+    {
+      "body": "base_footprint",
+      "joints": [
+        {
+          "name": "base_x_joint",
+          "type": "slide",
+          "axis": "x"
+        },
+        {
+          "name": "base_y_joint",
+          "type": "slide",
+          "axis": "y"
+        },
+        {
+          "name": "base_yaw_joint",
+          "type": "hinge",
+          "axis": "z"
+        }
+      ]
+    }
+  ],
+  "joints": {
+    "base_x_joint": {
+      "armature": 0.001,
+      "damping": 0.0,
+      "frictionloss": 0.0,
+      "actuator": {
+        "actuator_type": "velocity",
+        "ctrllimited": true,
+        "ctrlrange": [
+          -1.0,
+          1.0
+        ],
+        "kv": 1000000,
+        "forcelimited": false
+      },
+      "sensors": {
+        "jointvel": true
+      }
+    },
+    "base_y_joint": {
+      "armature": 0.001,
+      "damping": 0.0,
+      "frictionloss": 0.0,
+      "actuator": {
+        "actuator_type": "velocity",
+        "ctrllimited": true,
+        "ctrlrange": [
+          -1.0,
+          1.0
+        ],
+        "kv": 1000000,
+        "forcelimited": false
+      },
+      "sensors": {
+        "jointvel": true
+      }
+    },
+    "base_yaw_joint": {
+      "armature": 0.001,
+      "damping": 0.0,
+      "frictionloss": 0.0,
+      "actuator": {
+        "actuator_type": "velocity",
+        "ctrllimited": true,
+        "ctrlrange": [
+          -4.0,
+          4.0
+        ],
+        "kv": 1000000,
+        "forcelimited": false
+      },
+      "sensors": {
+        "jointvel": true
+      }
+    }
+  }
+}
