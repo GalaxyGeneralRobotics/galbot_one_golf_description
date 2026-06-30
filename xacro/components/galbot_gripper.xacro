@@ -305,22 +305,22 @@
 			</inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://galbot_one_golf_description/meshes/visual/end_effectors/galbot_gripper/link3.glb" scale="1 -1 1"/>
+					<mesh filename="package://galbot_one_golf_description/meshes/visual/end_effectors/galbot_gripper/link3_right.glb"/>
 				</geometry>
 			</visual>
 				<collision>
 					<geometry>
-						<mesh filename="package://galbot_one_golf_description/meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_01.stl" scale="1 -1 1"/>
+						<mesh filename="package://galbot_one_golf_description/meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_01.stl"/>
 					</geometry>
 				</collision>
 				<collision>
 					<geometry>
-						<mesh filename="package://galbot_one_golf_description/meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_02.stl" scale="1 -1 1"/>
+						<mesh filename="package://galbot_one_golf_description/meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_02.stl"/>
 					</geometry>
 				</collision>
 				<collision>
 					<geometry>
-						<mesh filename="package://galbot_one_golf_description/meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_03.stl" scale="1 -1 1"/>
+						<mesh filename="package://galbot_one_golf_description/meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_03.stl"/>
 					</geometry>
 				</collision>
 		</link>

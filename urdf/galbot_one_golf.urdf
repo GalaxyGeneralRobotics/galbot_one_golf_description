@@ -1173,20 +1173,6 @@
       <mass value="1.5695"/>
       <inertia ixx="0.0069002956" ixy="1.52205e-06" ixz="3.13295e-06" iyy="0.0068330036" iyz="1.009318e-05" izz="0.0011696764"/>
     </inertial>
-    <!--
-            <visual>
-                <origin xyz="0 0 0" rpy="0 0 0"/>
-                <geometry>
-                    <mesh filename="meshes/visual/head/head_link1.glb"/>
-                </geometry>
-            </visual>
-            <collision>
-                <origin xyz="0 0 0" rpy="0 0 0"/>
-                <geometry>
-                    <mesh filename="meshes/collision/head/head_link1_collision_01.stl"/>
-                </geometry>
-            </collision>
-            -->
   </link>
   <joint name="head_joint1" type="revolute">
     <parent link="head_base_link"/>
@@ -1262,27 +1248,27 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link1.glb" scale="1 -1 1"/>
+        <mesh filename="meshes/visual/right_arm/link1_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_01.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link1/link1_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_02.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link1/link1_right_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_03.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link1/link1_right_collision_03.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_04.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link1/link1_right_collision_04.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1301,22 +1287,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link2_right.glb"/>
+        <mesh filename="meshes/visual/right_arm/link2_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link2_right/link2_right_collision_01.stl"/>
+        <mesh filename="meshes/collision/right_arm/link2/link2_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link2_right/link2_right_collision_02.stl"/>
+        <mesh filename="meshes/collision/right_arm/link2/link2_right_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link2_right/link2_right_collision_03.stl"/>
+        <mesh filename="meshes/collision/right_arm/link2/link2_right_collision_03.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1335,22 +1321,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link3.glb" scale="1 -1 1"/>
+        <mesh filename="meshes/visual/right_arm/link3_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link3/link3_collision_01.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link3/link3_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link3/link3_collision_02.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link3/link3_right_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link3/link3_collision_03.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link3/link3_right_collision_03.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1369,17 +1355,17 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link4.glb" scale="1 -1 1"/>
+        <mesh filename="meshes/visual/right_arm/link4_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link4/link4_collision_01.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link4/link4_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link4/link4_collision_02.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link4/link4_right_collision_02.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1398,37 +1384,37 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link5.glb"/>
+        <mesh filename="meshes/visual/right_arm/link5_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_01.stl"/>
+        <mesh filename="meshes/collision/right_arm/link5/link5_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_02.stl"/>
+        <mesh filename="meshes/collision/right_arm/link5/link5_right_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_03.stl"/>
+        <mesh filename="meshes/collision/right_arm/link5/link5_right_collision_03.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_04.stl"/>
+        <mesh filename="meshes/collision/right_arm/link5/link5_right_collision_04.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_05.stl"/>
+        <mesh filename="meshes/collision/right_arm/link5/link5_right_collision_05.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_06.stl"/>
+        <mesh filename="meshes/collision/right_arm/link5/link5_right_collision_06.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1447,12 +1433,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link6.glb" scale="1 -1 1"/>
+        <mesh filename="meshes/visual/right_arm/link6_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link6/link6_collision_01.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link6/link6_right_collision_01.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1471,27 +1457,27 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link7.glb" scale="1 -1 1"/>
+        <mesh filename="meshes/visual/right_arm/link7_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_01.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link7/link7_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_02.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link7/link7_right_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_03.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link7/link7_right_collision_03.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_04.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/right_arm/link7/link7_right_collision_04.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1527,7 +1513,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/d405_stand.glb"/>
+        <mesh filename="meshes/visual/right_arm/d405_stand_right.glb"/>
       </geometry>
     </visual>
   </link>
@@ -1841,22 +1827,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/end_effectors/galbot_gripper/link3.glb" scale="1 -1 1"/>
+        <mesh filename="meshes/visual/end_effectors/galbot_gripper/link3_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_01.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_02.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_03.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_03.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1933,27 +1919,27 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link1.glb" scale="1 1 1"/>
+        <mesh filename="meshes/visual/left_arm/link1_left.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_01.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link1/link1_left_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_02.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link1/link1_left_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_03.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link1/link1_left_collision_03.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link1/link1_collision_04.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link1/link1_left_collision_04.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1972,22 +1958,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link2.glb"/>
+        <mesh filename="meshes/visual/left_arm/link2_left.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link2/link2_collision_01.stl"/>
+        <mesh filename="meshes/collision/left_arm/link2/link2_left_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link2/link2_collision_02.stl"/>
+        <mesh filename="meshes/collision/left_arm/link2/link2_left_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link2/link2_collision_03.stl"/>
+        <mesh filename="meshes/collision/left_arm/link2/link2_left_collision_03.stl"/>
       </geometry>
     </collision>
   </link>
@@ -2006,22 +1992,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link3.glb" scale="1 1 1"/>
+        <mesh filename="meshes/visual/left_arm/link3_left.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link3/link3_collision_01.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link3/link3_left_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link3/link3_collision_02.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link3/link3_left_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link3/link3_collision_03.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link3/link3_left_collision_03.stl"/>
       </geometry>
     </collision>
   </link>
@@ -2040,17 +2026,17 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link4.glb" scale="1 1 1"/>
+        <mesh filename="meshes/visual/left_arm/link4_left.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link4/link4_collision_01.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link4/link4_left_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link4/link4_collision_02.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link4/link4_left_collision_02.stl"/>
       </geometry>
     </collision>
   </link>
@@ -2069,37 +2055,37 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link5.glb"/>
+        <mesh filename="meshes/visual/left_arm/link5_left.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_01.stl"/>
+        <mesh filename="meshes/collision/left_arm/link5/link5_left_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_02.stl"/>
+        <mesh filename="meshes/collision/left_arm/link5/link5_left_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_03.stl"/>
+        <mesh filename="meshes/collision/left_arm/link5/link5_left_collision_03.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_04.stl"/>
+        <mesh filename="meshes/collision/left_arm/link5/link5_left_collision_04.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_05.stl"/>
+        <mesh filename="meshes/collision/left_arm/link5/link5_left_collision_05.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link5/link5_collision_06.stl"/>
+        <mesh filename="meshes/collision/left_arm/link5/link5_left_collision_06.stl"/>
       </geometry>
     </collision>
   </link>
@@ -2118,12 +2104,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link6.glb" scale="1 1 1"/>
+        <mesh filename="meshes/visual/left_arm/link6_left.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link6/link6_collision_01.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link6/link6_left_collision_01.stl"/>
       </geometry>
     </collision>
   </link>
@@ -2142,27 +2128,27 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/link7.glb" scale="1 1 1"/>
+        <mesh filename="meshes/visual/left_arm/link7_left.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_01.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link7/link7_left_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_02.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link7/link7_left_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_03.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link7/link7_left_collision_03.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/arm/link7/link7_collision_04.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/left_arm/link7/link7_left_collision_04.stl"/>
       </geometry>
     </collision>
   </link>
@@ -2198,7 +2184,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/arm/d405_stand.glb"/>
+        <mesh filename="meshes/visual/left_arm/d405_stand_left.glb"/>
       </geometry>
     </visual>
   </link>
@@ -2512,22 +2498,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/end_effectors/galbot_gripper/link3.glb" scale="1 -1 1"/>
+        <mesh filename="meshes/visual/end_effectors/galbot_gripper/link3_right.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_01.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_01.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_02.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_02.stl"/>
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3/link_3_collision_03.stl" scale="1 -1 1"/>
+        <mesh filename="meshes/collision/end_effectors/galbot_gripper/link3_right/link_3_right_collision_03.stl"/>
       </geometry>
     </collision>
   </link>

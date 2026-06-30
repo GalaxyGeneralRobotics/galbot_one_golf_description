@@ -24,7 +24,7 @@
 				</inertial>
 				<visual>
 					<geometry>
-						<mesh filename="package://galbot_one_golf_description/meshes/visual/arm/d405_stand.glb"/>
+						<mesh filename="package://galbot_one_golf_description/meshes/visual/${side}_arm/d405_stand_${side}.glb"/>
 					</geometry>
 				</visual>
 			</link>
@@ -64,7 +64,7 @@
 				</inertial>
 				<visual>
 					<geometry>
-						<mesh filename="package://galbot_one_golf_description/meshes/visual/arm/d415_stand.glb"/>
+						<mesh filename="package://galbot_one_golf_description/meshes/visual/${side}_arm/d415_stand_${side}.glb"/>
 					</geometry>
 				</visual>
 			</link>
