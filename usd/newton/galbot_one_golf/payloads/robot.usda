@@ -4,16 +4,16 @@
         string creator = "MuJoCo USD Converter v0.2.0"
     }
     defaultPrim = "galbot_one_golf"
-    doc = """Generated from Composed Stage of root layer /tmp/tmpez349qxc/galbot_one_golf.usdc
+    doc = """Generated from Composed Stage of root layer /tmp/tmpifvq64lv/galbot_one_golf.usdc
 
 
-Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_vpbwz7h_/usdex_galbot_one_golf/galbot_one_golf.usdc
+Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_lj6b8j2n/usdex_galbot_one_golf/galbot_one_golf.usdc
 
 
-Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_vpbwz7h_/temp_galbot_one_golf/galbot_one_golf.usd
+Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_lj6b8j2n/temp_galbot_one_golf/galbot_one_golf.usd
 
 
-Generated from Composed Stage of root layer /workspace/GalbotLab/tmp/galbot-newton-rebuild-20260718/galbot_one_golf/payloads/base.usd
+Generated from Composed Stage of root layer /workspace/GalbotLab/tmp/g1-newton-capsule-fix/galbot_one_golf/galbot_one_golf/payloads/base.usd
 """
     kilogramsPerUnit = 1
     metersPerUnit = 1

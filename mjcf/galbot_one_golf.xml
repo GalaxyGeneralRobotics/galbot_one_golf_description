@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <mujoco model="galbot_one_golf">
   <default>
     <default class="robot">
@@ -7,16 +8,16 @@
       <default class="collision">
         <geom contype="0" conaffinity="1" group="3" friction="0.8 0.02 0.001" solref="0.02 1" solimp="0.9 0.95 0.001" />
       </default>
+      <default class="passive_roller">
+        <joint armature="0.001" damping="0.01" />
+      </default>
     </default>
   </default>
-
   <compiler angle="radian" meshdir="." balanceinertia="true" />
   <option timestep="0.002" integrator="implicitfast" cone="elliptic" iterations="100" ls_iterations="15" impratio="10" />
-
   <visual>
     <global offwidth="3840" offheight="2160" />
   </visual>
-
   <worldbody>
     <body name="base_footprint" childclass="robot" pos="0 0 0.0062">
       <body name="base_link" pos="0 0 0.028166">
@@ -427,55 +428,55 @@
             <geom type="mesh" class="visual" name="wheel_1_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_1_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_1_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
-            <body name="wheel_1_passive_0" pos="0 0.025 0.0">
+            <body name="wheel_1_passive_0" pos="0 0.08 0.0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_0_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_0_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_0_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_0_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_1" pos="0 0.02022542485937369 0.014694631307311828" quat="0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_1_passive_1" pos="0 0.06472135954999579 0.04702282018339785" quat="0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_1_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_1_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_1_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_1_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_2" pos="0 0.007725424859373687 0.02377641290737884" quat="0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_1_passive_2" pos="0 0.024721359549995797 0.07608452130361229" quat="0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_2_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_2_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_2_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_2_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_3" pos="0 -0.007725424859373684 0.023776412907378842" quat="0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_1_passive_3" pos="0 -0.024721359549995787 0.07608452130361229" quat="0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_3_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_3_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_3_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_3_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_4" pos="0 -0.020225424859373686 0.014694631307311832" quat="0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_1_passive_4" pos="0 -0.06472135954999579 0.04702282018339786" quat="0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_4_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_4_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_4_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_4_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_5" pos="0 -0.025 3.061616997868383e-18" quat="0 1 0 0">
+            <body name="wheel_1_passive_5" pos="0 -0.08 9.797174393178826e-18" quat="0 1 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_5_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_5_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_5_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_5_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_6" pos="0 -0.02022542485937369 -0.014694631307311827" quat="-0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_1_passive_6" pos="0 -0.0647213595499958 -0.047022820183397845" quat="-0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_6_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_6_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_6_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_6_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_7" pos="0 -0.007725424859373689 -0.02377641290737884" quat="-0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_1_passive_7" pos="0 -0.024721359549995804 -0.07608452130361229" quat="-0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_7_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_7_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_7_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_7_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_8" pos="0 0.007725424859373681 -0.023776412907378842" quat="-0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_1_passive_8" pos="0 0.02472135954999578 -0.07608452130361229" quat="-0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_8_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_8_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_8_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_8_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_1_passive_9" pos="0 0.020225424859373686 -0.014694631307311835" quat="-0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_1_passive_9" pos="0 0.06472135954999579 -0.04702282018339787" quat="-0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_1_passive_9_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_1_passive_9_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_1_passive_9_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_1_passive_9_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
           </body>
           <body name="wheel_2" pos="-0.176493 0.176493 0.071834" quat="0.9239 0 0 -0.3827">
@@ -484,55 +485,55 @@
             <geom type="mesh" class="visual" name="wheel_2_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_2_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_2_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
-            <body name="wheel_2_passive_0" pos="0 0.025 0.0">
+            <body name="wheel_2_passive_0" pos="0 0.08 0.0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_0_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_0_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_0_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_0_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_1" pos="0 0.02022542485937369 0.014694631307311828" quat="0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_2_passive_1" pos="0 0.06472135954999579 0.04702282018339785" quat="0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_1_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_1_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_1_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_1_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_2" pos="0 0.007725424859373687 0.02377641290737884" quat="0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_2_passive_2" pos="0 0.024721359549995797 0.07608452130361229" quat="0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_2_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_2_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_2_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_2_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_3" pos="0 -0.007725424859373684 0.023776412907378842" quat="0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_2_passive_3" pos="0 -0.024721359549995787 0.07608452130361229" quat="0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_3_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_3_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_3_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_3_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_4" pos="0 -0.020225424859373686 0.014694631307311832" quat="0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_2_passive_4" pos="0 -0.06472135954999579 0.04702282018339786" quat="0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_4_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_4_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_4_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_4_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_5" pos="0 -0.025 3.061616997868383e-18" quat="0 1 0 0">
+            <body name="wheel_2_passive_5" pos="0 -0.08 9.797174393178826e-18" quat="0 1 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_5_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_5_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_5_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_5_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_6" pos="0 -0.02022542485937369 -0.014694631307311827" quat="-0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_2_passive_6" pos="0 -0.0647213595499958 -0.047022820183397845" quat="-0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_6_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_6_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_6_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_6_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_7" pos="0 -0.007725424859373689 -0.02377641290737884" quat="-0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_2_passive_7" pos="0 -0.024721359549995804 -0.07608452130361229" quat="-0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_7_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_7_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_7_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_7_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_8" pos="0 0.007725424859373681 -0.023776412907378842" quat="-0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_2_passive_8" pos="0 0.02472135954999578 -0.07608452130361229" quat="-0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_8_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_8_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_8_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_8_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_2_passive_9" pos="0 0.020225424859373686 -0.014694631307311835" quat="-0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_2_passive_9" pos="0 0.06472135954999579 -0.04702282018339787" quat="-0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_2_passive_9_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_2_passive_9_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_2_passive_9_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_2_passive_9_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
           </body>
           <body name="wheel_3" pos="-0.176493 -0.176493 0.071834" quat="0.9239 0 0 0.3827">
@@ -541,55 +542,55 @@
             <geom type="mesh" class="visual" name="wheel_3_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_3_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_3_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
-            <body name="wheel_3_passive_0" pos="0 0.025 0.0">
+            <body name="wheel_3_passive_0" pos="0 0.08 0.0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_0_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_0_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_0_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_0_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_1" pos="0 0.02022542485937369 0.014694631307311828" quat="0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_3_passive_1" pos="0 0.06472135954999579 0.04702282018339785" quat="0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_1_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_1_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_1_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_1_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_2" pos="0 0.007725424859373687 0.02377641290737884" quat="0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_3_passive_2" pos="0 0.024721359549995797 0.07608452130361229" quat="0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_2_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_2_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_2_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_2_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_3" pos="0 -0.007725424859373684 0.023776412907378842" quat="0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_3_passive_3" pos="0 -0.024721359549995787 0.07608452130361229" quat="0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_3_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_3_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_3_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_3_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_4" pos="0 -0.020225424859373686 0.014694631307311832" quat="0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_3_passive_4" pos="0 -0.06472135954999579 0.04702282018339786" quat="0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_4_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_4_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_4_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_4_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_5" pos="0 -0.025 3.061616997868383e-18" quat="0 1 0 0">
+            <body name="wheel_3_passive_5" pos="0 -0.08 9.797174393178826e-18" quat="0 1 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_5_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_5_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_5_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_5_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_6" pos="0 -0.02022542485937369 -0.014694631307311827" quat="-0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_3_passive_6" pos="0 -0.0647213595499958 -0.047022820183397845" quat="-0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_6_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_6_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_6_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_6_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_7" pos="0 -0.007725424859373689 -0.02377641290737884" quat="-0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_3_passive_7" pos="0 -0.024721359549995804 -0.07608452130361229" quat="-0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_7_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_7_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_7_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_7_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_8" pos="0 0.007725424859373681 -0.023776412907378842" quat="-0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_3_passive_8" pos="0 0.02472135954999578 -0.07608452130361229" quat="-0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_8_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_8_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_8_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_8_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_3_passive_9" pos="0 0.020225424859373686 -0.014694631307311835" quat="-0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_3_passive_9" pos="0 0.06472135954999579 -0.04702282018339787" quat="-0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_3_passive_9_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_3_passive_9_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_3_passive_9_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_3_passive_9_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
           </body>
           <body name="wheel_4" pos="0.176493 -0.176493 0.071834" quat="0.3827 0 0 0.9239">
@@ -598,55 +599,55 @@
             <geom type="mesh" class="visual" name="wheel_4_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_4_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_4_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
-            <body name="wheel_4_passive_0" pos="0 0.025 0.0">
+            <body name="wheel_4_passive_0" pos="0 0.08 0.0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_0_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_0_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_0_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_0_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_1" pos="0 0.02022542485937369 0.014694631307311828" quat="0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_4_passive_1" pos="0 0.06472135954999579 0.04702282018339785" quat="0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_1_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_1_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_1_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_1_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_2" pos="0 0.007725424859373687 0.02377641290737884" quat="0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_4_passive_2" pos="0 0.024721359549995797 0.07608452130361229" quat="0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_2_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_2_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_2_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_2_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_3" pos="0 -0.007725424859373684 0.023776412907378842" quat="0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_4_passive_3" pos="0 -0.024721359549995787 0.07608452130361229" quat="0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_3_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_3_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_3_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_3_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_4" pos="0 -0.020225424859373686 0.014694631307311832" quat="0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_4_passive_4" pos="0 -0.06472135954999579 0.04702282018339786" quat="0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_4_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_4_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_4_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_4_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_5" pos="0 -0.025 3.061616997868383e-18" quat="0 1 0 0">
+            <body name="wheel_4_passive_5" pos="0 -0.08 9.797174393178826e-18" quat="0 1 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_5_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_5_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_5_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_5_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_6" pos="0 -0.02022542485937369 -0.014694631307311827" quat="-0.30901699437494745 0.9510565162951535 0 0">
+            <body name="wheel_4_passive_6" pos="0 -0.0647213595499958 -0.047022820183397845" quat="-0.30901699437494745 0.9510565162951535 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_6_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_6_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_6_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_6_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_7" pos="0 -0.007725424859373689 -0.02377641290737884" quat="-0.5877852522924731 0.8090169943749475 0 0">
+            <body name="wheel_4_passive_7" pos="0 -0.024721359549995804 -0.07608452130361229" quat="-0.5877852522924731 0.8090169943749475 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_7_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_7_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_7_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_7_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_8" pos="0 0.007725424859373681 -0.023776412907378842" quat="-0.8090169943749475 0.5877852522924731 0 0">
+            <body name="wheel_4_passive_8" pos="0 0.02472135954999578 -0.07608452130361229" quat="-0.8090169943749475 0.5877852522924731 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_8_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_8_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_8_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_8_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
-            <body name="wheel_4_passive_9" pos="0 0.020225424859373686 -0.014694631307311835" quat="-0.9510565162951535 0.30901699437494745 0 0">
+            <body name="wheel_4_passive_9" pos="0 0.06472135954999579 -0.04702282018339787" quat="-0.9510565162951535 0.30901699437494745 0 0">
               <inertial pos="0 0 0" mass="0.1" diaginertia="0.0001 0.0001 0.0001" />
-              <joint name="wheel_4_passive_9_joint" type="hinge" axis="0 0 1" />
-              <geom name="wheel_4_passive_9_collision" type="sphere" size="0.08" class="collision" />
+              <joint name="wheel_4_passive_9_joint" type="hinge" class="passive_roller" axis="0 0 1" />
+              <geom name="wheel_4_passive_9_collision" type="capsule" size="0.025 0.0075" class="collision" />
             </body>
           </body>
           <body name="chassis_lidar" pos="0.235 0 0.2144">
@@ -660,7 +661,6 @@
       <freejoint name="floating_base" />
     </body>
   </worldbody>
-
   <asset>
     <texture type="2d" name="mtl_meshes_meshes_visual_chassis_chassis_M_chassis_texture" file="meshes/meshes/visual/chassis/M_chassis.png" />
     <texture type="2d" name="mtl_meshes_meshes_visual_leg_leg2_M_leg_leg2_texture" file="meshes/meshes/visual/leg/M_leg_leg2_.png" />
@@ -863,7 +863,6 @@
     <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" />
     <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
   </asset>
-
   <actuator>
     <position name="leg_joint1" joint="leg_joint1" kp="10000.0" kv="2000.0" ctrlrange="0.0 0.9374" forcerange="-420.0 420.0" />
     <position name="leg_joint2" joint="leg_joint2" kp="10000.0" kv="2000.0" ctrlrange="0.0 2.5847" forcerange="-420.0 420.0" />
@@ -893,7 +892,6 @@
     <velocity name="wheel3_joint" joint="wheel3_joint" kv="50.0" ctrlrange="-25.0 25.0" forcerange="-120.0 120.0" />
     <velocity name="wheel4_joint" joint="wheel4_joint" kv="50.0" ctrlrange="-25.0 25.0" forcerange="-120.0 120.0" />
   </actuator>
-
   <sensor>
     <jointvel name="vel_leg_joint1" joint="leg_joint1" />
     <jointvel name="vel_leg_joint2" joint="leg_joint2" />
@@ -921,22 +919,19 @@
     <jointvel name="vel_wheel3_joint" joint="wheel3_joint" />
     <jointvel name="vel_wheel4_joint" joint="wheel4_joint" />
   </sensor>
-
   <equality>
-    <joint joint1="right_gripper_r_inner_knuckle_joint" joint2="right_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="right_gripper_r_finger_joint" joint2="right_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="right_gripper_l_knuckle_joint" joint2="right_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="right_gripper_l_inner_knuckle_joint" joint2="right_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="right_gripper_l_finger_joint" joint2="right_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="left_gripper_r_inner_knuckle_joint" joint2="left_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="left_gripper_r_finger_joint" joint2="left_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="left_gripper_l_knuckle_joint" joint2="left_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="left_gripper_l_inner_knuckle_joint" joint2="left_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
-    <joint joint1="left_gripper_l_finger_joint" joint2="left_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.02 1" />
+    <joint joint1="right_gripper_r_inner_knuckle_joint" joint2="right_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="right_gripper_r_finger_joint" joint2="right_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="right_gripper_l_knuckle_joint" joint2="right_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="right_gripper_l_inner_knuckle_joint" joint2="right_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="right_gripper_l_finger_joint" joint2="right_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="left_gripper_r_inner_knuckle_joint" joint2="left_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="left_gripper_r_finger_joint" joint2="left_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="left_gripper_l_knuckle_joint" joint2="left_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="left_gripper_l_inner_knuckle_joint" joint2="left_gripper_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
+    <joint joint1="left_gripper_l_finger_joint" joint2="left_gripper_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.004 1" />
   </equality>
-
   <visual>
     <rgba haze="0.15 0.25 0.35 1" />
   </visual>
-
 </mujoco>

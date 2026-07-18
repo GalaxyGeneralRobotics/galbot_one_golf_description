@@ -233,14 +233,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_0_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.0 0 0" xyz="0 0.025 0.0"/>
+    <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_0"/>
     <axis xyz="0 0 1"/>
@@ -254,14 +254,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_1_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.6283185307179586 0 0" xyz="0 0.02022542485937369 0.014694631307311828"/>
+    <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_1"/>
     <axis xyz="0 0 1"/>
@@ -275,14 +275,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_2_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.2566370614359172 0 0" xyz="0 0.007725424859373687 0.02377641290737884"/>
+    <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_2"/>
     <axis xyz="0 0 1"/>
@@ -296,14 +296,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_3_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.007725424859373684 0.023776412907378842"/>
+    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_3"/>
     <axis xyz="0 0 1"/>
@@ -317,14 +317,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_4_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.020225424859373686 0.014694631307311832"/>
+    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_4"/>
     <axis xyz="0 0 1"/>
@@ -338,14 +338,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_5_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.141592653589793 0 0" xyz="0 -0.025 3.061616997868383e-18"/>
+    <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_5"/>
     <axis xyz="0 0 1"/>
@@ -359,14 +359,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_6_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_6"/>
     <axis xyz="0 0 1"/>
@@ -380,14 +380,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_7_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="4.39822971502571 0 0" xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+    <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_7"/>
     <axis xyz="0 0 1"/>
@@ -401,14 +401,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_8_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.026548245743669 0 0" xyz="0 0.007725424859373681 -0.023776412907378842"/>
+    <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_8"/>
     <axis xyz="0 0 1"/>
@@ -422,14 +422,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_1_passive_9_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.654866776461628 0 0" xyz="0 0.020225424859373686 -0.014694631307311835"/>
+    <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
     <parent link="wheel_1"/>
     <child link="wheel_1_passive_9"/>
     <axis xyz="0 0 1"/>
@@ -456,14 +456,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_0_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.0 0 0" xyz="0 0.025 0.0"/>
+    <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_0"/>
     <axis xyz="0 0 1"/>
@@ -477,14 +477,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_1_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.6283185307179586 0 0" xyz="0 0.02022542485937369 0.014694631307311828"/>
+    <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_1"/>
     <axis xyz="0 0 1"/>
@@ -498,14 +498,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_2_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.2566370614359172 0 0" xyz="0 0.007725424859373687 0.02377641290737884"/>
+    <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_2"/>
     <axis xyz="0 0 1"/>
@@ -519,14 +519,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_3_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.007725424859373684 0.023776412907378842"/>
+    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_3"/>
     <axis xyz="0 0 1"/>
@@ -540,14 +540,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_4_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.020225424859373686 0.014694631307311832"/>
+    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_4"/>
     <axis xyz="0 0 1"/>
@@ -561,14 +561,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_5_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.141592653589793 0 0" xyz="0 -0.025 3.061616997868383e-18"/>
+    <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_5"/>
     <axis xyz="0 0 1"/>
@@ -582,14 +582,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_6_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_6"/>
     <axis xyz="0 0 1"/>
@@ -603,14 +603,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_7_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="4.39822971502571 0 0" xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+    <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_7"/>
     <axis xyz="0 0 1"/>
@@ -624,14 +624,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_8_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.026548245743669 0 0" xyz="0 0.007725424859373681 -0.023776412907378842"/>
+    <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_8"/>
     <axis xyz="0 0 1"/>
@@ -645,14 +645,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_2_passive_9_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.654866776461628 0 0" xyz="0 0.020225424859373686 -0.014694631307311835"/>
+    <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
     <parent link="wheel_2"/>
     <child link="wheel_2_passive_9"/>
     <axis xyz="0 0 1"/>
@@ -679,14 +679,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_0_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.0 0 0" xyz="0 0.025 0.0"/>
+    <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_0"/>
     <axis xyz="0 0 1"/>
@@ -700,14 +700,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_1_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.6283185307179586 0 0" xyz="0 0.02022542485937369 0.014694631307311828"/>
+    <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_1"/>
     <axis xyz="0 0 1"/>
@@ -721,14 +721,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_2_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.2566370614359172 0 0" xyz="0 0.007725424859373687 0.02377641290737884"/>
+    <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_2"/>
     <axis xyz="0 0 1"/>
@@ -742,14 +742,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_3_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.007725424859373684 0.023776412907378842"/>
+    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_3"/>
     <axis xyz="0 0 1"/>
@@ -763,14 +763,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_4_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.020225424859373686 0.014694631307311832"/>
+    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_4"/>
     <axis xyz="0 0 1"/>
@@ -784,14 +784,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_5_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.141592653589793 0 0" xyz="0 -0.025 3.061616997868383e-18"/>
+    <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_5"/>
     <axis xyz="0 0 1"/>
@@ -805,14 +805,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_6_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_6"/>
     <axis xyz="0 0 1"/>
@@ -826,14 +826,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_7_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="4.39822971502571 0 0" xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+    <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_7"/>
     <axis xyz="0 0 1"/>
@@ -847,14 +847,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_8_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.026548245743669 0 0" xyz="0 0.007725424859373681 -0.023776412907378842"/>
+    <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_8"/>
     <axis xyz="0 0 1"/>
@@ -868,14 +868,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_3_passive_9_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.654866776461628 0 0" xyz="0 0.020225424859373686 -0.014694631307311835"/>
+    <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
     <parent link="wheel_3"/>
     <child link="wheel_3_passive_9"/>
     <axis xyz="0 0 1"/>
@@ -902,14 +902,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_0_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.0 0 0" xyz="0 0.025 0.0"/>
+    <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_0"/>
     <axis xyz="0 0 1"/>
@@ -923,14 +923,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_1_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="0.6283185307179586 0 0" xyz="0 0.02022542485937369 0.014694631307311828"/>
+    <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_1"/>
     <axis xyz="0 0 1"/>
@@ -944,14 +944,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_2_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.2566370614359172 0 0" xyz="0 0.007725424859373687 0.02377641290737884"/>
+    <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_2"/>
     <axis xyz="0 0 1"/>
@@ -965,14 +965,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_3_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.007725424859373684 0.023776412907378842"/>
+    <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_3"/>
     <axis xyz="0 0 1"/>
@@ -986,14 +986,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_4_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.020225424859373686 0.014694631307311832"/>
+    <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_4"/>
     <axis xyz="0 0 1"/>
@@ -1007,14 +1007,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_5_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.141592653589793 0 0" xyz="0 -0.025 3.061616997868383e-18"/>
+    <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_5"/>
     <axis xyz="0 0 1"/>
@@ -1028,14 +1028,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_6_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+    <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_6"/>
     <axis xyz="0 0 1"/>
@@ -1049,14 +1049,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_7_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="4.39822971502571 0 0" xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+    <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_7"/>
     <axis xyz="0 0 1"/>
@@ -1070,14 +1070,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_8_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.026548245743669 0 0" xyz="0 0.007725424859373681 -0.023776412907378842"/>
+    <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_8"/>
     <axis xyz="0 0 1"/>
@@ -1091,14 +1091,14 @@
     </inertial>
     <collision>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
   <!-- 被动轮关节 - 绕x轴旋转，在yz平面上分布，y轴负方向指向圆心 -->
   <joint name="wheel_4_passive_9_joint" type="continuous">
     <!-- 让y轴负方向指向圆心：被动轮在角度angle位置，需要绕x轴旋转angle角度使y轴负方向指向圆心 -->
-    <origin rpy="5.654866776461628 0 0" xyz="0 0.020225424859373686 -0.014694631307311835"/>
+    <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
     <parent link="wheel_4"/>
     <child link="wheel_4_passive_9"/>
     <axis xyz="0 0 1"/>

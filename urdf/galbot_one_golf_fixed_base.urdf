@@ -224,63 +224,63 @@
       </geometry>
     </visual>
     <collision name="wheel_1_collision_0">
-      <origin xyz="0 0.025 0.0"/>
+      <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_1">
-      <origin xyz="0 0.02022542485937369 0.014694631307311828"/>
+      <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_2">
-      <origin xyz="0 0.007725424859373687 0.02377641290737884"/>
+      <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_3">
-      <origin xyz="0 -0.007725424859373684 0.023776412907378842"/>
+      <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_4">
-      <origin xyz="0 -0.020225424859373686 0.014694631307311832"/>
+      <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_5">
-      <origin xyz="0 -0.025 3.061616997868383e-18"/>
+      <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_6">
-      <origin xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+      <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_7">
-      <origin xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+      <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_8">
-      <origin xyz="0 0.007725424859373681 -0.023776412907378842"/>
+      <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_1_collision_9">
-      <origin xyz="0 0.020225424859373686 -0.014694631307311835"/>
+      <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
@@ -297,63 +297,63 @@
       </geometry>
     </visual>
     <collision name="wheel_2_collision_0">
-      <origin xyz="0 0.025 0.0"/>
+      <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_1">
-      <origin xyz="0 0.02022542485937369 0.014694631307311828"/>
+      <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_2">
-      <origin xyz="0 0.007725424859373687 0.02377641290737884"/>
+      <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_3">
-      <origin xyz="0 -0.007725424859373684 0.023776412907378842"/>
+      <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_4">
-      <origin xyz="0 -0.020225424859373686 0.014694631307311832"/>
+      <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_5">
-      <origin xyz="0 -0.025 3.061616997868383e-18"/>
+      <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_6">
-      <origin xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+      <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_7">
-      <origin xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+      <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_8">
-      <origin xyz="0 0.007725424859373681 -0.023776412907378842"/>
+      <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_2_collision_9">
-      <origin xyz="0 0.020225424859373686 -0.014694631307311835"/>
+      <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
@@ -370,63 +370,63 @@
       </geometry>
     </visual>
     <collision name="wheel_3_collision_0">
-      <origin xyz="0 0.025 0.0"/>
+      <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_1">
-      <origin xyz="0 0.02022542485937369 0.014694631307311828"/>
+      <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_2">
-      <origin xyz="0 0.007725424859373687 0.02377641290737884"/>
+      <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_3">
-      <origin xyz="0 -0.007725424859373684 0.023776412907378842"/>
+      <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_4">
-      <origin xyz="0 -0.020225424859373686 0.014694631307311832"/>
+      <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_5">
-      <origin xyz="0 -0.025 3.061616997868383e-18"/>
+      <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_6">
-      <origin xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+      <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_7">
-      <origin xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+      <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_8">
-      <origin xyz="0 0.007725424859373681 -0.023776412907378842"/>
+      <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_3_collision_9">
-      <origin xyz="0 0.020225424859373686 -0.014694631307311835"/>
+      <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>
@@ -443,63 +443,63 @@
       </geometry>
     </visual>
     <collision name="wheel_4_collision_0">
-      <origin xyz="0 0.025 0.0"/>
+      <origin rpy="0.0 0 0" xyz="0 0.08 0.0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_1">
-      <origin xyz="0 0.02022542485937369 0.014694631307311828"/>
+      <origin rpy="0.6283185307179586 0 0" xyz="0 0.06472135954999579 0.04702282018339785"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_2">
-      <origin xyz="0 0.007725424859373687 0.02377641290737884"/>
+      <origin rpy="1.2566370614359172 0 0" xyz="0 0.024721359549995797 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_3">
-      <origin xyz="0 -0.007725424859373684 0.023776412907378842"/>
+      <origin rpy="1.8849555921538759 0 0" xyz="0 -0.024721359549995787 0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_4">
-      <origin xyz="0 -0.020225424859373686 0.014694631307311832"/>
+      <origin rpy="2.5132741228718345 0 0" xyz="0 -0.06472135954999579 0.04702282018339786"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_5">
-      <origin xyz="0 -0.025 3.061616997868383e-18"/>
+      <origin rpy="3.141592653589793 0 0" xyz="0 -0.08 9.797174393178826e-18"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_6">
-      <origin xyz="0 -0.02022542485937369 -0.014694631307311827"/>
+      <origin rpy="3.7699111843077517 0 0" xyz="0 -0.0647213595499958 -0.047022820183397845"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_7">
-      <origin xyz="0 -0.007725424859373689 -0.02377641290737884"/>
+      <origin rpy="4.39822971502571 0 0" xyz="0 -0.024721359549995804 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_8">
-      <origin xyz="0 0.007725424859373681 -0.023776412907378842"/>
+      <origin rpy="5.026548245743669 0 0" xyz="0 0.02472135954999578 -0.07608452130361229"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
     <collision name="wheel_4_collision_9">
-      <origin xyz="0 0.020225424859373686 -0.014694631307311835"/>
+      <origin rpy="5.654866776461628 0 0" xyz="0 0.06472135954999579 -0.04702282018339787"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <cylinder radius="0.025" length="0.065"/>
       </geometry>
     </collision>
   </link>

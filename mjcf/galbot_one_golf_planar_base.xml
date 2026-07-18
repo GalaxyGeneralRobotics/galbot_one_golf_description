@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <mujoco model="galbot_one_golf">
   <default>
     <default class="robot">
@@ -12,13 +13,10 @@
       <geom type="plane" size="0 0 0.05" material="groundplane" />
     </default>
   </default>
-
   <compiler angle="radian" meshdir="." balanceinertia="true" />
-
   <visual>
     <global offwidth="3840" offheight="2160" />
   </visual>
-
   <worldbody>
     <body name="base_footprint" childclass="robot" pos="0 0 0.0062">
       <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06" />
@@ -429,64 +427,64 @@
           </body>
           <body name="wheel_1" pos="0.176493 0.176493 0.071834" quat="0.3827 0 0 -0.9239">
             <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
-            <geom name="wheel_1_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_3" pos="0 -0.007725424859373684 0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_4" pos="0 -0.020225424859373686 0.014694631307311832" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_5" pos="0 -0.025 3.061616997868383e-18" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_6" pos="0 -0.02022542485937369 -0.014694631307311827" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_7" pos="0 -0.007725424859373689 -0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_8" pos="0 0.007725424859373681 -0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_1_collision_9" pos="0 0.020225424859373686 -0.014694631307311835" type="sphere" size="0.08" class="collision" />
+            <geom name="wheel_1_collision_0" pos="0 0.08 0.0" type="capsule" size="0.025 0.0075" class="collision" euler="0 0 0" />
+            <geom name="wheel_1_collision_1" pos="0 0.06472135954999579 0.04702282018339785" type="capsule" size="0.025 0.0075" class="collision" euler="0.62831853071795873 0 0" />
+            <geom name="wheel_1_collision_2" pos="0 0.024721359549995797 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.2566370614359172 0 0" />
+            <geom name="wheel_1_collision_3" pos="0 -0.024721359549995787 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.8849555921538759 0 0" />
+            <geom name="wheel_1_collision_4" pos="0 -0.06472135954999579 0.04702282018339786" type="capsule" size="0.025 0.0075" class="collision" euler="2.5132741228718345 0 0" />
+            <geom name="wheel_1_collision_5" pos="0 -0.08 9.797174393178826e-18" type="capsule" size="0.025 0.0075" class="collision" euler="3.1415926535897931 0 0" />
+            <geom name="wheel_1_collision_6" pos="0 -0.0647213595499958 -0.047022820183397845" type="capsule" size="0.025 0.0075" class="collision" euler="-2.5132741228718349 0 0" />
+            <geom name="wheel_1_collision_7" pos="0 -0.024721359549995804 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.8849555921538761 0 0" />
+            <geom name="wheel_1_collision_8" pos="0 0.02472135954999578 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.2566370614359175 0 0" />
+            <geom name="wheel_1_collision_9" pos="0 0.06472135954999579 -0.04702282018339787" type="capsule" size="0.025 0.0075" class="collision" euler="-0.62831853071795885 0 0" />
             <geom type="mesh" class="visual" name="wheel_1_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_1_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_1_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
           </body>
           <body name="wheel_2" pos="-0.176493 0.176493 0.071834" quat="0.9239 0 0 -0.3827">
             <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
-            <geom name="wheel_2_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_3" pos="0 -0.007725424859373684 0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_4" pos="0 -0.020225424859373686 0.014694631307311832" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_5" pos="0 -0.025 3.061616997868383e-18" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_6" pos="0 -0.02022542485937369 -0.014694631307311827" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_7" pos="0 -0.007725424859373689 -0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_8" pos="0 0.007725424859373681 -0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_2_collision_9" pos="0 0.020225424859373686 -0.014694631307311835" type="sphere" size="0.08" class="collision" />
+            <geom name="wheel_2_collision_0" pos="0 0.08 0.0" type="capsule" size="0.025 0.0075" class="collision" euler="0 0 0" />
+            <geom name="wheel_2_collision_1" pos="0 0.06472135954999579 0.04702282018339785" type="capsule" size="0.025 0.0075" class="collision" euler="0.62831853071795873 0 0" />
+            <geom name="wheel_2_collision_2" pos="0 0.024721359549995797 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.2566370614359172 0 0" />
+            <geom name="wheel_2_collision_3" pos="0 -0.024721359549995787 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.8849555921538759 0 0" />
+            <geom name="wheel_2_collision_4" pos="0 -0.06472135954999579 0.04702282018339786" type="capsule" size="0.025 0.0075" class="collision" euler="2.5132741228718345 0 0" />
+            <geom name="wheel_2_collision_5" pos="0 -0.08 9.797174393178826e-18" type="capsule" size="0.025 0.0075" class="collision" euler="3.1415926535897931 0 0" />
+            <geom name="wheel_2_collision_6" pos="0 -0.0647213595499958 -0.047022820183397845" type="capsule" size="0.025 0.0075" class="collision" euler="-2.5132741228718349 0 0" />
+            <geom name="wheel_2_collision_7" pos="0 -0.024721359549995804 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.8849555921538761 0 0" />
+            <geom name="wheel_2_collision_8" pos="0 0.02472135954999578 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.2566370614359175 0 0" />
+            <geom name="wheel_2_collision_9" pos="0 0.06472135954999579 -0.04702282018339787" type="capsule" size="0.025 0.0075" class="collision" euler="-0.62831853071795885 0 0" />
             <geom type="mesh" class="visual" name="wheel_2_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_2_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_2_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
           </body>
           <body name="wheel_3" pos="-0.176493 -0.176493 0.071834" quat="0.9239 0 0 0.3827">
             <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
-            <geom name="wheel_3_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_3" pos="0 -0.007725424859373684 0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_4" pos="0 -0.020225424859373686 0.014694631307311832" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_5" pos="0 -0.025 3.061616997868383e-18" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_6" pos="0 -0.02022542485937369 -0.014694631307311827" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_7" pos="0 -0.007725424859373689 -0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_8" pos="0 0.007725424859373681 -0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_3_collision_9" pos="0 0.020225424859373686 -0.014694631307311835" type="sphere" size="0.08" class="collision" />
+            <geom name="wheel_3_collision_0" pos="0 0.08 0.0" type="capsule" size="0.025 0.0075" class="collision" euler="0 0 0" />
+            <geom name="wheel_3_collision_1" pos="0 0.06472135954999579 0.04702282018339785" type="capsule" size="0.025 0.0075" class="collision" euler="0.62831853071795873 0 0" />
+            <geom name="wheel_3_collision_2" pos="0 0.024721359549995797 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.2566370614359172 0 0" />
+            <geom name="wheel_3_collision_3" pos="0 -0.024721359549995787 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.8849555921538759 0 0" />
+            <geom name="wheel_3_collision_4" pos="0 -0.06472135954999579 0.04702282018339786" type="capsule" size="0.025 0.0075" class="collision" euler="2.5132741228718345 0 0" />
+            <geom name="wheel_3_collision_5" pos="0 -0.08 9.797174393178826e-18" type="capsule" size="0.025 0.0075" class="collision" euler="3.1415926535897931 0 0" />
+            <geom name="wheel_3_collision_6" pos="0 -0.0647213595499958 -0.047022820183397845" type="capsule" size="0.025 0.0075" class="collision" euler="-2.5132741228718349 0 0" />
+            <geom name="wheel_3_collision_7" pos="0 -0.024721359549995804 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.8849555921538761 0 0" />
+            <geom name="wheel_3_collision_8" pos="0 0.02472135954999578 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.2566370614359175 0 0" />
+            <geom name="wheel_3_collision_9" pos="0 0.06472135954999579 -0.04702282018339787" type="capsule" size="0.025 0.0075" class="collision" euler="-0.62831853071795885 0 0" />
             <geom type="mesh" class="visual" name="wheel_3_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_3_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_3_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
           </body>
           <body name="wheel_4" pos="0.176493 -0.176493 0.071834" quat="0.3827 0 0 0.9239">
             <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
-            <geom name="wheel_4_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_3" pos="0 -0.007725424859373684 0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_4" pos="0 -0.020225424859373686 0.014694631307311832" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_5" pos="0 -0.025 3.061616997868383e-18" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_6" pos="0 -0.02022542485937369 -0.014694631307311827" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_7" pos="0 -0.007725424859373689 -0.02377641290737884" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_8" pos="0 0.007725424859373681 -0.023776412907378842" type="sphere" size="0.08" class="collision" />
-            <geom name="wheel_4_collision_9" pos="0 0.020225424859373686 -0.014694631307311835" type="sphere" size="0.08" class="collision" />
+            <geom name="wheel_4_collision_0" pos="0 0.08 0.0" type="capsule" size="0.025 0.0075" class="collision" euler="0 0 0" />
+            <geom name="wheel_4_collision_1" pos="0 0.06472135954999579 0.04702282018339785" type="capsule" size="0.025 0.0075" class="collision" euler="0.62831853071795873 0 0" />
+            <geom name="wheel_4_collision_2" pos="0 0.024721359549995797 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.2566370614359172 0 0" />
+            <geom name="wheel_4_collision_3" pos="0 -0.024721359549995787 0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="1.8849555921538759 0 0" />
+            <geom name="wheel_4_collision_4" pos="0 -0.06472135954999579 0.04702282018339786" type="capsule" size="0.025 0.0075" class="collision" euler="2.5132741228718345 0 0" />
+            <geom name="wheel_4_collision_5" pos="0 -0.08 9.797174393178826e-18" type="capsule" size="0.025 0.0075" class="collision" euler="3.1415926535897931 0 0" />
+            <geom name="wheel_4_collision_6" pos="0 -0.0647213595499958 -0.047022820183397845" type="capsule" size="0.025 0.0075" class="collision" euler="-2.5132741228718349 0 0" />
+            <geom name="wheel_4_collision_7" pos="0 -0.024721359549995804 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.8849555921538761 0 0" />
+            <geom name="wheel_4_collision_8" pos="0 0.02472135954999578 -0.07608452130361229" type="capsule" size="0.025 0.0075" class="collision" euler="-1.2566370614359175 0 0" />
+            <geom name="wheel_4_collision_9" pos="0 0.06472135954999579 -0.04702282018339787" type="capsule" size="0.025 0.0075" class="collision" euler="-0.62831853071795885 0 0" />
             <geom type="mesh" class="visual" name="wheel_4_visual_0" mesh="wheel_1_omniwheel_10_0" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" />
             <geom type="mesh" class="visual" name="wheel_4_visual_1" mesh="wheel_1_omniwheel_10_1" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" />
             <geom type="mesh" class="visual" name="wheel_4_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
@@ -503,7 +501,6 @@
     <light pos="0 0 2." dir="0 0 -1" directional="true" />
     <geom name="floor" class="floor" size="0 0 0.05" />
   </worldbody>
-
   <asset>
     <texture type="2d" name="mtl_meshes_meshes_visual_chassis_chassis_M_chassis_texture" file="meshes/meshes/visual/chassis/M_chassis.png" />
     <texture type="2d" name="mtl_meshes_meshes_visual_leg_leg2_M_leg_leg2_texture" file="meshes/meshes/visual/leg/M_leg_leg2_.png" />
@@ -706,7 +703,6 @@
     <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" />
     <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
   </asset>
-
   <actuator>
     <position name="leg_joint1" joint="leg_joint1" kp="10000.0" kv="2000.0" ctrlrange="0.0 0.9374" forcerange="-420.0 420.0" />
     <position name="leg_joint2" joint="leg_joint2" kp="10000.0" kv="2000.0" ctrlrange="0.0 2.5847" forcerange="-420.0 420.0" />
@@ -735,7 +731,6 @@
     <velocity name="base_y_joint" joint="base_y_joint" ctrllimited="true" kv="1000000.0" ctrlrange="-1.0 1.0" forcelimited="false" />
     <velocity name="base_yaw_joint" joint="base_yaw_joint" ctrllimited="true" kv="1000000.0" ctrlrange="-4.0 4.0" forcelimited="false" />
   </actuator>
-
   <sensor>
     <jointvel name="vel_leg_joint1" joint="leg_joint1" />
     <jointvel name="vel_leg_joint2" joint="leg_joint2" />
@@ -762,7 +757,6 @@
     <jointvel name="vel_base_y_joint" joint="base_y_joint" />
     <jointvel name="vel_base_yaw_joint" joint="base_yaw_joint" />
   </sensor>
-
   <equality>
     <joint joint1="right_gripper_joint" joint2="right_gripper_r_inner_knuckle_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.005 1" />
     <joint joint1="right_gripper_joint" joint2="right_gripper_r_finger_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.005 1" />
@@ -775,10 +769,8 @@
     <joint joint1="left_gripper_joint" joint2="left_gripper_l_inner_knuckle_joint" polycoef="0.0 1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.005 1" />
     <joint joint1="left_gripper_joint" joint2="left_gripper_l_finger_joint" polycoef="0.0 -1.0 0 0 0" solimp="0.95 0.99 0.001" solref="0.005 1" />
   </equality>
-
   <visual>
     <rgba haze="0.15 0.25 0.35 1" />
   </visual>
-
   <option integrator="implicitfast" />
 </mujoco>

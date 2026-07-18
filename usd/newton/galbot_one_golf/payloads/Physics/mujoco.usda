@@ -4,16 +4,16 @@
         string creator = "MuJoCo USD Converter v0.2.0"
     }
     defaultPrim = "galbot_one_golf"
-    doc = """Generated from Composed Stage of root layer /tmp/tmpez349qxc/galbot_one_golf.usdc
+    doc = """Generated from Composed Stage of root layer /tmp/tmpifvq64lv/galbot_one_golf.usdc
 
 
-Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_vpbwz7h_/usdex_galbot_one_golf/galbot_one_golf.usdc
+Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_lj6b8j2n/usdex_galbot_one_golf/galbot_one_golf.usdc
 
 
-Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_vpbwz7h_/temp_galbot_one_golf/galbot_one_golf.usd
+Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_lj6b8j2n/temp_galbot_one_golf/galbot_one_golf.usd
 
 
-Generated from Composed Stage of root layer /workspace/GalbotLab/tmp/galbot-newton-rebuild-20260718/galbot_one_golf/payloads/base.usd
+Generated from Composed Stage of root layer /workspace/GalbotLab/tmp/g1-newton-capsule-fix/galbot_one_golf/galbot_one_golf/payloads/base.usd
 """
     kilogramsPerUnit = 1
     metersPerUnit = 1
@@ -212,6 +212,7 @@ over "galbot_one_golf"
                                                                                                                 )
                                                                                                                 {
                                                                                                                     uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                    uniform double[] mjc:solref = [0.004, 1]
                                                                                                                     rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_left_arm_mount_link/left_arm_base_link/left_arm_link1/left_arm_link2/left_arm_link3/left_arm_link4/left_arm_link5/left_arm_link6/left_arm_link7/left_arm_end_effector_mount_link/left_gripper_flange_link/left_gripper_base_link/left_gripper_r_knuckle_link/left_gripper_joint>
                                                                                                                 }
 
@@ -247,6 +248,7 @@ over "galbot_one_golf"
                                                                                                             {
                                                                                                                 uniform double mjc:coef1 = -1
                                                                                                                 uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                uniform double[] mjc:solref = [0.004, 1]
                                                                                                                 rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_left_arm_mount_link/left_arm_base_link/left_arm_link1/left_arm_link2/left_arm_link3/left_arm_link4/left_arm_link5/left_arm_link6/left_arm_link7/left_arm_end_effector_mount_link/left_gripper_flange_link/left_gripper_base_link/left_gripper_r_knuckle_link/left_gripper_joint>
                                                                                                             }
 
@@ -299,6 +301,7 @@ over "galbot_one_golf"
                                                                                                             )
                                                                                                             {
                                                                                                                 uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                uniform double[] mjc:solref = [0.004, 1]
                                                                                                                 rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_left_arm_mount_link/left_arm_base_link/left_arm_link1/left_arm_link2/left_arm_link3/left_arm_link4/left_arm_link5/left_arm_link6/left_arm_link7/left_arm_end_effector_mount_link/left_gripper_flange_link/left_gripper_base_link/left_gripper_r_knuckle_link/left_gripper_joint>
                                                                                                             }
 
@@ -354,6 +357,7 @@ over "galbot_one_golf"
                                                                                                                 {
                                                                                                                     uniform double mjc:coef1 = -1
                                                                                                                     uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                    uniform double[] mjc:solref = [0.004, 1]
                                                                                                                     rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_left_arm_mount_link/left_arm_base_link/left_arm_link1/left_arm_link2/left_arm_link3/left_arm_link4/left_arm_link5/left_arm_link6/left_arm_link7/left_arm_end_effector_mount_link/left_gripper_flange_link/left_gripper_base_link/left_gripper_r_knuckle_link/left_gripper_joint>
                                                                                                                 }
 
@@ -388,6 +392,7 @@ over "galbot_one_golf"
                                                                                                             )
                                                                                                             {
                                                                                                                 uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                uniform double[] mjc:solref = [0.004, 1]
                                                                                                                 rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_left_arm_mount_link/left_arm_base_link/left_arm_link1/left_arm_link2/left_arm_link3/left_arm_link4/left_arm_link5/left_arm_link6/left_arm_link7/left_arm_end_effector_mount_link/left_gripper_flange_link/left_gripper_base_link/left_gripper_r_knuckle_link/left_gripper_joint>
                                                                                                             }
 
@@ -818,6 +823,7 @@ over "galbot_one_golf"
                                                                                                                 )
                                                                                                                 {
                                                                                                                     uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                    uniform double[] mjc:solref = [0.004, 1]
                                                                                                                     rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_right_arm_mount_link/right_arm_base_link/right_arm_link1/right_arm_link2/right_arm_link3/right_arm_link4/right_arm_link5/right_arm_link6/right_arm_link7/right_arm_end_effector_mount_link/right_gripper_flange_link/right_gripper_base_link/right_gripper_r_knuckle_link/right_gripper_joint>
                                                                                                                 }
 
@@ -853,6 +859,7 @@ over "galbot_one_golf"
                                                                                                             {
                                                                                                                 uniform double mjc:coef1 = -1
                                                                                                                 uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                uniform double[] mjc:solref = [0.004, 1]
                                                                                                                 rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_right_arm_mount_link/right_arm_base_link/right_arm_link1/right_arm_link2/right_arm_link3/right_arm_link4/right_arm_link5/right_arm_link6/right_arm_link7/right_arm_end_effector_mount_link/right_gripper_flange_link/right_gripper_base_link/right_gripper_r_knuckle_link/right_gripper_joint>
                                                                                                             }
 
@@ -905,6 +912,7 @@ over "galbot_one_golf"
                                                                                                             )
                                                                                                             {
                                                                                                                 uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                uniform double[] mjc:solref = [0.004, 1]
                                                                                                                 rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_right_arm_mount_link/right_arm_base_link/right_arm_link1/right_arm_link2/right_arm_link3/right_arm_link4/right_arm_link5/right_arm_link6/right_arm_link7/right_arm_end_effector_mount_link/right_gripper_flange_link/right_gripper_base_link/right_gripper_r_knuckle_link/right_gripper_joint>
                                                                                                             }
 
@@ -960,6 +968,7 @@ over "galbot_one_golf"
                                                                                                                 {
                                                                                                                     uniform double mjc:coef1 = -1
                                                                                                                     uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                    uniform double[] mjc:solref = [0.004, 1]
                                                                                                                     rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_right_arm_mount_link/right_arm_base_link/right_arm_link1/right_arm_link2/right_arm_link3/right_arm_link4/right_arm_link5/right_arm_link6/right_arm_link7/right_arm_end_effector_mount_link/right_gripper_flange_link/right_gripper_base_link/right_gripper_r_knuckle_link/right_gripper_joint>
                                                                                                                 }
 
@@ -994,6 +1003,7 @@ over "galbot_one_golf"
                                                                                                             )
                                                                                                             {
                                                                                                                 uniform double[] mjc:solimp = [0.95, 0.99, 0.001, 0.5, 2]
+                                                                                                                uniform double[] mjc:solref = [0.004, 1]
                                                                                                                 rel mjc:target = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link/torso_right_arm_mount_link/right_arm_base_link/right_arm_link1/right_arm_link2/right_arm_link3/right_arm_link4/right_arm_link5/right_arm_link6/right_arm_link7/right_arm_end_effector_mount_link/right_gripper_flange_link/right_gripper_base_link/right_gripper_r_knuckle_link/right_gripper_joint>
                                                                                                             }
 
@@ -1492,6 +1502,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1509,6 +1521,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1526,6 +1540,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1543,6 +1559,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1560,6 +1578,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1577,6 +1597,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1594,6 +1616,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1611,6 +1635,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1628,6 +1654,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1645,6 +1673,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1687,6 +1717,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1704,6 +1736,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1721,6 +1755,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1738,6 +1774,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1755,6 +1793,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1772,6 +1812,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1789,6 +1831,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1806,6 +1850,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1823,6 +1869,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1840,6 +1888,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1882,6 +1932,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1899,6 +1951,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1916,6 +1970,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1933,6 +1989,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1950,6 +2008,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1967,6 +2027,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -1984,6 +2046,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2001,6 +2065,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2018,6 +2084,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2035,6 +2103,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2077,6 +2147,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2094,6 +2166,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2111,6 +2185,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2128,6 +2204,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2145,6 +2223,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2162,6 +2242,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2179,6 +2261,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2196,6 +2280,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2213,6 +2299,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 
@@ -2230,6 +2318,8 @@ over "galbot_one_golf"
                                 prepend apiSchemas = ["MjcJointAPI"]
                             )
                             {
+                                uniform double mjc:armature = 0.001
+                                uniform double mjc:damping = 0.01
                             }
                         }
 

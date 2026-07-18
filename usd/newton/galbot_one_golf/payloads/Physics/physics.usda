@@ -4,16 +4,16 @@
         string creator = "MuJoCo USD Converter v0.2.0"
     }
     defaultPrim = "galbot_one_golf"
-    doc = """Generated from Composed Stage of root layer /tmp/tmpez349qxc/galbot_one_golf.usdc
+    doc = """Generated from Composed Stage of root layer /tmp/tmpifvq64lv/galbot_one_golf.usdc
 
 
-Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_vpbwz7h_/usdex_galbot_one_golf/galbot_one_golf.usdc
+Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_lj6b8j2n/usdex_galbot_one_golf/galbot_one_golf.usdc
 
 
-Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_vpbwz7h_/temp_galbot_one_golf/galbot_one_golf.usd
+Generated from Composed Stage of root layer /tmp/mjcf_import_galbot_one_golf_lj6b8j2n/temp_galbot_one_golf/galbot_one_golf.usd
 
 
-Generated from Composed Stage of root layer /workspace/GalbotLab/tmp/galbot-newton-rebuild-20260718/galbot_one_golf/payloads/base.usd
+Generated from Composed Stage of root layer /workspace/GalbotLab/tmp/g1-newton-capsule-fix/galbot_one_golf/galbot_one_golf/payloads/base.usd
 """
     kilogramsPerUnit = 1
     metersPerUnit = 1
@@ -1508,7 +1508,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_0>
-                                point3f physics:localPos0 = (0, 0.025, 0)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.08, 0)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (1, 0, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1541,7 +1541,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_1>
-                                point3f physics:localPos0 = (0, 0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, 0.3090169, 1.3877788e-17, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1574,7 +1574,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_2>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, 0.58778524, -2.7755576e-17, 5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1607,7 +1607,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_3>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.58778524, 0.809017, 0, 1.3877788e-16)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1640,7 +1640,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_4>
-                                point3f physics:localPos0 = (0, -0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.309017, 0.95105654, -5.551115e-17, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1673,7 +1673,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_5>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.025, 0)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.08, 1.3877788e-17)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (2.8831724e-17, 1, 0, -7.8220356e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1706,7 +1706,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_6>
-                                point3f physics:localPos0 = (0, -0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.309017, 0.95105654, -5.551115e-17, 9.7144515e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1739,7 +1739,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_7>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.58778524, 0.809017, 0, 3.0531133e-16)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1772,7 +1772,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_8>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (0, 0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, -0.58778524, 2.7755576e-17, 5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1805,7 +1805,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_1/wheel_1_passive_9>
-                                point3f physics:localPos0 = (0, 0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, -0.3090169, -1.3877788e-17, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1866,7 +1866,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_0>
-                                point3f physics:localPos0 = (0, 0.025, 0)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.08, 0)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (1, 0, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1899,7 +1899,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_1>
-                                point3f physics:localPos0 = (0, 0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, 0.3090169, 0, 5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1932,7 +1932,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_2>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (0, 0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, 0.58778524, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1965,7 +1965,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_3>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (0, -0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.58778524, 0.809017, 5.551115e-17, -2.7755576e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1998,7 +1998,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_4>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.309017, 0.95105654, 5.551115e-17, -2.7755576e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2031,7 +2031,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_5>
-                                point3f physics:localPos0 = (0, -0.025, 0)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.08, 1.3877788e-17)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (7.1951717e-17, 1, 0, -1.36981995e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2064,7 +2064,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_6>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.309017, 0.95105654, 5.551115e-17, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2097,7 +2097,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_7>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.58778524, 0.809017, -1.110223e-16, 5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2130,7 +2130,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_8>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, -0.58778524, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2163,7 +2163,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_2/wheel_2_passive_9>
-                                point3f physics:localPos0 = (0, 0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, -0.3090169, 0, 5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2224,7 +2224,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_0>
-                                point3f physics:localPos0 = (0, 0.025, 0)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.08, 0)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (1, 0, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2257,7 +2257,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_1>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, 0.3090169, 0, -5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2290,7 +2290,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_2>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, 0.58778524, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2323,7 +2323,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_3>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.58778524, 0.809017, -5.551115e-17, 2.7755576e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2356,7 +2356,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_4>
-                                point3f physics:localPos0 = (0, -0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.309017, 0.95105654, -5.551115e-17, 2.7755576e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2389,7 +2389,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_5>
-                                point3f physics:localPos0 = (0, -0.025, 0)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.08, 1.3877788e-17)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (7.1320307e-17, 1, 0, 1.2173878e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2422,7 +2422,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_6>
-                                point3f physics:localPos0 = (0, -0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.309017, 0.95105654, -5.551115e-17, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2455,7 +2455,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_7>
-                                point3f physics:localPos0 = (-2.7755576e-17, -0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.58778524, 0.809017, 1.110223e-16, -5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2488,7 +2488,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_8>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (0, 0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, -0.58778524, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2521,7 +2521,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_3/wheel_3_passive_9>
-                                point3f physics:localPos0 = (-2.7755576e-17, 0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, -0.3090169, 0, -5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2582,7 +2582,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_0>
-                                point3f physics:localPos0 = (0, 0.025, 0)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.08, 0)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (1, 0, 0, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2615,7 +2615,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_1>
-                                point3f physics:localPos0 = (0, 0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (0, 0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, 0.3090169, -8.326673e-17, -5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2648,7 +2648,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_2>
-                                point3f physics:localPos0 = (0, 0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, 0.58778524, -2.7755576e-17, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2681,7 +2681,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_3>
-                                point3f physics:localPos0 = (0, -0.007725425, 0.023776412)
+                                point3f physics:localPos0 = (0, -0.02472136, 0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.58778524, 0.809017, -5.551115e-17, 1.9428903e-16)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2714,7 +2714,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_4>
-                                point3f physics:localPos0 = (0, -0.020225424, 0.014694631)
+                                point3f physics:localPos0 = (0, -0.06472136, 0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.309017, 0.95105654, -5.551115e-17, 4.1633363e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2747,7 +2747,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_5>
-                                point3f physics:localPos0 = (0, -0.025, 0)
+                                point3f physics:localPos0 = (0, -0.08, 1.3877788e-17)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (7.569777e-17, 1, 0, -3.4921908e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2780,7 +2780,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_6>
-                                point3f physics:localPos0 = (0, -0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (0, -0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.309017, 0.95105654, -5.551115e-17, 1.3877788e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2813,7 +2813,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_7>
-                                point3f physics:localPos0 = (0, -0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, -0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (-0.58778524, 0.809017, -5.551115e-17, 1.3877788e-16)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2846,7 +2846,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_8>
-                                point3f physics:localPos0 = (0, 0.007725425, -0.023776412)
+                                point3f physics:localPos0 = (-2.7755576e-17, 0.02472136, -0.076084524)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.809017, -0.58778524, -5.551115e-17, 0)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
@@ -2879,7 +2879,7 @@ over "galbot_one_golf"
                                 prepend rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4>
                                 custom rel physics:body1
                                 prepend rel physics:body1 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/wheel_4/wheel_4_passive_9>
-                                point3f physics:localPos0 = (0, 0.020225424, -0.014694631)
+                                point3f physics:localPos0 = (0, 0.06472136, -0.04702282)
                                 point3f physics:localPos1 = (0, 0, 0)
                                 quatf physics:localRot0 = (0.95105654, -0.3090169, 1.3877788e-17, -5.551115e-17)
                                 quatf physics:localRot1 = (1, 0, 0, 0)
