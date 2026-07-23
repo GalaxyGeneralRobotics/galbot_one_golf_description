@@ -1,2215 +1,3538 @@
 #usda 1.0
 (
     customLayerData = {
-        dictionary cameraSettings = {
-            dictionary Front = {
-                double3 position = (5, 0, 0)
-                double radius = 5
-            }
-            dictionary Perspective = {
-                double3 position = (1.0453179238059274, 1.0167778433570756, 1.4489239725993888)
-                double3 target = (-0.1250219965430832, -0.15356207699193503, 0.2785840801843207)
-            }
-            dictionary Right = {
-                double3 position = (0, -5, 0)
-                double radius = 5
-            }
-            dictionary Top = {
-                double3 position = (0, 0, 5)
-                double radius = 5
-            }
-            string boundCamera = "/OmniverseKit_Persp"
-        }
-        dictionary omni_layer = {
-            string authoring_layer = "./galbot_one_golf.usd"
-        }
-        dictionary renderSettings = {
-        }
+        string creator = "MuJoCo USD Converter v0.2.0"
     }
-    doc = """Generated from Composed Stage of root layer /home/galbot/Downloads/galbot_one_golf_isaac6/galbot_one_golf.usd
-
-
-Generated from Composed Stage of root layer /home/galbot/Downloads/galbot_one_golf_isaac6/payloads/base.usd
-"""
+    kilogramsPerUnit = 1
     metersPerUnit = 1
     upAxis = "Z"
 )
 
 def Scope "Instances"
 {
-    def Xform "mesh" (
-        prepend references = @./geometries.usd@</Geometries/mesh>
+    def Xform "omni_chassis_base_link_collision" (
+        prepend references = @./geometries.usd@</Geometries/omni_chassis_base_link_collision>
     )
     {
-        over "mesh" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "omni_chassis_base_link_collision" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh/VisualMaterials/M_chassis>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_chassis" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_chassis>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_1" (
-        prepend references = @./geometries.usd@</Geometries/mesh_1>
-    )
-    {
-        over "mesh_1"
-        {
-            over "M_sensors_mid360_blue" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_1/VisualMaterials/M_sensors_mid360_blue>
-            }
-
-            over "M_mid360_tube" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_1/VisualMaterials/M_mid360_tube>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_sensors_mid360_blue" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_sensors_mid360_blue>
-            )
-            {
-            }
-
-            def Material "M_mid360_tube" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_mid360_tube>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_2" (
-        prepend references = @./geometries.usd@</Geometries/mesh_2>
-    )
-    {
-        over "mesh_2" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_2/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_3" (
-        prepend references = @./geometries.usd@</Geometries/mesh_3>
+    def Xform "omni_chassis_base_link_visual" (
+        prepend references = @./geometries.usd@</Geometries/omni_chassis_base_link_visual>
     )
     {
-        over "mesh_3" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "omni_chassis_base_link_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_3/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/omni_chassis_base_link_visual/VisualMaterials/mtl_meshes_meshes_visual_chassis_chassis_M_chassis>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_chassis_chassis_M_chassis" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_chassis_chassis_M_chassis>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_4" (
-        prepend references = @./geometries.usd@</Geometries/mesh_4>
+    def Xform "leg_link1_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/leg_link1_collision_0>
     )
     {
-        over "mesh_4" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "leg_link1_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_4/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_5" (
-        prepend references = @./geometries.usd@</Geometries/mesh_5>
+    def Xform "leg_link1_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/leg_link1_collision_1>
     )
     {
-        over "mesh_5" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "leg_link1_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_5/VisualMaterials/M_leg_leg1_metal_black>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_leg_leg1_metal_black" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_leg_leg1_metal_black>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_6" (
-        prepend references = @./geometries.usd@</Geometries/mesh_6>
-    )
-    {
-        over "mesh_6" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_6/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_7" (
-        prepend references = @./geometries.usd@</Geometries/mesh_7>
+    def Xform "leg_link1_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/leg_link1_collision_2>
     )
     {
-        over "mesh_7" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "leg_link1_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_7/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_8" (
-        prepend references = @./geometries.usd@</Geometries/mesh_8>
+    def Xform "leg_link1_visual" (
+        prepend references = @./geometries.usd@</Geometries/leg_link1_visual>
     )
     {
-        over "mesh_8" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "leg_link1_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_8/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/leg_link1_visual/VisualMaterials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_9" (
-        prepend references = @./geometries.usd@</Geometries/mesh_9>
+    def Xform "leg_link2_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/leg_link2_collision_0>
     )
     {
-        over "mesh_9" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "leg_link2_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_9/VisualMaterials/M_leg_leg2_>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_leg_leg2_" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_leg_leg2_>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_10" (
-        prepend references = @./geometries.usd@</Geometries/mesh_10>
-    )
-    {
-        over "mesh_10" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_10/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_11" (
-        prepend references = @./geometries.usd@</Geometries/mesh_11>
+    def Xform "leg_link2_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/leg_link2_collision_1>
     )
     {
-        over "mesh_11" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "leg_link2_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_11/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_12" (
-        prepend references = @./geometries.usd@</Geometries/mesh_12>
+    def Xform "leg_link2_visual" (
+        prepend references = @./geometries.usd@</Geometries/leg_link2_visual>
     )
     {
-        over "mesh_12" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "leg_link2_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_12/VisualMaterials/M_leg_leg3_metal_black>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_leg_leg3_metal_black" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_leg_leg3_metal_black>
+            prepend rel material:binding = </Instances/leg_link2_visual/VisualMaterials/mtl_meshes_meshes_visual_leg_leg2_M_leg_leg2>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_13" (
-        prepend references = @./geometries.usd@</Geometries/mesh_13>
-    )
-    {
-        over "mesh_13" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_13/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_leg_leg2_M_leg_leg2" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg2_M_leg_leg2>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_14" (
-        prepend references = @./geometries.usd@</Geometries/mesh_14>
+    def Xform "leg_link3_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/leg_link3_collision_0>
     )
     {
-        over "mesh_14" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "leg_link3_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_14/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_15" (
-        prepend references = @./geometries.usd@</Geometries/mesh_15>
+    def Xform "leg_link3_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/leg_link3_collision_1>
     )
     {
-        over "mesh_15" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "leg_link3_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_15/VisualMaterials/M_leg_leg4_metal_black>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_leg_leg4_metal_black" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_leg_leg4_metal_black>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_16" (
-        prepend references = @./geometries.usd@</Geometries/mesh_16>
-    )
-    {
-        over "mesh_16" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_16/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_17" (
-        prepend references = @./geometries.usd@</Geometries/mesh_17>
+    def Xform "leg_link3_visual" (
+        prepend references = @./geometries.usd@</Geometries/leg_link3_visual>
     )
     {
-        over "mesh_17" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "leg_link3_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_17/VisualMaterials/M_torso>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_torso" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_torso>
+            prepend rel material:binding = </Instances/leg_link3_visual/VisualMaterials/mtl_meshes_meshes_visual_leg_leg3_M_leg_leg3_metal_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_18" (
-        prepend references = @./geometries.usd@</Geometries/mesh_18>
-    )
-    {
-        over "mesh_18" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_18/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_leg_leg3_M_leg_leg3_metal_black" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_19" (
-        prepend references = @./geometries.usd@</Geometries/mesh_19>
+    def Xform "leg_link4_collision" (
+        prepend references = @./geometries.usd@</Geometries/leg_link4_collision>
     )
     {
-        over "mesh_19" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "leg_link4_collision" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_19/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_20" (
-        prepend references = @./geometries.usd@</Geometries/mesh_20>
+    def Xform "leg_link4_visual" (
+        prepend references = @./geometries.usd@</Geometries/leg_link4_visual>
     )
     {
-        over "mesh_20"
-        {
-            over "M_head_link2_plastic_black" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_20/VisualMaterials/M_head_link2_plastic_black>
-            }
-
-            over "M_head_link2_glacier_white" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_20/VisualMaterials/M_head_link2_glacier_white>
-            }
-
-            over "M_head_link2_mirror_silver" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_20/VisualMaterials/M_head_link2_mirror_silver>
-            }
-
-            over "M_head_link2_glacier_428c" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_20/VisualMaterials/M_head_link2_glacier_428c>
-            }
-
-            over "M_head_link2_camera" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_20/VisualMaterials/M_head_link2_camera>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_head_link2_plastic_black" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_head_link2_plastic_black>
-            )
-            {
-            }
-
-            def Material "M_head_link2_glacier_white" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_head_link2_glacier_white>
-            )
-            {
-            }
-
-            def Material "M_head_link2_mirror_silver" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_head_link2_mirror_silver>
-            )
-            {
-            }
-
-            def Material "M_head_link2_glacier_428c" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_head_link2_glacier_428c>
-            )
-            {
-            }
-
-            def Material "M_head_link2_camera" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_head_link2_camera>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_21" (
-        prepend references = @./geometries.usd@</Geometries/mesh_21>
-    )
-    {
-        over "mesh_21" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "leg_link4_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_21/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/leg_link4_visual/VisualMaterials/mtl_meshes_meshes_visual_leg_leg4_M_leg_leg4_metal_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_leg_leg4_M_leg_leg4_metal_black" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_22" (
-        prepend references = @./geometries.usd@</Geometries/mesh_22>
+    def Xform "torso_base_link_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/torso_base_link_collision_0>
     )
     {
-        over "mesh_22" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "torso_base_link_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_22/VisualMaterials/M_arm_link1>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_link1" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link1>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_23" (
-        prepend references = @./geometries.usd@</Geometries/mesh_23>
-    )
-    {
-        over "mesh_23" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_23/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_24" (
-        prepend references = @./geometries.usd@</Geometries/mesh_24>
+    def Xform "torso_base_link_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/torso_base_link_collision_1>
     )
     {
-        over "mesh_24" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "torso_base_link_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_24/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_25" (
-        prepend references = @./geometries.usd@</Geometries/mesh_25>
+    def Xform "torso_base_link_visual" (
+        prepend references = @./geometries.usd@</Geometries/torso_base_link_visual>
     )
     {
-        over "mesh_25" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "torso_base_link_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_25/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/torso_base_link_visual/VisualMaterials/mtl_meshes_meshes_visual_torso_torso_M_torso>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_torso_torso_M_torso" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_torso_torso_M_torso>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_26" (
-        prepend references = @./geometries.usd@</Geometries/mesh_26>
+    def Xform "head_link2_collision" (
+        prepend references = @./geometries.usd@</Geometries/head_link2_collision>
     )
     {
-        over "mesh_26" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "head_link2_collision" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_26/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_27" (
-        prepend references = @./geometries.usd@</Geometries/mesh_27>
+    def Xform "head_link2_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/head_link2_visual_0>
     )
     {
-        over "mesh_27" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "head_link2_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "MjcMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_27/VisualMaterials/M_arm_link2>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_link2" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link2>
+            prepend rel material:binding = </Instances/head_link2_visual_0/VisualMaterials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_camera>
+            int mjc:group = 2
+            token mjc:inertia = "shell"
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_28" (
-        prepend references = @./geometries.usd@</Geometries/mesh_28>
-    )
-    {
-        over "mesh_28" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_28/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_head_head_link2_M_head_link2_camera" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_camera>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_29" (
-        prepend references = @./geometries.usd@</Geometries/mesh_29>
+    def Xform "head_link2_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/head_link2_visual_1>
     )
     {
-        over "mesh_29" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "head_link2_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_29/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/head_link2_visual_1/VisualMaterials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_428c>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_428c" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_428c>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_30" (
-        prepend references = @./geometries.usd@</Geometries/mesh_30>
+    def Xform "head_link2_visual_2" (
+        prepend references = @./geometries.usd@</Geometries/head_link2_visual_2>
     )
     {
-        over "mesh_30" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "head_link2_visual_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_30/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/head_link2_visual_2/VisualMaterials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_mirror_silver>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_head_head_link2_M_head_link2_mirror_silver" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_mirror_silver>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_31" (
-        prepend references = @./geometries.usd@</Geometries/mesh_31>
+    def Xform "head_link2_visual_3" (
+        prepend references = @./geometries.usd@</Geometries/head_link2_visual_3>
     )
     {
-        over "mesh_31" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "head_link2_visual_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_31/VisualMaterials/M_arm_link3_metal_aluminum>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_link3_metal_aluminum" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link3_metal_aluminum>
+            prepend rel material:binding = </Instances/head_link2_visual_3/VisualMaterials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_32" (
-        prepend references = @./geometries.usd@</Geometries/mesh_32>
-    )
-    {
-        over "mesh_32" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_32/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_33" (
-        prepend references = @./geometries.usd@</Geometries/mesh_33>
+    def Xform "head_link2_visual_4" (
+        prepend references = @./geometries.usd@</Geometries/head_link2_visual_4>
     )
     {
-        over "mesh_33" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "head_link2_visual_4" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_33/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/head_link2_visual_4/VisualMaterials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_plastic_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_head_head_link2_M_head_link2_plastic_black" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_plastic_black>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_34" (
-        prepend references = @./geometries.usd@</Geometries/mesh_34>
+    def Xform "left_arm_link1_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link1_collision_0>
     )
     {
-        over "mesh_34" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link1_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_34/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_35" (
-        prepend references = @./geometries.usd@</Geometries/mesh_35>
+    def Xform "left_arm_link1_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link1_collision_1>
     )
     {
-        over "mesh_35"
-        {
-            over "M_arm_link4_metal_aluminum" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_35/VisualMaterials/M_arm_link4_metal_aluminum>
-            }
-
-            over "M_arm_link4_glacier_white" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_35/VisualMaterials/M_arm_link4_glacier_white>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_link4_metal_aluminum" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link4_metal_aluminum>
-            )
-            {
-            }
-
-            def Material "M_arm_link4_glacier_white" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link4_glacier_white>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_36" (
-        prepend references = @./geometries.usd@</Geometries/mesh_36>
-    )
-    {
-        over "mesh_36" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link1_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_36/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_37" (
-        prepend references = @./geometries.usd@</Geometries/mesh_37>
+    def Xform "left_arm_link1_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link1_collision_2>
     )
     {
-        over "mesh_37" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link1_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_37/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_38" (
-        prepend references = @./geometries.usd@</Geometries/mesh_38>
+    def Xform "left_arm_link1_collision_3" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link1_collision_3>
     )
     {
-        over "mesh_38" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "left_arm_link1_collision_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_38/VisualMaterials/M_gltf_arm_link5_glacier_white>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_gltf_arm_link5_glacier_white" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_gltf_arm_link5_glacier_white>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_39" (
-        prepend references = @./geometries.usd@</Geometries/mesh_39>
-    )
-    {
-        over "mesh_39" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_39/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_40" (
-        prepend references = @./geometries.usd@</Geometries/mesh_40>
+    def Xform "left_arm_link1_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link1_visual>
     )
     {
-        over "mesh_40" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link1_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_40/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link1_visual/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link1_left_M_arm_link1>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link1_left_M_arm_link1" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_41" (
-        prepend references = @./geometries.usd@</Geometries/mesh_41>
+    def Xform "left_arm_link2_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link2_collision_0>
     )
     {
-        over "mesh_41" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link2_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_41/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_42" (
-        prepend references = @./geometries.usd@</Geometries/mesh_42>
+    def Xform "left_arm_link2_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link2_collision_1>
     )
     {
-        over "mesh_42" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link2_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_42/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_43" (
-        prepend references = @./geometries.usd@</Geometries/mesh_43>
+    def Xform "left_arm_link2_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link2_collision_2>
     )
     {
-        over "mesh_43" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link2_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_43/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_44" (
-        prepend references = @./geometries.usd@</Geometries/mesh_44>
+    def Xform "left_arm_link2_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link2_visual>
     )
     {
-        over "mesh_44" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link2_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_44/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link2_visual/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link2_left_M_arm_link2>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link2_left_M_arm_link2" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link2_left_M_arm_link2>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_45" (
-        prepend references = @./geometries.usd@</Geometries/mesh_45>
+    def Xform "left_arm_link3_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link3_collision_0>
     )
     {
-        over "mesh_45" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "left_arm_link3_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_45/VisualMaterials/M_arm_link6_glacier_white>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_link6_glacier_white" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link6_glacier_white>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_46" (
-        prepend references = @./geometries.usd@</Geometries/mesh_46>
-    )
-    {
-        over "mesh_46" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_46/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_47" (
-        prepend references = @./geometries.usd@</Geometries/mesh_47>
+    def Xform "left_arm_link3_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link3_collision_1>
     )
     {
-        over "mesh_47"
-        {
-            over "M_arm_link7_metal_aluminum" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_47/VisualMaterials/M_arm_link7_metal_aluminum>
-            }
-
-            over "M_arm_link7_glacier_white" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_47/VisualMaterials/M_arm_link7_glacier_white>
-            }
-
-            over "M_arm_link7_light_silver" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_47/VisualMaterials/M_arm_link7_light_silver>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_link7_metal_aluminum" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link7_metal_aluminum>
-            )
-            {
-            }
-
-            def Material "M_arm_link7_glacier_white" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link7_glacier_white>
-            )
-            {
-            }
-
-            def Material "M_arm_link7_light_silver" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link7_light_silver>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_48" (
-        prepend references = @./geometries.usd@</Geometries/mesh_48>
-    )
-    {
-        over "mesh_48" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "left_arm_link3_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_48/VisualMaterials/M_arm_d405_stand>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_d405_stand" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_d405_stand>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_49" (
-        prepend references = @./geometries.usd@</Geometries/mesh_49>
-    )
-    {
-        over "mesh_49" (
-            apiSchemas = ["MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_49/VisualMaterials/M_sensors_realsense_d405>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_sensors_realsense_d405" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_sensors_realsense_d405>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_50" (
-        prepend references = @./geometries.usd@</Geometries/mesh_50>
-    )
-    {
-        over "mesh_50" (
-            apiSchemas = ["MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_50/VisualMaterials/M_end_effectors_galbot_gripper_flange_metal_black_001>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_end_effectors_galbot_gripper_flange_metal_black_001" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_flange_metal_black_001>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_51" (
-        prepend references = @./geometries.usd@</Geometries/mesh_51>
-    )
-    {
-        over "mesh_51"
-        {
-            over "M_end_effectors_galbot_gripper_base_link_plastic_black" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_51/VisualMaterials/M_end_effectors_galbot_gripper_base_link_plastic_black>
-            }
-
-            over "M_end_effectors_galbot_gripper_base_link_metal_black" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_51/VisualMaterials/M_end_effectors_galbot_gripper_base_link_metal_black>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_end_effectors_galbot_gripper_base_link_plastic_black" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_base_link_plastic_black>
-            )
-            {
-            }
-
-            def Material "M_end_effectors_galbot_gripper_base_link_metal_black" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_base_link_metal_black>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_52" (
-        prepend references = @./geometries.usd@</Geometries/mesh_52>
-    )
-    {
-        over "mesh_52" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_52/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_53" (
-        prepend references = @./geometries.usd@</Geometries/mesh_53>
+    def Xform "left_arm_link3_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link3_collision_2>
     )
     {
-        over "mesh_53" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link3_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_53/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_54" (
-        prepend references = @./geometries.usd@</Geometries/mesh_54>
+    def Xform "left_arm_link3_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link3_visual>
     )
     {
-        over "mesh_54" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link3_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_54/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link3_visual/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_55" (
-        prepend references = @./geometries.usd@</Geometries/mesh_55>
+    def Xform "left_arm_link4_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link4_collision_0>
     )
     {
-        over "mesh_55" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link4_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_55/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_56" (
-        prepend references = @./geometries.usd@</Geometries/mesh_56>
+    def Xform "left_arm_link4_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link4_collision_1>
     )
     {
-        over "mesh_56" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link4_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_56/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_57" (
-        prepend references = @./geometries.usd@</Geometries/mesh_57>
+    def Xform "left_arm_link4_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link4_visual_0>
     )
     {
-        over "mesh_57" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link4_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_57/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link4_visual_0/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link4_left_M_arm_link4_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link4_left_M_arm_link4_glacier_white" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_58" (
-        prepend references = @./geometries.usd@</Geometries/mesh_58>
+    def Xform "left_arm_link4_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link4_visual_1>
     )
     {
-        over "mesh_58" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link4_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_58/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link4_visual_1/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link4_left_M_arm_link4_metal_aluminum>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link4_left_M_arm_link4_metal_aluminum" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_59" (
-        prepend references = @./geometries.usd@</Geometries/mesh_59>
+    def Xform "left_arm_link5_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_collision_0>
     )
     {
-        over "mesh_59" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_59/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_60" (
-        prepend references = @./geometries.usd@</Geometries/mesh_60>
+    def Xform "left_arm_link5_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_collision_1>
     )
     {
-        over "mesh_60"
-        {
-            over "M_end_effectors_galbot_gripper_link1_metal_aluminum_005" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_60/VisualMaterials/M_end_effectors_galbot_gripper_link1_metal_aluminum_005>
-            }
-
-            over "M_end_effectors_galbot_gripper_link1_light_silver" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_60/VisualMaterials/M_end_effectors_galbot_gripper_link1_light_silver>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_end_effectors_galbot_gripper_link1_metal_aluminum_005" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_link1_metal_aluminum_005>
-            )
-            {
-            }
-
-            def Material "M_end_effectors_galbot_gripper_link1_light_silver" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_link1_light_silver>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_61" (
-        prepend references = @./geometries.usd@</Geometries/mesh_61>
-    )
-    {
-        over "mesh_61" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_61/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_62" (
-        prepend references = @./geometries.usd@</Geometries/mesh_62>
+    def Xform "left_arm_link5_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_collision_2>
     )
     {
-        over "mesh_62" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_62/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_63" (
-        prepend references = @./geometries.usd@</Geometries/mesh_63>
+    def Xform "left_arm_link5_collision_3" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_collision_3>
     )
     {
-        over "mesh_63" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_collision_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_63/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_64" (
-        prepend references = @./geometries.usd@</Geometries/mesh_64>
+    def Xform "left_arm_link5_collision_4" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_collision_4>
     )
     {
-        over "mesh_64" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_collision_4" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_64/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_65" (
-        prepend references = @./geometries.usd@</Geometries/mesh_65>
+    def Xform "left_arm_link5_collision_5" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_collision_5>
     )
     {
-        over "mesh_65" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_collision_5" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_65/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_66" (
-        prepend references = @./geometries.usd@</Geometries/mesh_66>
+    def Xform "left_arm_link5_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_visual>
     )
     {
-        over "mesh_66" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_66/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link5_visual/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link5_left_M_gltf_arm_link5_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link5_left_M_gltf_arm_link5_glacier_white" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_67" (
-        prepend references = @./geometries.usd@</Geometries/mesh_67>
+    def Xform "left_arm_link5_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link5_visual>
     )
     {
-        over "mesh_67" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link5_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_67/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link5_visual_1/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link5_right_M_gltf_arm_link5_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_right_arm_link5_right_M_gltf_arm_link5_glacier_white" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_68" (
-        prepend references = @./geometries.usd@</Geometries/mesh_68>
+    def Xform "left_arm_link6_collision" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link6_collision>
     )
     {
-        over "mesh_68" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link6_collision" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_68/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_69" (
-        prepend references = @./geometries.usd@</Geometries/mesh_69>
+    def Xform "left_arm_link6_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link6_visual>
     )
     {
-        over "mesh_69"
-        {
-            over "M_end_effectors_galbot_gripper_link2_metal_aluminum" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_69/VisualMaterials/M_end_effectors_galbot_gripper_link2_metal_aluminum>
-            }
-
-            over "M_end_effectors_galbot_gripper_link2_light_silver" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_69/VisualMaterials/M_end_effectors_galbot_gripper_link2_light_silver>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_end_effectors_galbot_gripper_link2_metal_aluminum" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_link2_metal_aluminum>
-            )
-            {
-            }
-
-            def Material "M_end_effectors_galbot_gripper_link2_light_silver" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_link2_light_silver>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_70" (
-        prepend references = @./geometries.usd@</Geometries/mesh_70>
-    )
-    {
-        over "mesh_70"
-        {
-            over "M_end_effectors_galbot_gripper_link3_plastic_black" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_70/VisualMaterials/M_end_effectors_galbot_gripper_link3_plastic_black>
-            }
-
-            over "M_end_effectors_galbot_gripper_link3_light_silver_001" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_70/VisualMaterials/M_end_effectors_galbot_gripper_link3_light_silver_001>
-            }
-
-            over "M_end_effectors_galbot_gripper_link3_metal_aluminum_001" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_70/VisualMaterials/M_end_effectors_galbot_gripper_link3_metal_aluminum_001>
-            }
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_end_effectors_galbot_gripper_link3_plastic_black" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_link3_plastic_black>
-            )
-            {
-            }
-
-            def Material "M_end_effectors_galbot_gripper_link3_light_silver_001" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_link3_light_silver_001>
-            )
-            {
-            }
-
-            def Material "M_end_effectors_galbot_gripper_link3_metal_aluminum_001" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_end_effectors_galbot_gripper_link3_metal_aluminum_001>
-            )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_71" (
-        prepend references = @./geometries.usd@</Geometries/mesh_71>
-    )
-    {
-        over "mesh_71" (
-            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        over "left_arm_link6_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_71/VisualMaterials/M_gripper_physics>
+            prepend rel material:binding = </Instances/left_arm_link6_visual/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link6_left_M_arm_link6_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "M_gripper_physics" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link6_left_M_arm_link6_glacier_white" (
                 instanceable = true
-                prepend references = @./base.usda@</galbot_one_golf/VisualMaterials/M_gripper_physics>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_72" (
-        prepend references = @./geometries.usd@</Geometries/mesh_72>
+    def Xform "left_arm_link7_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link7_collision_0>
     )
     {
-        over "mesh_72" (
-            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        over "left_arm_link7_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_72/VisualMaterials/M_gripper_physics>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_gripper_physics" (
-                instanceable = true
-                prepend references = @./base.usda@</galbot_one_golf/VisualMaterials/M_gripper_physics>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_73" (
-        prepend references = @./geometries.usd@</Geometries/mesh_73>
+    def Xform "left_arm_link7_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link7_collision_1>
     )
     {
-        over "mesh_73" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link7_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_73/VisualMaterials/DefaultMaterial>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_74" (
-        prepend references = @./geometries.usd@</Geometries/mesh_74>
+    def Xform "left_arm_link7_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link7_collision_2>
     )
     {
-        over "mesh_74" (
-            apiSchemas = ["MaterialBindingAPI"]
+        over "left_arm_link7_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_74/VisualMaterials/M_arm_link2_right_glacier_white_001>
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "M_arm_link2_right_glacier_white_001" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/M_arm_link2_right_glacier_white_001>
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-            }
-        }
-    }
-
-    def Xform "mesh_75" (
-        prepend references = @./geometries.usd@</Geometries/mesh_75>
-    )
-    {
-        over "mesh_75" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
-        )
-        {
-            custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_75/VisualMaterials/DefaultMaterial>
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
-        }
-
-        def Scope "VisualMaterials"
-        {
-            def Material "DefaultMaterial" (
-                instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
-            )
-            {
-            }
+            float physics:density = 1000
+            token purpose = "guide"
         }
     }
 
-    def Xform "mesh_76" (
-        prepend references = @./geometries.usd@</Geometries/mesh_76>
+    def Xform "left_arm_link7_collision_3" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link7_collision_3>
     )
     {
-        over "mesh_76" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link7_collision_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_arm_link7_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link7_visual_0>
+    )
+    {
+        over "left_arm_link7_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_76/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link7_visual_0/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_77" (
-        prepend references = @./geometries.usd@</Geometries/mesh_77>
+    def Xform "left_arm_link7_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link7_visual_1>
     )
     {
-        over "mesh_77" (
-            apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+        over "left_arm_link7_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
         )
         {
             custom rel material:binding
-            prepend rel material:binding = </Instances/mesh_77/VisualMaterials/DefaultMaterial>
+            prepend rel material:binding = </Instances/left_arm_link7_visual_1/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
             token physics:approximation = "convexHull"
-            uniform token purpose = "guide"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "DefaultMaterial" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_glacier_white" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/DefaultMaterial>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
             )
             {
             }
         }
     }
 
-    def Xform "mesh_78" (
-        prepend references = @./geometries.usd@</Geometries/mesh_78>
+    def Xform "left_arm_link7_visual_2" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_link7_visual_2>
     )
     {
-        over "mesh_78"
+        over "left_arm_link7_visual_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
         {
-            over "M_components_omniwheel_10_black_003" (
-                apiSchemas = ["MaterialBindingAPI"]
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_arm_link7_visual_2/VisualMaterials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_metal_aluminum>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
             )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_78/VisualMaterials/M_components_omniwheel_10_black_003>
-            }
-
-            over "M_components_omniwheel_10_silver_003" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_78/VisualMaterials/M_components_omniwheel_10_silver_003>
-            }
-
-            over "M_subwheel" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                custom rel material:binding
-                prepend rel material:binding = </Instances/mesh_78/VisualMaterials/M_subwheel>
-            }
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
         }
 
         def Scope "VisualMaterials"
         {
-            def Material "M_components_omniwheel_10_black_003" (
+            def Material "mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_metal_aluminum" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/M_components_omniwheel_10_black_003>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
             )
             {
             }
+        }
+    }
 
-            def Material "M_components_omniwheel_10_silver_003" (
+    def Xform "left_gripper_flange_link_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_flange_link_visual>
+    )
+    {
+        over "left_gripper_flange_link_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_flange_link_visual/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_flange_M_end_effectors_galbot_gripper_flange_metal_black_001>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_flange_M_end_effectors_galbot_gripper_flange_metal_black_001" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/M_components_omniwheel_10_silver_003>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
             )
             {
             }
+        }
+    }
 
-            def Material "M_subwheel" (
+    def Xform "left_gripper_base_link_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_base_link_collision_0>
+    )
+    {
+        over "left_gripper_base_link_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_base_link_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_base_link_collision_1>
+    )
+    {
+        over "left_gripper_base_link_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_base_link_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_base_link_collision_2>
+    )
+    {
+        over "left_gripper_base_link_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_base_link_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_base_link_visual_0>
+    )
+    {
+        over "left_gripper_base_link_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_base_link_visual_0/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_base_link_M_end_effectors_galbot_gripper_base_link_metal_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_base_link_M_end_effectors_galbot_gripper_base_link_metal_black" (
                 instanceable = true
-                prepend references = @./materials.usda@</Materials/M_subwheel>
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_base_link_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_base_link_visual_1>
+    )
+    {
+        over "left_gripper_base_link_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_base_link_visual_1/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_base_link_M_end_effectors_galbot_gripper_base_link_plastic_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_base_link_M_end_effectors_galbot_gripper_base_link_plastic_black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_plastic_black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_0>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_1>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_2>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_3" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_3>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_4" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_4>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_4" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_5" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_5>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_5" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_6" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_6>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_6" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_collision_7" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_collision_7>
+    )
+    {
+        over "left_gripper_r_knuckle_link_collision_7" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_visual_0>
+    )
+    {
+        over "left_gripper_r_knuckle_link_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_r_knuckle_link_visual_0/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_light_silver>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_light_silver" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_r_knuckle_link_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_knuckle_link_visual_1>
+    )
+    {
+        over "left_gripper_r_knuckle_link_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_r_knuckle_link_visual_1/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_metal_aluminum_005>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_metal_aluminum_005" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_metal_aluminum_005>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_0>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_1>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_2>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_3" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_3>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_4" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_4>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_4" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_5" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_5>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_5" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_6" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_6>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_6" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_collision_7" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_collision_7>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_collision_7" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_visual_0>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_r_inner_knuckle_link_visual_0/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link2_M_end_effectors_galbot_gripper_link2_light_silver>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link2_M_end_effectors_galbot_gripper_link2_light_silver" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_r_inner_knuckle_link_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_inner_knuckle_link_visual_1>
+    )
+    {
+        over "left_gripper_r_inner_knuckle_link_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_r_inner_knuckle_link_visual_1/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link2_M_end_effectors_galbot_gripper_link2_metal_aluminum>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link2_M_end_effectors_galbot_gripper_link2_metal_aluminum" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_metal_aluminum_005>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_r_finger_link_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_finger_link_collision_0>
+    )
+    {
+        over "left_gripper_r_finger_link_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_finger_link_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_finger_link_collision_1>
+    )
+    {
+        over "left_gripper_r_finger_link_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_finger_link_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_finger_link_collision_2>
+    )
+    {
+        over "left_gripper_r_finger_link_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_r_finger_link_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_finger_link_visual_0>
+    )
+    {
+        over "left_gripper_r_finger_link_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_r_finger_link_visual_0/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_right_M_end_effectors_galbot_gripper_link3_metal_aluminum_001>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_right_M_end_effectors_galbot_gripper_link3_metal_aluminum_001" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_metal_aluminum_005>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_r_finger_link_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_finger_link_visual_1>
+    )
+    {
+        over "left_gripper_r_finger_link_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_r_finger_link_visual_1/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_right_M_end_effectors_galbot_gripper_link3_light_silver_001>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_right_M_end_effectors_galbot_gripper_link3_light_silver_001" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_r_finger_link_visual_2" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_r_finger_link_visual_2>
+    )
+    {
+        over "left_gripper_r_finger_link_visual_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_r_finger_link_visual_2/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_right_M_end_effectors_galbot_gripper_link3_plastic_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_right_M_end_effectors_galbot_gripper_link3_plastic_black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_plastic_black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_l_finger_link_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_l_finger_link_collision_0>
+    )
+    {
+        over "left_gripper_l_finger_link_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_l_finger_link_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_l_finger_link_collision_1>
+    )
+    {
+        over "left_gripper_l_finger_link_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_l_finger_link_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_l_finger_link_collision_2>
+    )
+    {
+        over "left_gripper_l_finger_link_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_gripper_l_finger_link_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_l_finger_link_visual_0>
+    )
+    {
+        over "left_gripper_l_finger_link_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_l_finger_link_visual_0/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_metal_aluminum_001>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_metal_aluminum_001" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link1_M_end_effectors_galbot_gripper_link1_metal_aluminum_005>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_l_finger_link_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_l_finger_link_visual_1>
+    )
+    {
+        over "left_gripper_l_finger_link_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_l_finger_link_visual_1/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_light_silver_001>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_light_silver_001" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_gripper_l_finger_link_visual_2" (
+        prepend references = @./geometries.usd@</Geometries/left_gripper_l_finger_link_visual_2>
+    )
+    {
+        over "left_gripper_l_finger_link_visual_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_gripper_l_finger_link_visual_2/VisualMaterials/mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_plastic_black>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_plastic_black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_plastic_black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_arm_wrist_camera_stand_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_wrist_camera_stand_visual>
+    )
+    {
+        over "left_arm_wrist_camera_stand_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_arm_wrist_camera_stand_visual/VisualMaterials/mtl_meshes_meshes_visual_left_arm_d405_stand_left_M_arm_d405_stand>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_left_arm_d405_stand_left_M_arm_d405_stand" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_arm_wrist_camera_stand_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/left_arm_wrist_camera_stand_visual>
+    )
+    {
+        over "left_arm_wrist_camera_stand_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_arm_wrist_camera_stand_visual_1/VisualMaterials/mtl_meshes_meshes_visual_right_arm_d405_stand_right_M_arm_d405_stand>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_d405_stand_right_M_arm_d405_stand" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "left_wrist_camera_link_collision" (
+        prepend references = @./geometries.usd@</Geometries/left_wrist_camera_link_collision>
+    )
+    {
+        over "left_wrist_camera_link_collision" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "left_wrist_camera_link_visual" (
+        prepend references = @./geometries.usd@</Geometries/left_wrist_camera_link_visual>
+    )
+    {
+        over "left_wrist_camera_link_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/left_wrist_camera_link_visual/VisualMaterials/mtl_meshes_meshes_visual_sensors_realsense_d405_M_sensors_realsense_d405>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_sensors_realsense_d405_M_sensors_realsense_d405" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_sensors_realsense_d405_M_sensors_realsense_d405>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link1_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link1_collision_0>
+    )
+    {
+        over "right_arm_link1_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link1_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link1_collision_1>
+    )
+    {
+        over "right_arm_link1_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link1_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link1_collision_2>
+    )
+    {
+        over "right_arm_link1_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link1_collision_3" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link1_collision_3>
+    )
+    {
+        over "right_arm_link1_collision_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link1_visual" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link1_visual>
+    )
+    {
+        over "right_arm_link1_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link1_visual/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link1_right_M_arm_link1>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link1_right_M_arm_link1" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_leg_leg1_M_leg_leg1_metal_black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link2_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link2_collision_0>
+    )
+    {
+        over "right_arm_link2_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link2_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link2_collision_1>
+    )
+    {
+        over "right_arm_link2_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link2_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link2_collision_2>
+    )
+    {
+        over "right_arm_link2_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link2_visual" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link2_visual>
+    )
+    {
+        over "right_arm_link2_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link2_visual/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link2_right_M_arm_link2_right_glacier_white_001>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link2_right_M_arm_link2_right_glacier_white_001" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link3_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link3_collision_0>
+    )
+    {
+        over "right_arm_link3_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link3_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link3_collision_1>
+    )
+    {
+        over "right_arm_link3_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link3_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link3_collision_2>
+    )
+    {
+        over "right_arm_link3_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link3_visual" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link3_visual>
+    )
+    {
+        over "right_arm_link3_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link3_visual/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link3_right_M_arm_link3_metal_aluminum>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link3_right_M_arm_link3_metal_aluminum" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link4_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link4_collision_0>
+    )
+    {
+        over "right_arm_link4_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link4_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link4_collision_1>
+    )
+    {
+        over "right_arm_link4_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link4_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link4_visual_0>
+    )
+    {
+        over "right_arm_link4_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link4_visual_0/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link4_right_M_arm_link4_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link4_right_M_arm_link4_glacier_white" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link4_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link4_visual_1>
+    )
+    {
+        over "right_arm_link4_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link4_visual_1/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link4_right_M_arm_link4_metal_aluminum>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link4_right_M_arm_link4_metal_aluminum" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link6_collision" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link6_collision>
+    )
+    {
+        over "right_arm_link6_collision" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link6_visual" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link6_visual>
+    )
+    {
+        over "right_arm_link6_visual" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link6_visual/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link6_right_M_arm_link6_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link6_right_M_arm_link6_glacier_white" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link7_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link7_collision_0>
+    )
+    {
+        over "right_arm_link7_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link7_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link7_collision_1>
+    )
+    {
+        over "right_arm_link7_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link7_collision_2" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link7_collision_2>
+    )
+    {
+        over "right_arm_link7_collision_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link7_collision_3" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link7_collision_3>
+    )
+    {
+        over "right_arm_link7_collision_3" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "right_arm_link7_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link7_visual_0>
+    )
+    {
+        over "right_arm_link7_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link7_visual_0/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link7_right_M_arm_link7_light_silver>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link7_right_M_arm_link7_light_silver" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link7_left_M_arm_link7_light_silver>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link7_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link7_visual_1>
+    )
+    {
+        over "right_arm_link7_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link7_visual_1/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link7_right_M_arm_link7_glacier_white>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link7_right_M_arm_link7_glacier_white" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_head_head_link2_M_head_link2_glacier_white>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "right_arm_link7_visual_2" (
+        prepend references = @./geometries.usd@</Geometries/right_arm_link7_visual_2>
+    )
+    {
+        over "right_arm_link7_visual_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/right_arm_link7_visual_2/VisualMaterials/mtl_meshes_meshes_visual_right_arm_link7_right_M_arm_link7_metal_aluminum>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_right_arm_link7_right_M_arm_link7_metal_aluminum" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_left_arm_link3_left_M_arm_link3_metal_aluminum>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "wheel_1_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/wheel_1_visual_0>
+    )
+    {
+        over "wheel_1_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/wheel_1_visual_0/VisualMaterials/mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_components_omniwheel_10_M_subwheel>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "wheel_1_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/wheel_1_visual_1>
+    )
+    {
+        over "wheel_1_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/wheel_1_visual_1/VisualMaterials/mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_silver_003>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "wheel_1_visual_2" (
+        prepend references = @./geometries.usd@</Geometries/wheel_1_visual_2>
+    )
+    {
+        over "wheel_1_visual_2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/wheel_1_visual_2/VisualMaterials/mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "chassis_lidar_collision_0" (
+        prepend references = @./geometries.usd@</Geometries/chassis_lidar_collision_0>
+    )
+    {
+        over "chassis_lidar_collision_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "chassis_lidar_collision_1" (
+        prepend references = @./geometries.usd@</Geometries/chassis_lidar_collision_1>
+    )
+    {
+        over "chassis_lidar_collision_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            int mjc:group = 3
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            float physics:density = 1000
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "chassis_lidar_visual_0" (
+        prepend references = @./geometries.usd@</Geometries/chassis_lidar_visual_0>
+    )
+    {
+        over "chassis_lidar_visual_0" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/chassis_lidar_visual_0/VisualMaterials/mtl_meshes_meshes_visual_sensors_mid360_mid360_M_mid360_tube>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_sensors_mid360_mid360_M_mid360_tube" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_sensors_mid360_mid360_M_mid360_tube>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "chassis_lidar_visual_1" (
+        prepend references = @./geometries.usd@</Geometries/chassis_lidar_visual_1>
+    )
+    {
+        over "chassis_lidar_visual_1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/chassis_lidar_visual_1/VisualMaterials/mtl_meshes_meshes_visual_sensors_mid360_mid360_M_sensors_mid360_blue>
+            int mjc:group = 2
+            float newton:contactGap = 0 (
+                limits = {
+                    dictionary hard = {
+                        double minimum = 0
+                    }
+                }
+            )
+            token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 0
+            float physics:density = 1000
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "mtl_meshes_meshes_visual_sensors_mid360_mid360_M_sensors_mid360_blue" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/mtl_meshes_meshes_visual_sensors_mid360_mid360_M_sensors_mid360_blue>
             )
             {
             }

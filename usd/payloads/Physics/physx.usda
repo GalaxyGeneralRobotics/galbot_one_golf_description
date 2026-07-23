@@ -1,32 +1,10 @@
 #usda 1.0
 (
     customLayerData = {
-        dictionary cameraSettings = {
-            dictionary Front = {
-                double3 position = (5, 0, 0)
-                double radius = 5
-            }
-            dictionary Perspective = {
-                double3 position = (1.0453179238059274, 1.0167778433570756, 1.4489239725993888)
-                double3 target = (-0.1250219965430832, -0.15356207699193503, 0.2785840801843207)
-            }
-            dictionary Right = {
-                double3 position = (0, -5, 0)
-                double radius = 5
-            }
-            dictionary Top = {
-                double3 position = (0, 0, 5)
-                double radius = 5
-            }
-            string boundCamera = "/OmniverseKit_Persp"
-        }
-        dictionary omni_layer = {
-            string authoring_layer = "./galbot_one_golf.usd"
-        }
-        dictionary renderSettings = {
-        }
+        string creator = "MuJoCo USD Converter v0.2.0"
     }
     defaultPrim = "galbot_one_golf"
+    kilogramsPerUnit = 1
     metersPerUnit = 1
     subLayers = [
         @./physics.usda@
@@ -34,595 +12,1015 @@
     upAxis = "Z"
 )
 
-def "galbot_one_golf"
+over "galbot_one_golf"
 {
-    over "base_footprint" (
-        prepend apiSchemas = ["PhysxArticulationAPI"]
-    )
+    over "Geometry"
     {
-        bool physxArticulation:enabledSelfCollisions = 0
-        int physxArticulation:solverVelocityIterationCount = 1
-    }
-
-    over "joints"
-    {
-        over "leg_joint1" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 57.295776
-        }
-
-        over "leg_joint2" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 57.295776
-        }
-
-        over "leg_joint3" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 57.295776
-        }
-
-        over "leg_joint4" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 57.295776
-        }
-
-        over "leg_joint5" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 57.295776
-        }
-
-        over "head_joint1" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "head_joint2" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_arm_joint1" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_arm_joint2" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_arm_joint3" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_arm_joint4" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_arm_joint5" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_arm_joint6" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_arm_joint7" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "left_gripper_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 28.647888
-        }
-
-        over "left_gripper_l_inner_knuckle_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = -1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/left_gripper_joint>
-        }
-
-        over "left_gripper_l_finger_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = 1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/left_gripper_joint>
-        }
-
-        over "left_gripper_l_knuckle_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = -1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/left_gripper_joint>
-        }
-
-        over "left_gripper_r_inner_knuckle_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = 1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/left_gripper_joint>
-        }
-
-        over "left_gripper_r_finger_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = -1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/left_gripper_joint>
-        }
-
-        over "right_arm_joint1" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "right_arm_joint2" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "right_arm_joint3" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "right_arm_joint4" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "right_arm_joint5" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "right_arm_joint6" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "right_arm_joint7" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 85.943665
-        }
-
-        over "right_gripper_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = 28.647888
-        }
-
-        over "right_gripper_l_inner_knuckle_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = -1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/right_gripper_joint>
-        }
-
-        over "right_gripper_l_finger_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = 1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/right_gripper_joint>
-        }
-
-        over "right_gripper_l_knuckle_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = -1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/right_gripper_joint>
-        }
-
-        over "right_gripper_r_inner_knuckle_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = 1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/right_gripper_joint>
-        }
-
-        over "right_gripper_r_finger_joint" (
-            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotZ"]
-        )
-        {
-            float physxMimicJoint:rotZ:dampingRatio = 0
-            float physxMimicJoint:rotZ:gearing = -1
-            float physxMimicJoint:rotZ:naturalFrequency = 0
-            float physxMimicJoint:rotZ:offset = 0
-            rel physxMimicJoint:rotZ:referenceJoint = </galbot_one_golf/joints/right_gripper_joint>
-        }
-
-        over "wheel1_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_0_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_1_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_2_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_3_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_4_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_5_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_6_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_7_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_8_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_1_passive_9_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel2_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_0_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_1_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_2_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_3_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_4_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_5_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_6_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_7_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_8_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_2_passive_9_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel3_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_0_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_1_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_2_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_3_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_4_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_5_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_6_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_7_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_8_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_3_passive_9_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel4_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_0_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_1_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_2_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_3_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_4_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_5_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_6_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_7_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_8_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
-        }
-
-        over "wheel_4_passive_9_joint" (
-            prepend apiSchemas = ["PhysxJointAPI"]
-        )
-        {
-            float physxJoint:maxJointVelocity = inf
+        over "base_footprint" (
+            delete apiSchemas = ["PhysicsRigidBodyAPI"]
+        )
+        {
+            over "base_link" (
+                delete apiSchemas = ["PhysicsRigidBodyAPI"]
+            )
+            {
+                over "omni_chassis_base_link"
+                {
+                    over "omni_chassis_leg_mount_link" (
+                        delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                    )
+                    {
+                        over "leg_base_link"
+                        {
+                            over "leg_link1"
+                            {
+                                over "leg_link2"
+                                {
+                                    over "leg_link3"
+                                    {
+                                        over "leg_link4"
+                                        {
+                                            over "leg_link5"
+                                            {
+                                                over "leg_end_effector_mount_link" (
+                                                    delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                )
+                                                {
+                                                    over "torso_base_link"
+                                                    {
+                                                        over "torso_head_mount_link" (
+                                                            delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            over "head_base_link"
+                                                            {
+                                                                over "head_link1"
+                                                                {
+                                                                    over "head_link2"
+                                                                    {
+                                                                        over "head_joint2" (
+                                                                            prepend apiSchemas = ["PhysxJointAPI"]
+                                                                        )
+                                                                        {
+                                                                            float physxJoint:armature = 0.1
+                                                                            float physxJoint:jointFriction = 0.5
+                                                                        }
+
+                                                                        over "head_end_effector_mount_link" (
+                                                                            delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                                        )
+                                                                        {
+                                                                            over "PhysicsFixedJoint" (
+                                                                                active = false
+                                                                            )
+                                                                            {
+                                                                            }
+                                                                        }
+                                                                    }
+
+                                                                    over "head_joint1" (
+                                                                        prepend apiSchemas = ["PhysxJointAPI"]
+                                                                    )
+                                                                    {
+                                                                        float physxJoint:armature = 0.1
+                                                                        float physxJoint:jointFriction = 0.5
+                                                                    }
+                                                                }
+
+                                                                over "PhysicsFixedJoint"
+                                                                {
+                                                                    rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link>
+                                                                    point3f physics:localPos0 = (-2.0679515e-25, 0.37711, 2.7755576e-17)
+                                                                    quatf physics:localRot0 = (0.5, -0.5, -0.5, -0.5)
+                                                                }
+                                                            }
+
+                                                            over "PhysicsFixedJoint" (
+                                                                active = false
+                                                            )
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "torso_left_arm_mount_link" (
+                                                            delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            over "left_arm_base_link"
+                                                            {
+                                                                over "left_arm_link1"
+                                                                {
+                                                                    over "left_arm_link2"
+                                                                    {
+                                                                        over "left_arm_link3"
+                                                                        {
+                                                                            over "left_arm_link4"
+                                                                            {
+                                                                                over "left_arm_link5"
+                                                                                {
+                                                                                    over "left_arm_link6"
+                                                                                    {
+                                                                                        over "left_arm_link7"
+                                                                                        {
+                                                                                            over "left_arm_end_effector_mount_link"
+                                                                                            {
+                                                                                                over "left_gripper_flange_link"
+                                                                                                {
+                                                                                                    over "left_gripper_base_link"
+                                                                                                    {
+                                                                                                        over "left_gripper_r_knuckle_link"
+                                                                                                        {
+                                                                                                            over "left_gripper_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                                float physxJoint:armature = 0.1
+                                                                                                                float physxJoint:jointFriction = 0.5
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "left_gripper_r_inner_knuckle_link"
+                                                                                                        {
+                                                                                                            over "left_gripper_r_finger_link"
+                                                                                                            {
+                                                                                                                over "left_gripper_r_finger_joint" (
+                                                                                                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                }
+                                                                                                            }
+
+                                                                                                            over "left_gripper_r_inner_knuckle_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "left_gripper_l_knuckle_link"
+                                                                                                        {
+                                                                                                            over "left_gripper_l_knuckle_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "left_gripper_l_inner_knuckle_link"
+                                                                                                        {
+                                                                                                            over "left_gripper_l_finger_link"
+                                                                                                            {
+                                                                                                                over "left_gripper_l_finger_joint" (
+                                                                                                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                }
+                                                                                                            }
+
+                                                                                                            over "left_gripper_l_inner_knuckle_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "left_gripper_tcp_link" (
+                                                                                                            delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                                                                        )
+                                                                                                        {
+                                                                                                            over "PhysicsFixedJoint" (
+                                                                                                                active = false
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+
+                                                                                            over "left_arm_joint7" (
+                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                            )
+                                                                                            {
+                                                                                                float physxJoint:armature = 0.1
+                                                                                                float physxJoint:jointFriction = 0.5
+                                                                                            }
+
+                                                                                            over "left_arm_wrist_camera_stand"
+                                                                                            {
+                                                                                                over "left_wrist_camera_link" (
+                                                                                                    delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                                                                )
+                                                                                                {
+                                                                                                    over "PhysicsFixedJoint" (
+                                                                                                        active = false
+                                                                                                    )
+                                                                                                    {
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+
+                                                                                        over "left_arm_joint6" (
+                                                                                            prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            float physxJoint:armature = 0.1
+                                                                                            float physxJoint:jointFriction = 0.5
+                                                                                        }
+                                                                                    }
+
+                                                                                    over "left_arm_joint5" (
+                                                                                        prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                    )
+                                                                                    {
+                                                                                        float physxJoint:armature = 0.1
+                                                                                        float physxJoint:jointFriction = 0.5
+                                                                                    }
+                                                                                }
+
+                                                                                over "left_arm_joint4" (
+                                                                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                )
+                                                                                {
+                                                                                    float physxJoint:armature = 0.1
+                                                                                    float physxJoint:jointFriction = 0.5
+                                                                                }
+                                                                            }
+
+                                                                            over "left_arm_joint3" (
+                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                            )
+                                                                            {
+                                                                                float physxJoint:armature = 0.1
+                                                                                float physxJoint:jointFriction = 0.5
+                                                                            }
+                                                                        }
+
+                                                                        over "left_arm_joint2" (
+                                                                            prepend apiSchemas = ["PhysxJointAPI"]
+                                                                        )
+                                                                        {
+                                                                            float physxJoint:armature = 0.1
+                                                                            float physxJoint:jointFriction = 0.5
+                                                                        }
+                                                                    }
+
+                                                                    over "left_arm_joint1" (
+                                                                        prepend apiSchemas = ["PhysxJointAPI"]
+                                                                    )
+                                                                    {
+                                                                        float physxJoint:armature = 0.1
+                                                                        float physxJoint:jointFriction = 0.5
+                                                                    }
+                                                                }
+
+                                                                over "PhysicsFixedJoint"
+                                                                {
+                                                                    rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link>
+                                                                    point3f physics:localPos0 = (0.20843, 0.172, 1.3877788e-17)
+                                                                    quatf physics:localRot0 = (0.7071068, -8.944124e-21, 0.7071067, 1.9805124e-20)
+                                                                }
+                                                            }
+
+                                                            over "PhysicsFixedJoint" (
+                                                                active = false
+                                                            )
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "torso_right_arm_mount_link" (
+                                                            delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            over "right_arm_base_link"
+                                                            {
+                                                                over "right_arm_link1"
+                                                                {
+                                                                    over "right_arm_link2"
+                                                                    {
+                                                                        over "right_arm_link3"
+                                                                        {
+                                                                            over "right_arm_link4"
+                                                                            {
+                                                                                over "right_arm_link5"
+                                                                                {
+                                                                                    over "right_arm_link6"
+                                                                                    {
+                                                                                        over "right_arm_link7"
+                                                                                        {
+                                                                                            over "right_arm_end_effector_mount_link"
+                                                                                            {
+                                                                                                over "right_gripper_flange_link"
+                                                                                                {
+                                                                                                    over "right_gripper_base_link"
+                                                                                                    {
+                                                                                                        over "right_gripper_r_knuckle_link"
+                                                                                                        {
+                                                                                                            over "right_gripper_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                                float physxJoint:armature = 0.1
+                                                                                                                float physxJoint:jointFriction = 0.5
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "right_gripper_r_inner_knuckle_link"
+                                                                                                        {
+                                                                                                            over "right_gripper_r_finger_link"
+                                                                                                            {
+                                                                                                                over "right_gripper_r_finger_joint" (
+                                                                                                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                }
+                                                                                                            }
+
+                                                                                                            over "right_gripper_r_inner_knuckle_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "right_gripper_l_knuckle_link"
+                                                                                                        {
+                                                                                                            over "right_gripper_l_knuckle_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "right_gripper_l_inner_knuckle_link"
+                                                                                                        {
+                                                                                                            over "right_gripper_l_finger_link"
+                                                                                                            {
+                                                                                                                over "right_gripper_l_finger_joint" (
+                                                                                                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                }
+                                                                                                            }
+
+                                                                                                            over "right_gripper_l_inner_knuckle_joint" (
+                                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+
+                                                                                                        over "right_gripper_tcp_link" (
+                                                                                                            delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                                                                        )
+                                                                                                        {
+                                                                                                            over "PhysicsFixedJoint" (
+                                                                                                                active = false
+                                                                                                            )
+                                                                                                            {
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+
+                                                                                            over "right_arm_joint7" (
+                                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                            )
+                                                                                            {
+                                                                                                float physxJoint:armature = 0.1
+                                                                                                float physxJoint:jointFriction = 0.5
+                                                                                            }
+
+                                                                                            over "right_arm_wrist_camera_stand"
+                                                                                            {
+                                                                                                over "right_wrist_camera_link" (
+                                                                                                    delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                                                                )
+                                                                                                {
+                                                                                                    over "PhysicsFixedJoint" (
+                                                                                                        active = false
+                                                                                                    )
+                                                                                                    {
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+
+                                                                                        over "right_arm_joint6" (
+                                                                                            prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            float physxJoint:armature = 0.1
+                                                                                            float physxJoint:jointFriction = 0.5
+                                                                                        }
+                                                                                    }
+
+                                                                                    over "right_arm_joint5" (
+                                                                                        prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                    )
+                                                                                    {
+                                                                                        float physxJoint:armature = 0.1
+                                                                                        float physxJoint:jointFriction = 0.5
+                                                                                    }
+                                                                                }
+
+                                                                                over "right_arm_joint4" (
+                                                                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                                                                )
+                                                                                {
+                                                                                    float physxJoint:armature = 0.1
+                                                                                    float physxJoint:jointFriction = 0.5
+                                                                                }
+                                                                            }
+
+                                                                            over "right_arm_joint3" (
+                                                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                                                            )
+                                                                            {
+                                                                                float physxJoint:armature = 0.1
+                                                                                float physxJoint:jointFriction = 0.5
+                                                                            }
+                                                                        }
+
+                                                                        over "right_arm_joint2" (
+                                                                            prepend apiSchemas = ["PhysxJointAPI"]
+                                                                        )
+                                                                        {
+                                                                            float physxJoint:armature = 0.1
+                                                                            float physxJoint:jointFriction = 0.5
+                                                                        }
+                                                                    }
+
+                                                                    over "right_arm_joint1" (
+                                                                        prepend apiSchemas = ["PhysxJointAPI"]
+                                                                    )
+                                                                    {
+                                                                        float physxJoint:armature = 0.1
+                                                                        float physxJoint:jointFriction = 0.5
+                                                                    }
+                                                                }
+
+                                                                over "PhysicsFixedJoint"
+                                                                {
+                                                                    rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5/leg_end_effector_mount_link/torso_base_link>
+                                                                    point3f physics:localPos0 = (-0.20843, 0.172, 0)
+                                                                    quatf physics:localRot0 = (-1.6081226e-16, -0.70710677, -4.5989177e-17, 0.70710677)
+                                                                }
+                                                            }
+
+                                                            over "PhysicsFixedJoint" (
+                                                                active = false
+                                                            )
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "PhysicsFixedJoint"
+                                                        {
+                                                            rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link/omni_chassis_leg_mount_link/leg_base_link/leg_link1/leg_link2/leg_link3/leg_link4/leg_link5>
+                                                            point3f physics:localPos0 = (6.2038546e-25, 0, 2.7755576e-17)
+                                                            quatf physics:localRot0 = (1, 0, 0, 0)
+                                                        }
+                                                    }
+
+                                                    over "PhysicsFixedJoint" (
+                                                        active = false
+                                                    )
+                                                    {
+                                                    }
+                                                }
+
+                                                over "leg_joint5" (
+                                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                                )
+                                                {
+                                                    float physxJoint:armature = 0.1
+                                                    float physxJoint:jointFriction = 0.5
+                                                }
+                                            }
+
+                                            over "leg_joint4" (
+                                                prepend apiSchemas = ["PhysxJointAPI"]
+                                            )
+                                            {
+                                                float physxJoint:armature = 0.1
+                                                float physxJoint:jointFriction = 0.5
+                                            }
+                                        }
+
+                                        over "leg_joint3" (
+                                            prepend apiSchemas = ["PhysxJointAPI"]
+                                        )
+                                        {
+                                            float physxJoint:armature = 0.1
+                                            float physxJoint:jointFriction = 0.5
+                                        }
+                                    }
+
+                                    over "leg_joint2" (
+                                        prepend apiSchemas = ["PhysxJointAPI"]
+                                    )
+                                    {
+                                        float physxJoint:armature = 0.1
+                                        float physxJoint:jointFriction = 0.5
+                                    }
+                                }
+
+                                over "leg_joint1" (
+                                    prepend apiSchemas = ["PhysxJointAPI"]
+                                )
+                                {
+                                    float physxJoint:armature = 0.1
+                                    float physxJoint:jointFriction = 0.5
+                                }
+                            }
+
+                            over "PhysicsFixedJoint"
+                            {
+                                rel physics:body0 = </galbot_one_golf/Geometry/base_footprint/base_link/omni_chassis_base_link>
+                                point3f physics:localPos0 = (0.134, 0, 0.1325)
+                                quatf physics:localRot0 = (1, 0, 0, 0)
+                            }
+                        }
+
+                        over "PhysicsFixedJoint" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "wheel_1"
+                    {
+                        over "wheel_1_passive_0"
+                        {
+                            over "wheel_1_passive_0_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_1"
+                        {
+                            over "wheel_1_passive_1_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_2"
+                        {
+                            over "wheel_1_passive_2_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_3"
+                        {
+                            over "wheel_1_passive_3_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_4"
+                        {
+                            over "wheel_1_passive_4_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_5"
+                        {
+                            over "wheel_1_passive_5_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_6"
+                        {
+                            over "wheel_1_passive_6_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_7"
+                        {
+                            over "wheel_1_passive_7_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_8"
+                        {
+                            over "wheel_1_passive_8_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_1_passive_9"
+                        {
+                            over "wheel_1_passive_9_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel1_joint" (
+                            prepend apiSchemas = ["PhysxJointAPI"]
+                        )
+                        {
+                            float physxJoint:armature = 0.01
+                            float physxJoint:jointFriction = 0.02
+                        }
+                    }
+
+                    over "wheel_2"
+                    {
+                        over "wheel_2_passive_0"
+                        {
+                            over "wheel_2_passive_0_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_1"
+                        {
+                            over "wheel_2_passive_1_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_2"
+                        {
+                            over "wheel_2_passive_2_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_3"
+                        {
+                            over "wheel_2_passive_3_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_4"
+                        {
+                            over "wheel_2_passive_4_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_5"
+                        {
+                            over "wheel_2_passive_5_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_6"
+                        {
+                            over "wheel_2_passive_6_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_7"
+                        {
+                            over "wheel_2_passive_7_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_8"
+                        {
+                            over "wheel_2_passive_8_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_2_passive_9"
+                        {
+                            over "wheel_2_passive_9_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel2_joint" (
+                            prepend apiSchemas = ["PhysxJointAPI"]
+                        )
+                        {
+                            float physxJoint:armature = 0.01
+                            float physxJoint:jointFriction = 0.02
+                        }
+                    }
+
+                    over "wheel_3"
+                    {
+                        over "wheel_3_passive_0"
+                        {
+                            over "wheel_3_passive_0_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_1"
+                        {
+                            over "wheel_3_passive_1_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_2"
+                        {
+                            over "wheel_3_passive_2_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_3"
+                        {
+                            over "wheel_3_passive_3_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_4"
+                        {
+                            over "wheel_3_passive_4_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_5"
+                        {
+                            over "wheel_3_passive_5_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_6"
+                        {
+                            over "wheel_3_passive_6_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_7"
+                        {
+                            over "wheel_3_passive_7_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_8"
+                        {
+                            over "wheel_3_passive_8_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_3_passive_9"
+                        {
+                            over "wheel_3_passive_9_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel3_joint" (
+                            prepend apiSchemas = ["PhysxJointAPI"]
+                        )
+                        {
+                            float physxJoint:armature = 0.01
+                            float physxJoint:jointFriction = 0.02
+                        }
+                    }
+
+                    over "wheel_4"
+                    {
+                        over "wheel_4_passive_0"
+                        {
+                            over "wheel_4_passive_0_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_1"
+                        {
+                            over "wheel_4_passive_1_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_2"
+                        {
+                            over "wheel_4_passive_2_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_3"
+                        {
+                            over "wheel_4_passive_3_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_4"
+                        {
+                            over "wheel_4_passive_4_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_5"
+                        {
+                            over "wheel_4_passive_5_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_6"
+                        {
+                            over "wheel_4_passive_6_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_7"
+                        {
+                            over "wheel_4_passive_7_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_8"
+                        {
+                            over "wheel_4_passive_8_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel_4_passive_9"
+                        {
+                            over "wheel_4_passive_9_joint" (
+                                prepend apiSchemas = ["PhysxJointAPI"]
+                            )
+                            {
+                                float physxJoint:armature = 0.001
+                            }
+                        }
+
+                        over "wheel4_joint" (
+                            prepend apiSchemas = ["PhysxJointAPI"]
+                        )
+                        {
+                            float physxJoint:armature = 0.01
+                            float physxJoint:jointFriction = 0.02
+                        }
+                    }
+
+                    over "chassis_lidar" (
+                        delete apiSchemas = ["PhysicsRigidBodyAPI"]
+                    )
+                    {
+                        over "PhysicsFixedJoint" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "PhysicsFixedJoint" (
+                        active = false
+                    )
+                    {
+                    }
+                }
+
+                over "PhysicsFixedJoint" (
+                    active = false
+                )
+                {
+                }
+            }
         }
     }
 }
