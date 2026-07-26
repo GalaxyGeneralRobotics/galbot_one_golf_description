@@ -2967,5 +2967,29 @@ over "galbot_one_golf"
             float newton:torsionalFriction = 0.02
             float physics:dynamicFriction = 1.2
         }
+
+        over "G1GripperPadPhysicsMaterial" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "NewtonMaterialAPI"]
+        )
+        {
+            custom float newton:rollingFriction = 0.001
+            custom float newton:torsionalFriction = 0.01
+            float physics:density = 0
+            float physics:dynamicFriction = 1
+            float physics:restitution = 0
+            float physics:staticFriction = 1
+        }
+
+        over "G1GripperShellPhysicsMaterial" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "NewtonMaterialAPI"]
+        )
+        {
+            custom float newton:rollingFriction = 0
+            custom float newton:torsionalFriction = 0
+            float physics:density = 0
+            float physics:dynamicFriction = 0.00002
+            float physics:restitution = 0
+            float physics:staticFriction = 0.00002
+        }
     }
 }

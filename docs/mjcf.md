@@ -15,7 +15,7 @@ as `option` and `contact` are configured through `config/mjcf/appendix.xml`.
 The old `default*.json`, `actuator*.json`, and `metadata*.json` inputs are no
 longer used for the standard generation commands.
 
-## Required Roller Finalization
+## Required Contact Finalization
 
 URDF has no capsule primitive, so the xacro source emits cylinders with the
 same total end-to-end length as the intended roller capsules. After every
@@ -27,12 +27,20 @@ python3 scripts/finalize_mjcf.py mjcf/galbot_one_golf_fixed_base.xml
 python3 scripts/finalize_mjcf.py mjcf/galbot_one_golf_planar_base.xml
 ```
 
-The postprocessor validates the exact 40-roller geometry contract before it
-writes anything. It converts generated cylinders to local-Z MJCF capsules with
+The postprocessor validates the exact 40-roller geometry contract and the
+finger visual-mesh checksum before it writes anything. It converts generated
+cylinders to local-Z MJCF capsules with
 a 25 mm radius and 7.5 mm cylindrical half-length, preserves an 80 mm roller
 center radius, and normalizes rigid-wheel roller orientations. Mobile variants
 retain their passive local-Z hinge joints. There is no sphere or mesh fallback:
 an unexpected count, position, axis, or size is an error.
+
+The same pass replaces each finger's three imported collision meshes with the
+versioned fit in `config/mjcf/gripper_contact.json`: two grasp pads, one tip,
+and eight side-shell boxes. Pad contacts own sliding/torsional/rolling friction;
+the tip and shell retain only a small positive sliding coefficient required by
+MJWarp. The profile records its source mesh SHA-256, so regenerated geometry
+cannot silently drift from the measured contact envelope.
 
 Before committing regenerated assets, prove the operation is idempotent:
 

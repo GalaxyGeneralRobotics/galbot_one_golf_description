@@ -1,0 +1,289 @@
+{
+  "version": 2,
+  "method": "piecewise-pad-with-distal-side-shell-v2",
+  "source": {
+    "revision": "b311f5ca1acf506e9b7026397e2c74fb2db11df6",
+    "mesh": "mjcf/meshes/meshes/visual/end_effectors/galbot_gripper/link3/link3_2.obj",
+    "sha256": "98975c30ca8310e23103d434bd9f0ebac16499e784565fc37dab7b0461d2749e"
+  },
+  "fit": {
+    "contact_face_area_m2": 0.000966345871,
+    "fitted_pad_area_m2": 0.000750169995,
+    "pad_area_coverage": 0.776295545,
+    "contact_depth_m": 0.003,
+    "contact_face_recess_m": 0.0001,
+    "side_shell_half_thickness_m": 0.0005,
+    "side_shell_contact_setback_m": 0.001,
+    "nose_shell_contact_setback_m": 0.002,
+    "side_shell_boundary_length_m": 0.074793285,
+    "side_shell_count": 8,
+    "boxes": [
+      {
+        "name": "pad_proximal_collision",
+        "type": "box",
+        "pos": [
+          0.0185,
+          0.0046,
+          0.0
+        ],
+        "size": [
+          0.0125,
+          0.0015,
+          0.01015
+        ],
+        "friction": [
+          1.0,
+          0.01,
+          0.001
+        ]
+      },
+      {
+        "name": "pad_distal_collision",
+        "type": "box",
+        "pos": [
+          0.0469155,
+          0.0046,
+          0.0
+        ],
+        "size": [
+          0.0159155,
+          0.0015,
+          0.00381185
+        ],
+        "friction": [
+          1.0,
+          0.01,
+          0.001
+        ]
+      },
+      {
+        "name": "tip_collision",
+        "type": "box",
+        "pos": [
+          0.063496,
+          0.0046,
+          0.0
+        ],
+        "size": [
+          0.000665,
+          0.0015,
+          0.00300266
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_00_collision",
+        "type": "box",
+        "pos": [
+          0.046798154,
+          0.0041,
+          0.006393232
+        ],
+        "size": [
+          0.016227599,
+          0.001,
+          0.0005
+        ],
+        "quat": [
+          0.098094301,
+          0.0,
+          -0.995177124,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_01_collision",
+        "type": "box",
+        "pos": [
+          0.046798279,
+          0.0041,
+          -0.006392477
+        ],
+        "size": [
+          0.016227896,
+          0.001,
+          0.0005
+        ],
+        "quat": [
+          0.995174962,
+          0.0,
+          -0.098116234,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_02_collision",
+        "type": "box",
+        "pos": [
+          0.063183799,
+          0.0036,
+          0.002895615
+        ],
+        "size": [
+          0.000779118,
+          0.0005,
+          0.0005
+        ],
+        "quat": [
+          0.270185864,
+          0.0,
+          -0.962808184,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_03_collision",
+        "type": "box",
+        "pos": [
+          0.06318439,
+          0.0036,
+          -0.002894874
+        ],
+        "size": [
+          0.000778331,
+          0.0005,
+          0.0005
+        ],
+        "quat": [
+          0.962949402,
+          0.0,
+          -0.269682126,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_04_collision",
+        "type": "box",
+        "pos": [
+          0.064154351,
+          0.0036,
+          -0.002051162
+        ],
+        "size": [
+          0.000739397,
+          0.0005,
+          0.0005
+        ],
+        "quat": [
+          0.90126652,
+          0.0,
+          -0.433265115,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_05_collision",
+        "type": "box",
+        "pos": [
+          0.064202567,
+          0.0036,
+          0.001964815
+        ],
+        "size": [
+          0.000847835,
+          0.0005,
+          0.0005
+        ],
+        "quat": [
+          0.441804714,
+          0.0,
+          -0.89711125,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_06_collision",
+        "type": "box",
+        "pos": [
+          0.064723977,
+          0.0036,
+          -0.00087583
+        ],
+        "size": [
+          0.000846249,
+          0.0005,
+          0.0005
+        ],
+        "quat": [
+          0.793281909,
+          0.0,
+          -0.608854509,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "side_shell_07_collision",
+        "type": "box",
+        "pos": [
+          0.064767689,
+          0.0036,
+          0.000619141
+        ],
+        "size": [
+          0.000950219,
+          0.0005,
+          0.0005
+        ],
+        "quat": [
+          0.643328591,
+          0.0,
+          -0.76559018,
+          0.0
+        ],
+        "friction": [
+          2e-05,
+          0.0,
+          0.0
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "condim": 6,
+    "priority": 1,
+    "solref": [
+      0.005,
+      1.0
+    ]
+  },
+  "actuator_force_limit_nm": 3.0
+}

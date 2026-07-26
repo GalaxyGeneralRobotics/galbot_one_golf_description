@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import math
 import os
 import re
@@ -18,11 +20,16 @@ ROLLER_RADIUS = 0.025
 ROLLER_CAPSULE_HALF_LENGTH = 0.0075
 ROLLER_URDF_CYLINDER_HALF_LENGTH = ROLLER_RADIUS + ROLLER_CAPSULE_HALF_LENGTH
 ROLLER_COUNT = 40
+GRIPPER_FINGER_COUNT = 4
 
-MOBILE_ROLLER_PATTERN = re.compile(
-    r"wheel_[1-4]_passive_[0-9]_collision"
-)
+PACKAGE_ROOT = Path(__file__).resolve().parents[1]
+GRIPPER_CONTACT_PROFILE_PATH = PACKAGE_ROOT / "config/mjcf/gripper_contact.json"
+
+MOBILE_ROLLER_PATTERN = re.compile(r"wheel_[1-4]_passive_[0-9]_collision")
 RIGID_WHEEL_ROLLER_PATTERN = re.compile(r"wheel_[1-4]_collision_[0-9]")
+GRIPPER_FINGER_BODY_PATTERN = re.compile(
+    r"(?P<robot_side>left|right)_gripper_(?P<finger_side>[lr])_finger_link"
+)
 
 
 def _floats(value: str) -> tuple[float, ...]:
@@ -107,6 +114,141 @@ def _finalize_rigid_wheel_rollers(geoms: list[ET.Element]) -> int:
     return changed
 
 
+def _format_vector(values: list[float]) -> str:
+    return " ".join(str(float(value)) for value in values)
+
+
+def _load_gripper_contact_profile() -> dict:
+    profile = json.loads(GRIPPER_CONTACT_PROFILE_PATH.read_text(encoding="utf-8"))
+    if profile.get("version") != 2:
+        raise ValueError("G1 gripper contact profile must use version 2")
+
+    source = profile.get("source", {})
+    source_mesh = PACKAGE_ROOT / source.get("mesh", "")
+    if not source_mesh.is_file():
+        raise ValueError(f"G1 gripper contact source mesh is missing: {source_mesh}")
+    source_digest = hashlib.sha256(source_mesh.read_bytes()).hexdigest()
+    if source_digest != source.get("sha256"):
+        raise ValueError(
+            "G1 gripper contact profile is stale for its source visual mesh"
+        )
+
+    boxes = profile.get("fit", {}).get("boxes", [])
+    expected_names = {
+        "pad_proximal_collision",
+        "pad_distal_collision",
+        "tip_collision",
+        *(f"side_shell_{index:02d}_collision" for index in range(8)),
+    }
+    if (
+        len(boxes) != len(expected_names)
+        or {box.get("name") for box in boxes} != expected_names
+    ):
+        raise ValueError("G1 gripper contact profile has incomplete fitted boxes")
+    return profile
+
+
+def _fitted_gripper_geom(
+    *, body_name: str, finger_side: str, box: dict, contact: dict
+) -> ET.Element:
+    position = [float(value) for value in box["pos"]]
+    if finger_side == "r":
+        position[1] *= -1.0
+    attributes = {
+        "name": f"{body_name.removesuffix('_link')}_{box['name']}",
+        "type": str(box["type"]),
+        "pos": _format_vector(position),
+        "size": _format_vector(box["size"]),
+        "friction": _format_vector(box["friction"]),
+        "class": "collision",
+        "condim": str(int(contact["condim"])),
+        "priority": str(int(contact["priority"])),
+        "solref": _format_vector(contact["solref"]),
+    }
+    if "quat" in box:
+        attributes["quat"] = _format_vector(box["quat"])
+    return ET.Element("geom", attributes)
+
+
+def _finalize_gripper_contacts(root: ET.Element) -> int:
+    profile = _load_gripper_contact_profile()
+    boxes = profile["fit"]["boxes"]
+    contact = profile["contact"]
+    finger_bodies = [
+        body
+        for body in root.iter("body")
+        if GRIPPER_FINGER_BODY_PATTERN.fullmatch(body.get("name", ""))
+    ]
+    if len(finger_bodies) != GRIPPER_FINGER_COUNT:
+        raise ValueError(
+            f"Expected {GRIPPER_FINGER_COUNT} G1 finger bodies, "
+            f"got {len(finger_bodies)}"
+        )
+
+    changed = 0
+    for body in finger_bodies:
+        body_name = body.get("name", "")
+        match = GRIPPER_FINGER_BODY_PATTERN.fullmatch(body_name)
+        assert match is not None
+        fitted_names = {
+            f"{body_name.removesuffix('_link')}_{box['name']}" for box in boxes
+        }
+        direct_geoms = body.findall("geom")
+        current_fitted = {
+            geom.get("name", "")
+            for geom in direct_geoms
+            if geom.get("name") in fitted_names
+        }
+        if current_fitted == fitted_names:
+            expected_by_name = {
+                expected.get("name", ""): expected
+                for box in boxes
+                for expected in (
+                    _fitted_gripper_geom(
+                        body_name=body_name,
+                        finger_side=match.group("finger_side"),
+                        box=box,
+                        contact=contact,
+                    ),
+                )
+            }
+            for geom in direct_geoms:
+                expected = expected_by_name.get(geom.get("name", ""))
+                if expected is not None and geom.attrib != expected.attrib:
+                    geom.attrib.clear()
+                    geom.attrib.update(expected.attrib)
+                    changed += 1
+            continue
+        if current_fitted:
+            raise ValueError(f"{body_name}: partially finalized gripper contacts")
+
+        generated_meshes = [
+            geom
+            for geom in direct_geoms
+            if re.fullmatch(
+                rf"{re.escape(body_name)}_collision_[0-2]", geom.get("name", "")
+            )
+        ]
+        if len(generated_meshes) != 3:
+            raise ValueError(
+                f"{body_name}: expected three generated finger collision meshes, "
+                f"got {len(generated_meshes)}"
+            )
+        for geom in generated_meshes:
+            body.remove(geom)
+        for box in boxes:
+            body.append(
+                _fitted_gripper_geom(
+                    body_name=body_name,
+                    finger_side=match.group("finger_side"),
+                    box=box,
+                    contact=contact,
+                )
+            )
+        changed += len(generated_meshes) + len(boxes)
+    return changed
+
+
 def finalize_mjcf(path: Path, *, check: bool = False) -> int:
     """Normalize one generated MJCF and return its number of edits.
 
@@ -122,9 +264,7 @@ def finalize_mjcf(path: Path, *, check: bool = False) -> int:
     """
     tree = ET.parse(path)
     root = tree.getroot()
-    parent_by_child = {
-        child: parent for parent in root.iter() for child in parent
-    }
+    parent_by_child = {child: parent for parent in root.iter() for child in parent}
     named_geoms = [geom for geom in root.iter("geom") if geom.get("name")]
     mobile_geoms = [
         geom
@@ -137,9 +277,7 @@ def finalize_mjcf(path: Path, *, check: bool = False) -> int:
         if RIGID_WHEEL_ROLLER_PATTERN.fullmatch(geom.get("name", ""))
     ]
     if bool(mobile_geoms) == bool(rigid_geoms):
-        raise ValueError(
-            f"{path}: expected exactly one G1 roller geometry family"
-        )
+        raise ValueError(f"{path}: expected exactly one G1 roller geometry family")
     geoms = mobile_geoms or rigid_geoms
     if len(geoms) != ROLLER_COUNT:
         raise ValueError(
@@ -150,6 +288,7 @@ def finalize_mjcf(path: Path, *, check: bool = False) -> int:
         changed = _finalize_mobile_rollers(mobile_geoms, parent_by_child)
     else:
         changed = _finalize_rigid_wheel_rollers(rigid_geoms)
+    changed += _finalize_gripper_contacts(root)
 
     if check and changed:
         raise ValueError(f"{path}: requires {changed} MJCF finalization edits")

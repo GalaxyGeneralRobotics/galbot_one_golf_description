@@ -1634,6 +1634,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                                                                                                                 def Xform "left_gripper_r_finger_link_collision_0" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -1650,6 +1651,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "left_gripper_r_finger_link_collision_1" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -1666,6 +1668,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "left_gripper_r_finger_link_collision_2" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -1726,6 +1729,171 @@ def Xform "galbot_one_golf" (
                                                                                                                     quatd xformOp:orient = (1, 0, 0, 0)
                                                                                                                     double3 xformOp:scale = (1, 1, 1)
                                                                                                                     double3 xformOp:translate = (0, 0, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_pad_proximal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0125, 0.0015, 0.01015)
+                                                                                                                    double3 xformOp:translate = (0.0185, -0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_pad_distal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0159155, 0.0015, 0.00381185)
+                                                                                                                    double3 xformOp:translate = (0.0469155, -0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_tip_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.000665, 0.0015, 0.00300266)
+                                                                                                                    double3 xformOp:translate = (0.063496, -0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_00_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.098094301, 0, -0.995177124, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227599, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798154, -0.0041, 0.006393232)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_01_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.995174962, 0, -0.098116234, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227896, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798279, -0.0041, -0.006392477)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_02_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.270185864, 0, -0.962808184, 0)
+                                                                                                                    double3 xformOp:scale = (0.000779118, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.063183799, -0.0036, 0.002895615)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_03_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.962949402, 0, -0.269682126, 0)
+                                                                                                                    double3 xformOp:scale = (0.000778331, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.06318439, -0.0036, -0.002894874)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_04_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.90126652, 0, -0.433265115, 0)
+                                                                                                                    double3 xformOp:scale = (0.000739397, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064154351, -0.0036, -0.002051162)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_05_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.441804714, 0, -0.89711125, 0)
+                                                                                                                    double3 xformOp:scale = (0.000847835, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064202567, -0.0036, 0.001964815)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_06_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.793281909, 0, -0.608854509, 0)
+                                                                                                                    double3 xformOp:scale = (0.000846249, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064723977, -0.0036, -0.00087583)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_r_finger_side_shell_07_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.643328591, 0, -0.76559018, 0)
+                                                                                                                    double3 xformOp:scale = (0.000950219, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064767689, -0.0036, 0.000619141)
                                                                                                                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
                                                                                                                 }
                                                                                                             }
@@ -2080,6 +2248,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                                                                                                                 def Xform "left_gripper_l_finger_link_collision_0" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -2096,6 +2265,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "left_gripper_l_finger_link_collision_1" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -2112,6 +2282,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "left_gripper_l_finger_link_collision_2" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -2172,6 +2343,171 @@ def Xform "galbot_one_golf" (
                                                                                                                     quatd xformOp:orient = (1, 0, 0, 0)
                                                                                                                     double3 xformOp:scale = (1, 1, 1)
                                                                                                                     double3 xformOp:translate = (0, 0, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_pad_proximal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0125, 0.0015, 0.01015)
+                                                                                                                    double3 xformOp:translate = (0.0185, 0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_pad_distal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0159155, 0.0015, 0.00381185)
+                                                                                                                    double3 xformOp:translate = (0.0469155, 0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_tip_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.000665, 0.0015, 0.00300266)
+                                                                                                                    double3 xformOp:translate = (0.063496, 0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_00_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.098094301, 0, -0.995177124, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227599, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798154, 0.0041, 0.006393232)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_01_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.995174962, 0, -0.098116234, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227896, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798279, 0.0041, -0.006392477)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_02_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.270185864, 0, -0.962808184, 0)
+                                                                                                                    double3 xformOp:scale = (0.000779118, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.063183799, 0.0036, 0.002895615)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_03_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.962949402, 0, -0.269682126, 0)
+                                                                                                                    double3 xformOp:scale = (0.000778331, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.06318439, 0.0036, -0.002894874)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_04_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.90126652, 0, -0.433265115, 0)
+                                                                                                                    double3 xformOp:scale = (0.000739397, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064154351, 0.0036, -0.002051162)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_05_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.441804714, 0, -0.89711125, 0)
+                                                                                                                    double3 xformOp:scale = (0.000847835, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064202567, 0.0036, 0.001964815)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_06_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.793281909, 0, -0.608854509, 0)
+                                                                                                                    double3 xformOp:scale = (0.000846249, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064723977, 0.0036, -0.00087583)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "left_gripper_l_finger_side_shell_07_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.643328591, 0, -0.76559018, 0)
+                                                                                                                    double3 xformOp:scale = (0.000950219, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064767689, 0.0036, 0.000619141)
                                                                                                                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
                                                                                                                 }
                                                                                                             }
@@ -3348,6 +3684,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                                                                                                                 def Xform "right_gripper_r_finger_link_collision_0" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -3364,6 +3701,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "right_gripper_r_finger_link_collision_1" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -3380,6 +3718,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "right_gripper_r_finger_link_collision_2" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -3440,6 +3779,171 @@ def Xform "galbot_one_golf" (
                                                                                                                     quatd xformOp:orient = (1, 0, 0, 0)
                                                                                                                     double3 xformOp:scale = (1, 1, 1)
                                                                                                                     double3 xformOp:translate = (0, 0, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_pad_proximal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0125, 0.0015, 0.01015)
+                                                                                                                    double3 xformOp:translate = (0.0185, -0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_pad_distal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0159155, 0.0015, 0.00381185)
+                                                                                                                    double3 xformOp:translate = (0.0469155, -0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_tip_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.000665, 0.0015, 0.00300266)
+                                                                                                                    double3 xformOp:translate = (0.063496, -0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_00_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.098094301, 0, -0.995177124, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227599, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798154, -0.0041, 0.006393232)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_01_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.995174962, 0, -0.098116234, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227896, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798279, -0.0041, -0.006392477)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_02_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.270185864, 0, -0.962808184, 0)
+                                                                                                                    double3 xformOp:scale = (0.000779118, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.063183799, -0.0036, 0.002895615)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_03_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.962949402, 0, -0.269682126, 0)
+                                                                                                                    double3 xformOp:scale = (0.000778331, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.06318439, -0.0036, -0.002894874)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_04_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.90126652, 0, -0.433265115, 0)
+                                                                                                                    double3 xformOp:scale = (0.000739397, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064154351, -0.0036, -0.002051162)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_05_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.441804714, 0, -0.89711125, 0)
+                                                                                                                    double3 xformOp:scale = (0.000847835, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064202567, -0.0036, 0.001964815)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_06_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.793281909, 0, -0.608854509, 0)
+                                                                                                                    double3 xformOp:scale = (0.000846249, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064723977, -0.0036, -0.00087583)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_r_finger_side_shell_07_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.643328591, 0, -0.76559018, 0)
+                                                                                                                    double3 xformOp:scale = (0.000950219, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064767689, -0.0036, 0.000619141)
                                                                                                                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
                                                                                                                 }
                                                                                                             }
@@ -3794,6 +4298,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                                                                                                                 def Xform "right_gripper_l_finger_link_collision_0" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -3810,6 +4315,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "right_gripper_l_finger_link_collision_1" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -3826,6 +4332,7 @@ def Xform "galbot_one_golf" (
                                                                                                                 }
 
                                                                                                                 def Xform "right_gripper_l_finger_link_collision_2" (
+                                                                                                                    active = false
                                                                                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                                                                                     displayName = ""
                                                                                                                     instanceable = true
@@ -3886,6 +4393,171 @@ def Xform "galbot_one_golf" (
                                                                                                                     quatd xformOp:orient = (1, 0, 0, 0)
                                                                                                                     double3 xformOp:scale = (1, 1, 1)
                                                                                                                     double3 xformOp:translate = (0, 0, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_pad_proximal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0125, 0.0015, 0.01015)
+                                                                                                                    double3 xformOp:translate = (0.0185, 0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_pad_distal_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperPadPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.0159155, 0.0015, 0.00381185)
+                                                                                                                    double3 xformOp:translate = (0.0469155, 0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_tip_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (1, 0, 0, 0)
+                                                                                                                    double3 xformOp:scale = (0.000665, 0.0015, 0.00300266)
+                                                                                                                    double3 xformOp:translate = (0.063496, 0.0046, 0)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_00_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.098094301, 0, -0.995177124, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227599, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798154, 0.0041, 0.006393232)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_01_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.995174962, 0, -0.098116234, 0)
+                                                                                                                    double3 xformOp:scale = (0.016227896, 0.001, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.046798279, 0.0041, -0.006392477)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_02_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.270185864, 0, -0.962808184, 0)
+                                                                                                                    double3 xformOp:scale = (0.000779118, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.063183799, 0.0036, 0.002895615)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_03_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.962949402, 0, -0.269682126, 0)
+                                                                                                                    double3 xformOp:scale = (0.000778331, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.06318439, 0.0036, -0.002894874)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_04_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.90126652, 0, -0.433265115, 0)
+                                                                                                                    double3 xformOp:scale = (0.000739397, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064154351, 0.0036, -0.002051162)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_05_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.441804714, 0, -0.89711125, 0)
+                                                                                                                    double3 xformOp:scale = (0.000847835, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064202567, 0.0036, 0.001964815)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_06_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.793281909, 0, -0.608854509, 0)
+                                                                                                                    double3 xformOp:scale = (0.000846249, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064723977, 0.0036, -0.00087583)
+                                                                                                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                                                                                                }
+
+                                                                                                                def Cube "right_gripper_l_finger_side_shell_07_collision" (
+                                                                                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                                                )
+                                                                                                                {
+                                                                                                                    rel material:binding:physics = </galbot_one_golf/Physics/G1GripperShellPhysicsMaterial> (
+                                                                                                                        bindMaterialAs = "weakerThanDescendants"
+                                                                                                                    )
+                                                                                                                    uniform token purpose = "guide"
+                                                                                                                    double size = 2
+                                                                                                                    quatd xformOp:orient = (0.643328591, 0, -0.76559018, 0)
+                                                                                                                    double3 xformOp:scale = (0.000950219, 0.0005, 0.0005)
+                                                                                                                    double3 xformOp:translate = (0.064767689, 0.0036, 0.000619141)
                                                                                                                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
                                                                                                                 }
                                                                                                             }
@@ -5675,6 +6347,14 @@ def Xform "galbot_one_golf" (
         }
 
         def Material "PhysicsMaterial_2"
+        {
+        }
+
+        def Material "G1GripperPadPhysicsMaterial"
+        {
+        }
+
+        def Material "G1GripperShellPhysicsMaterial"
         {
         }
     }
