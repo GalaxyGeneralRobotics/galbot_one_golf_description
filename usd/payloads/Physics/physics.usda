@@ -2972,12 +2972,12 @@ over "galbot_one_golf"
             prepend apiSchemas = ["PhysicsMaterialAPI", "NewtonMaterialAPI"]
         )
         {
-            custom float newton:rollingFriction = 0.001
-            custom float newton:torsionalFriction = 0.01
+            custom float newton:rollingFriction = 0.005
+            custom float newton:torsionalFriction = 0.05
             float physics:density = 0
-            float physics:dynamicFriction = 1
+            float physics:dynamicFriction = 1.5
             float physics:restitution = 0
-            float physics:staticFriction = 1
+            float physics:staticFriction = 1.5
         }
 
         over "G1GripperShellPhysicsMaterial" (

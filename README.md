@@ -77,6 +77,11 @@ MJCF base variants:
 - `mjcf/galbot_one_golf_planar_base.xml`: virtual planar base, with
   `base_x_joint`, `base_y_joint`, and `base_yaw_joint` velocity actuators.
 
+Each finger uses a visual-fitted contact envelope with two inner pads. The pad
+sliding, torsional, and rolling friction coefficients are `(1.5, 0.05, 0.005)`,
+matching RoboCasa Galbot's calibrated gripper contact profile. The same values
+are authored in the solver-common USD physics material.
+
 | MJCF visual model |
 | --- |
 | ![Galbot One Golf MJCF visual model](docs/.images/galbot_one_golf_mjcf.png) |
