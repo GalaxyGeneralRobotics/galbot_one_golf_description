@@ -1,7 +1,7 @@
 {
   "extra_joints": [
     {
-      "body": "base_footprint",
+      "body": "base_link",
       "joints": [
         {
           "name": "base_x_joint",

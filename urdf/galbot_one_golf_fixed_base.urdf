@@ -177,13 +177,13 @@
     </collision>
   </link>
   <!-- Robot Base Link -->
+  <link name="base_link"/>
   <link name="base_footprint"/>
   <joint name="base_footprint_joint" type="fixed">
-    <origin xyz="0 0 0.028166"/>
-    <parent link="base_footprint"/>
-    <child link="base_link"/>
+    <origin xyz="0 0 -0.028166"/>
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
   </joint>
-  <link name="base_link"/>
   <joint name="omni_chassis_joint" type="fixed">
     <parent link="base_link"/>
     <child link="omni_chassis_base_link"/>

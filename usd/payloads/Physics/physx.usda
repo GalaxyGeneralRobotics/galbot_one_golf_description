@@ -36,7 +36,7 @@
 
 def "galbot_one_golf"
 {
-    over "base_footprint" (
+    over "base_link" (
         prepend apiSchemas = ["PhysxArticulationAPI"]
     )
     {
@@ -626,4 +626,3 @@ def "galbot_one_golf"
         }
     }
 }
-
