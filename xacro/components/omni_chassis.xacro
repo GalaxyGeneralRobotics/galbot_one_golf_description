@@ -5,6 +5,9 @@
   <xacro:arg name="enable_passive_wheels" default="false"/>
   <xacro:property name="PI" value="3.1415926535897931"/>
   <xacro:include filename="omniwheel_10.xacro"/>
+  <!-- The measured 30.15 kg chassis module includes four complete wheel assemblies. -->
+  <xacro:property name="omni_chassis_module_mass" value="30.15"/>
+  <xacro:property name="omni_chassis_wheel_count" value="4"/>
 
   <xacro:macro name="GalbotChassisV2" params="enable_wheel_joints:='false' enable_passive_wheels:='false'">
     <!-- Robot Base Link -->
@@ -23,9 +26,10 @@
 
     <link name="omni_chassis_base_link">
       <inertial>
-        <origin xyz="0.02079 0.00615 0.07261"/>
-        <mass value="30.15"/>
-        <inertia ixx="0.3317069394" ixy="3.760583e-05" ixz="3.706221e-05" iyy="0.32081635568" iyz="1.303674e-05" izz="0.55833152838"/>
+        <!-- Motors and chassis brackets stay here; rotating outputs live on the wheel links. -->
+        <origin xyz="0.027340944778854 0.008087869667626 0.072854427768648"/>
+        <mass value="${float(omni_chassis_module_mass) - float(omni_chassis_wheel_count) * float(omniwheel_output_mass)}"/>
+        <inertia ixx="0.09495588499632361" ixy="0.001252298388256994" ixz="0.0001902740573022943" iyy="0.08031837253490508" iyz="0.00005835914793213606" izz="0.1019001895297286"/>
       </inertial>
       <visual>
         <geometry>

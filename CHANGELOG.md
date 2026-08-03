@@ -8,3 +8,6 @@
 - Add an optional USD `ROS=ros2` variant for namespaced base commands,
   whole-body and gripper joint commands, joint-state feedback, and simulation
   clock publishing. The default `ROS=none` variant has no ROS dependency.
+- Correct chassis and omni-wheel mass accounting so the four 1.806 kg rotating
+  wheel outputs remain within the measured 30.15 kg chassis-module total, with
+  each explicit passive roller assigned 0.05 kg.

@@ -23,7 +23,7 @@
     <body name="base_link" childclass="robot" pos="0 0 0.034366">
       <body name="base_footprint" pos="0 0 -0.028166" />
         <body name="omni_chassis_base_link">
-          <inertial pos="0.02079 0.00615 0.07261" mass="30.15" diaginertia="0.3317069394 0.32081635568 0.55833152838" />
+          <inertial pos="0.027340944778854 0.008087869667626 0.072854427768648" mass="22.926" diaginertia="0.09495588499632361 0.08031837253490508 0.1019001895297286" />
           <geom name="omni_chassis_base_link_collision" type="mesh" mesh="omni_chassis_base_link_collision_chassis_collision_01" class="collision" />
           <geom name="omni_chassis_base_link_visual" type="mesh" mesh="omni_chassis_base_link_chassis" material="mtl_meshes_meshes_visual_chassis_chassis_M_chassis" class="visual" />
           <body name="omni_chassis_leg_mount_link" pos="0.134 0 0.1325">
@@ -424,7 +424,7 @@
             </body>
           </body>
           <body name="wheel_1" pos="0.176493 0.176493 0.071834" quat="0.3827 0 0 -0.9239">
-            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
+            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="1.806" diaginertia="0.005201566367065 0.002818241393321 0.002818241393321" />
             <geom name="wheel_1_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_1_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_1_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />
@@ -440,7 +440,7 @@
             <geom type="mesh" class="visual" name="wheel_1_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
           </body>
           <body name="wheel_2" pos="-0.176493 0.176493 0.071834" quat="0.9239 0 0 -0.3827">
-            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
+            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="1.806" diaginertia="0.005201566367065 0.002818241393321 0.002818241393321" />
             <geom name="wheel_2_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_2_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_2_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />
@@ -456,7 +456,7 @@
             <geom type="mesh" class="visual" name="wheel_2_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
           </body>
           <body name="wheel_3" pos="-0.176493 -0.176493 0.071834" quat="0.9239 0 0 0.3827">
-            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
+            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="1.806" diaginertia="0.005201566367065 0.002818241393321 0.002818241393321" />
             <geom name="wheel_3_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_3_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_3_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />
@@ -472,7 +472,7 @@
             <geom type="mesh" class="visual" name="wheel_3_visual_2" mesh="wheel_1_omniwheel_10_2" material="mtl_meshes_meshes_visual_components_omniwheel_10_M_components_omniwheel_10_black_003" />
           </body>
           <body name="wheel_4" pos="0.176493 -0.176493 0.071834" quat="0.3827 0 0 0.9239">
-            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="4.24803000494366" diaginertia="0.012235 0.006629 0.006629" />
+            <inertial pos="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07" mass="1.806" diaginertia="0.005201566367065 0.002818241393321 0.002818241393321" />
             <geom name="wheel_4_collision_0" pos="0 0.025 0.0" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_4_collision_1" pos="0 0.02022542485937369 0.014694631307311828" type="sphere" size="0.08" class="collision" />
             <geom name="wheel_4_collision_2" pos="0 0.007725424859373687 0.02377641290737884" type="sphere" size="0.08" class="collision" />

@@ -42,10 +42,10 @@ over "galbot_one_golf"
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsArticulationRootAPI"]
     )
     {
-        point3f physics:centerOfMass = (0.02643079, 0.0031478503, 0.07559223)
-        float3 physics:diagonalInertia = (0.35954753, 0.33839372, 0.59155643)
-        float physics:mass = 31.73
-        quatf physics:principalAxes = (0.93358207, -0.01696257, -0.015557792, 0.35762396)
+        point3f physics:centerOfMass = (0.034222193, 0.0040757894, 0.07670002)
+        float3 physics:diagonalInertia = (0.12010815, 0.09486162, 0.13627191)
+        float physics:mass = 24.506
+        quatf physics:principalAxes = (0.078462735, 0.9270959, 0.3247462, 0.16993134)
         rel physics:simulationOwner
     }
 
@@ -2368,9 +2368,9 @@ over "galbot_one_golf"
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0.0026089442, -1.3189704e-7, 2.869568e-7)
-        float3 physics:diagonalInertia = (0.012235, 0.006629, 0.006629)
-        float physics:mass = 4.24803
+        point3f physics:centerOfMass = (0.0036077742, -1.823936e-7, 3.9681776e-7)
+        float3 physics:diagonalInertia = (0.0044890662, 0.0022572852, 0.0022572852)
+        float physics:mass = 1.306
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2380,8 +2380,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2391,8 +2391,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2402,8 +2402,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2413,8 +2413,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2424,8 +2424,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2435,8 +2435,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2446,8 +2446,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2457,8 +2457,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2468,8 +2468,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2479,8 +2479,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2489,9 +2489,9 @@ over "galbot_one_golf"
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0.0026089442, -1.3189704e-7, 2.869568e-7)
-        float3 physics:diagonalInertia = (0.012235, 0.006629, 0.006629)
-        float physics:mass = 4.24803
+        point3f physics:centerOfMass = (0.0036077742, -1.823936e-7, 3.9681776e-7)
+        float3 physics:diagonalInertia = (0.0044890662, 0.0022572852, 0.0022572852)
+        float physics:mass = 1.306
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2501,8 +2501,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2512,8 +2512,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2523,8 +2523,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2534,8 +2534,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2545,8 +2545,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2556,8 +2556,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2567,8 +2567,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2578,8 +2578,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2589,8 +2589,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2600,8 +2600,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2610,9 +2610,9 @@ over "galbot_one_golf"
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0.0026089442, -1.3189704e-7, 2.869568e-7)
-        float3 physics:diagonalInertia = (0.012235, 0.006629, 0.006629)
-        float physics:mass = 4.24803
+        point3f physics:centerOfMass = (0.0036077742, -1.823936e-7, 3.9681776e-7)
+        float3 physics:diagonalInertia = (0.0044890662, 0.0022572852, 0.0022572852)
+        float physics:mass = 1.306
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2622,8 +2622,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2633,8 +2633,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2644,8 +2644,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2655,8 +2655,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2666,8 +2666,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2677,8 +2677,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2688,8 +2688,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2699,8 +2699,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2710,8 +2710,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2721,8 +2721,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2731,9 +2731,9 @@ over "galbot_one_golf"
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0.0026089442, -1.3189704e-7, 2.869568e-7)
-        float3 physics:diagonalInertia = (0.012235, 0.006629, 0.006629)
-        float physics:mass = 4.24803
+        point3f physics:centerOfMass = (0.0036077742, -1.823936e-7, 3.9681776e-7)
+        float3 physics:diagonalInertia = (0.0044890662, 0.0022572852, 0.0022572852)
+        float physics:mass = 1.306
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2743,8 +2743,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2754,8 +2754,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2765,8 +2765,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2776,8 +2776,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2787,8 +2787,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2798,8 +2798,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2809,8 +2809,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2820,8 +2820,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2831,8 +2831,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
@@ -2842,8 +2842,8 @@ over "galbot_one_golf"
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
-        float3 physics:diagonalInertia = (0.0001, 0.0001, 0.0001)
-        float physics:mass = 0.1
+        float3 physics:diagonalInertia = (0.00004, 0.00004, 0.00004)
+        float physics:mass = 0.05
         quatf physics:principalAxes = (1, 0, 0, 0)
         rel physics:simulationOwner
     }
