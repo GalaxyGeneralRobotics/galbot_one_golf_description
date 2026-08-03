@@ -40,10 +40,11 @@ def Xform "galbot_one_golf" (
     prepend references = @./payloads/base.usda@
     variants = {
         string Physics = "physx"
+        string ROS = "none"
         string Robot = "none"
         string Sensor = "none"
     }
-    append variantSets = ["Physics", "Sensor", "Robot"]
+    append variantSets = ["Physics", "Sensor", "Robot", "ROS"]
 )
 {
     variantSet "Physics" = {
@@ -83,6 +84,18 @@ def Xform "galbot_one_golf" (
         }
         "robot" (
             prepend payload = @./payloads/Robot/robot.usda@
+        ) {
+
+        }
+    }
+    variantSet "ROS" = {
+        "none" (
+            prepend payload = @./payloads/ROS/none.usda@
+        ) {
+
+        }
+        "ros2" (
+            prepend payload = @./payloads/ROS/ros2.usda@
         ) {
 
         }
@@ -266,4 +279,3 @@ over "OmniverseKit_Top" (
     double3 xformOp:translate = (0, 0, 5)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 }
-

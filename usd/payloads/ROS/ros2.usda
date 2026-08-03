@@ -1,0 +1,319 @@
+#usda 1.0
+(
+    defaultPrim = "galbot_one_golf"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "galbot_one_golf"
+{
+    def OmniGraph "ros2_control"
+    {
+        token evaluationMode = "Automatic"
+        token evaluator:type = "execution"
+        token fabricCacheBacking = "Shared"
+        int2 fileFormatVersion = (1, 9)
+        token pipelineStage = "pipelineStageSimulation"
+
+        def OmniGraphNode "on_playback_tick"
+        {
+            token node:type = "omni.graph.action.OnPlaybackTick"
+            int node:typeVersion = 2
+            custom double outputs:deltaSeconds
+            custom double outputs:frame
+            custom uint outputs:tick (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            custom double outputs:time
+        }
+
+        def OmniGraphNode "read_simulation_time"
+        {
+            custom uint64 inputs:referenceTimeDenominator = 0
+            custom int64 inputs:referenceTimeNumerator = 0
+            custom bool inputs:resetOnStop = false
+            token node:type = "isaacsim.core.nodes.IsaacReadSimulationTime"
+            int node:typeVersion = 1
+            custom double outputs:simulationTime
+        }
+
+        def OmniGraphNode "ros2_subscribe_twist"
+        {
+            custom uint64 inputs:context = 0
+            custom uint inputs:execIn (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            uint inputs:execIn.connect = </galbot_one_golf/ros2_control/on_playback_tick.outputs:tick>
+            custom string inputs:nodeNamespace = "galbot_one_golf"
+            custom string inputs:qosProfile = ""
+            custom uint64 inputs:queueSize = 10
+            custom string inputs:topicName = "cmd_vel"
+            token node:type = "isaacsim.ros2.bridge.ROS2SubscribeTwist"
+            int node:typeVersion = 1
+            custom vector3d outputs:angularVelocity = (0, 0, 0)
+            custom uint outputs:execOut (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            custom vector3d outputs:linearVelocity = (0, 0, 0)
+        }
+
+        def OmniGraphNode "break_angular_velocity"
+        {
+            custom token inputs:tuple
+            token inputs:tuple.connect = </galbot_one_golf/ros2_control/ros2_subscribe_twist.outputs:angularVelocity>
+            token node:type = "omni.graph.nodes.BreakVector3"
+            int node:typeVersion = 1
+            custom token outputs:x
+            custom token outputs:y
+            custom token outputs:z
+        }
+
+        def OmniGraphNode "break_linear_velocity"
+        {
+            custom token inputs:tuple
+            token inputs:tuple.connect = </galbot_one_golf/ros2_control/ros2_subscribe_twist.outputs:linearVelocity>
+            token node:type = "omni.graph.nodes.BreakVector3"
+            int node:typeVersion = 1
+            custom token outputs:x
+            custom token outputs:y
+            custom token outputs:z
+        }
+
+        def OmniGraphNode "make_planar_velocity"
+        {
+            custom token inputs:x
+            token inputs:x.connect = </galbot_one_golf/ros2_control/break_linear_velocity.outputs:x>
+            custom token inputs:y (
+                customData = {
+                    dictionary omni = {
+                        dictionary graph = {
+                            double attrValue = 0
+                            string resolvedType = "double"
+                        }
+                    }
+                }
+            )
+            token inputs:y.connect = </galbot_one_golf/ros2_control/break_linear_velocity.outputs:y>
+            custom token inputs:z (
+                customData = {
+                    dictionary omni = {
+                        dictionary graph = {
+                            double attrValue = 0
+                            string resolvedType = "double"
+                        }
+                    }
+                }
+            )
+            token inputs:z.connect = </galbot_one_golf/ros2_control/break_angular_velocity.outputs:z>
+            token node:type = "omni.graph.nodes.MakeVector3"
+            int node:typeVersion = 1
+            custom token outputs:tuple
+        }
+
+        def OmniGraphNode "setup_holonomic_robot"
+        {
+            custom rel inputs:comPrim = </galbot_one_golf/base_link> (
+                customData = {
+                    dictionary omni = {
+                        dictionary graph = {
+                            string relType = "target"
+                        }
+                    }
+                }
+            )
+            custom token inputs:comPrimPath = ""
+            custom rel inputs:robotPrim = </galbot_one_golf> (
+                customData = {
+                    dictionary omni = {
+                        dictionary graph = {
+                            string relType = "target"
+                        }
+                    }
+                }
+            )
+            custom token inputs:robotPrimPath = ""
+            custom bool inputs:usePath = false
+            token node:type = "isaacsim.robot.wheeled_robots.HolonomicRobotUsdSetup"
+            int node:typeVersion = 1
+            custom double[] outputs:mecanumAngles
+            custom double3 outputs:upAxis
+            custom double3 outputs:wheelAxis
+            custom token[] outputs:wheelDofNames
+            custom double4[] outputs:wheelOrientations
+            custom double3[] outputs:wheelPositions
+            custom double[] outputs:wheelRadius
+        }
+
+        def OmniGraphNode "holonomic_controller"
+        {
+            custom double inputs:angularGain = 1
+            custom uint inputs:execIn (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            uint inputs:execIn.connect = </galbot_one_golf/ros2_control/on_playback_tick.outputs:tick>
+            custom double3 inputs:inputVelocity = (0, 0, 0)
+            double3 inputs:inputVelocity.connect = </galbot_one_golf/ros2_control/make_planar_velocity.outputs:tuple>
+            custom double inputs:linearGain = -1
+            custom double inputs:maxAngularSpeed = 2
+            custom double inputs:maxLinearSpeed = 1.5
+            custom double inputs:maxWheelSpeed = 20
+            custom double[] inputs:mecanumAngles = []
+            double[] inputs:mecanumAngles.connect = </galbot_one_golf/ros2_control/setup_holonomic_robot.outputs:mecanumAngles>
+            custom double3 inputs:upAxis = (0, 0, 1)
+            double3 inputs:upAxis.connect = </galbot_one_golf/ros2_control/setup_holonomic_robot.outputs:upAxis>
+            custom double3 inputs:wheelAxis = (1, 0, 0)
+            double3 inputs:wheelAxis.connect = </galbot_one_golf/ros2_control/setup_holonomic_robot.outputs:wheelAxis>
+            custom double4[] inputs:wheelOrientations = []
+            double4[] inputs:wheelOrientations.connect = </galbot_one_golf/ros2_control/setup_holonomic_robot.outputs:wheelOrientations>
+            custom double3[] inputs:wheelPositions = []
+            double3[] inputs:wheelPositions.connect = </galbot_one_golf/ros2_control/setup_holonomic_robot.outputs:wheelPositions>
+            custom double[] inputs:wheelRadius = []
+            double[] inputs:wheelRadius.connect = </galbot_one_golf/ros2_control/setup_holonomic_robot.outputs:wheelRadius>
+            token node:type = "isaacsim.robot.wheeled_robots.HolonomicController"
+            int node:typeVersion = 2
+            custom double[] outputs:jointVelocityCommand
+        }
+
+        def OmniGraphNode "base_articulation_controller"
+        {
+            custom double[] inputs:effortCommand = []
+            custom uint inputs:execIn (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            uint inputs:execIn.connect = </galbot_one_golf/ros2_control/on_playback_tick.outputs:tick>
+            custom int[] inputs:jointIndices = []
+            custom token[] inputs:jointNames = []
+            token[] inputs:jointNames.connect = </galbot_one_golf/ros2_control/setup_holonomic_robot.outputs:wheelDofNames>
+            custom double[] inputs:positionCommand = []
+            custom string inputs:robotPath = ""
+            custom rel inputs:targetPrim = </galbot_one_golf/base_link> (
+                customData = {
+                    dictionary omni = {
+                        dictionary graph = {
+                            string relType = "target"
+                        }
+                    }
+                }
+            )
+            custom double[] inputs:velocityCommand = []
+            double[] inputs:velocityCommand.connect = </galbot_one_golf/ros2_control/holonomic_controller.outputs:jointVelocityCommand>
+            token node:type = "isaacsim.core.nodes.IsaacArticulationController"
+            int node:typeVersion = 1
+        }
+
+        def OmniGraphNode "ros2_subscribe_joint_command"
+        {
+            custom uint64 inputs:context = 0
+            custom uint inputs:execIn (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            uint inputs:execIn.connect = </galbot_one_golf/ros2_control/on_playback_tick.outputs:tick>
+            custom string inputs:nodeNamespace = "galbot_one_golf"
+            custom string inputs:qosProfile = ""
+            custom uint64 inputs:queueSize = 10
+            custom string inputs:topicName = "joint_command"
+            token node:type = "isaacsim.ros2.bridge.ROS2SubscribeJointState"
+            int node:typeVersion = 2
+            custom double[] outputs:effortCommand
+            custom uint outputs:execOut (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            custom token[] outputs:jointNames
+            custom double[] outputs:positionCommand
+            custom double outputs:timeStamp = 0
+            custom double[] outputs:velocityCommand
+        }
+
+        def OmniGraphNode "whole_body_articulation_controller"
+        {
+            custom double[] inputs:effortCommand = []
+            double[] inputs:effortCommand.connect = </galbot_one_golf/ros2_control/ros2_subscribe_joint_command.outputs:effortCommand>
+            custom uint inputs:execIn (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            uint inputs:execIn.connect = </galbot_one_golf/ros2_control/ros2_subscribe_joint_command.outputs:execOut>
+            custom int[] inputs:jointIndices = []
+            custom token[] inputs:jointNames = []
+            token[] inputs:jointNames.connect = </galbot_one_golf/ros2_control/ros2_subscribe_joint_command.outputs:jointNames>
+            custom double[] inputs:positionCommand = []
+            double[] inputs:positionCommand.connect = </galbot_one_golf/ros2_control/ros2_subscribe_joint_command.outputs:positionCommand>
+            custom string inputs:robotPath = ""
+            custom rel inputs:targetPrim = </galbot_one_golf/base_link> (
+                customData = {
+                    dictionary omni = {
+                        dictionary graph = {
+                            string relType = "target"
+                        }
+                    }
+                }
+            )
+            custom double[] inputs:velocityCommand = []
+            double[] inputs:velocityCommand.connect = </galbot_one_golf/ros2_control/ros2_subscribe_joint_command.outputs:velocityCommand>
+            token node:type = "isaacsim.core.nodes.IsaacArticulationController"
+            int node:typeVersion = 1
+        }
+
+        def OmniGraphNode "ros2_publish_joint_state"
+        {
+            custom uint64 inputs:context = 0
+            custom uint inputs:execIn (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            uint inputs:execIn.connect = </galbot_one_golf/ros2_control/on_playback_tick.outputs:tick>
+            custom string inputs:nodeNamespace = "galbot_one_golf"
+            custom string inputs:qosProfile = ""
+            custom uint64 inputs:queueSize = 10
+            custom rel inputs:targetPrim = </galbot_one_golf/base_link> (
+                customData = {
+                    dictionary omni = {
+                        dictionary graph = {
+                            string relType = "target"
+                        }
+                    }
+                }
+            )
+            custom double inputs:timeStamp = 0
+            double inputs:timeStamp.connect = </galbot_one_golf/ros2_control/read_simulation_time.outputs:simulationTime>
+            custom string inputs:topicName = "joint_states"
+            token node:type = "isaacsim.ros2.bridge.ROS2PublishJointState"
+            int node:typeVersion = 1
+        }
+
+        def OmniGraphNode "ros2_publish_clock"
+        {
+            custom uint64 inputs:context = 0
+            custom uint inputs:execIn (
+                customData = {
+                    bool isExecution = 1
+                }
+            )
+            uint inputs:execIn.connect = </galbot_one_golf/ros2_control/on_playback_tick.outputs:tick>
+            custom string inputs:nodeNamespace = ""
+            custom string inputs:qosProfile = ""
+            custom uint64 inputs:queueSize = 10
+            custom double inputs:timeStamp = 0
+            double inputs:timeStamp.connect = </galbot_one_golf/ros2_control/read_simulation_time.outputs:simulationTime>
+            custom string inputs:topicName = "clock"
+            token node:type = "isaacsim.ros2.bridge.ROS2PublishClock"
+            int node:typeVersion = 1
+        }
+    }
+}
