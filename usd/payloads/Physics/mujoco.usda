@@ -37,21 +37,22 @@ Generated from Composed Stage of root layer /home/galbot/Downloads/galbot_one_go
 
 over "galbot_one_golf"
 {
-    over "base_footprint"
+    over "base_link"
     {
-        over "base_link"
+        over "base_footprint"
         {
-            over "omni_chassis_base_link"
-            {
-                over "chassis_lidar"
-                {
-                }
+        }
 
-                over "omni_chassis_leg_mount_link"
+        over "omni_chassis_base_link"
+        {
+            over "chassis_lidar"
+            {
+            }
+
+            over "omni_chassis_leg_mount_link"
+            {
+                over "leg_base_link"
                 {
-                    over "leg_base_link"
-                    {
-                    }
                 }
             }
         }
@@ -2448,4 +2449,3 @@ over "Render"
         }
     }
 }
-

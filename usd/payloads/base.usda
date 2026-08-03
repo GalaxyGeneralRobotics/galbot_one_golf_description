@@ -46,49 +46,49 @@ def Xform "galbot_one_golf"
     double3 xformOp:translate = (0, 0, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-    def Xform "base_footprint"
+    def Xform "base_link"
     {
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0.028165999799966812)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-        def Xform "base_link"
+        def Xform "base_footprint"
         {
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, 0.028165999799966812)
+            double3 xformOp:translate = (0, 0, -0.028165999799966812)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Xform "omni_chassis_base_link"
+        {
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-            def Xform "omni_chassis_base_link"
+            def Xform "chassis_lidar"
             {
                 quatd xformOp:orient = (1, 0, 0, 0)
                 double3 xformOp:scale = (1, 1, 1)
-                double3 xformOp:translate = (0, 0, 0)
+                double3 xformOp:translate = (0.23499999940395355, 0, 0.21439999341964722)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Xform "omni_chassis_leg_mount_link"
+            {
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.1340000033378601, 0, 0.13249999284744263)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-                def Xform "chassis_lidar"
+                def Xform "leg_base_link"
                 {
                     quatd xformOp:orient = (1, 0, 0, 0)
                     double3 xformOp:scale = (1, 1, 1)
-                    double3 xformOp:translate = (0.23499999940395355, 0, 0.21439999341964722)
+                    double3 xformOp:translate = (0, 0, 0)
                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-                }
-
-                def Xform "omni_chassis_leg_mount_link"
-                {
-                    quatd xformOp:orient = (1, 0, 0, 0)
-                    double3 xformOp:scale = (1, 1, 1)
-                    double3 xformOp:translate = (0.1340000033378601, 0, 0.13249999284744263)
-                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
-                    def Xform "leg_base_link"
-                    {
-                        quatd xformOp:orient = (1, 0, 0, 0)
-                        double3 xformOp:scale = (1, 1, 1)
-                        double3 xformOp:translate = (0, 0, 0)
-                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-                    }
                 }
             }
         }
@@ -105,7 +105,7 @@ def Xform "galbot_one_golf"
                 token visibility = "inherited"
                 quatd xformOp:orient = (1, 0, 0, 0)
                 double3 xformOp:scale = (1, 1, 1)
-                double3 xformOp:translate = (0, 0, 0.0281659998)
+                double3 xformOp:translate = (0, 0, 0)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
             }
 
@@ -117,7 +117,7 @@ def Xform "galbot_one_golf"
                 token visibility = "inherited"
                 quatd xformOp:orient = (1, 0, 0, 0)
                 double3 xformOp:scale = (1, 1, 1)
-                double3 xformOp:translate = (0.2349999994, 0, 0.2425659895)
+                double3 xformOp:translate = (0.2349999994, 0, 0.2143999897)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
             }
         }
@@ -135,7 +135,7 @@ def Xform "galbot_one_golf"
                 token visibility = "inherited"
                 quatd xformOp:orient = (1, 0, 0, 0)
                 double3 xformOp:scale = (1, 1, 1)
-                double3 xformOp:translate = (0, 0, 0.0281659998)
+                double3 xformOp:translate = (0, 0, 0)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
             }
 
@@ -148,7 +148,7 @@ def Xform "galbot_one_golf"
                 token visibility = "inherited"
                 quatd xformOp:orient = (1, 0, 0, 0)
                 double3 xformOp:scale = (1, 1, 1)
-                double3 xformOp:translate = (0.2349999994, 0, 0.2425659895)
+                double3 xformOp:translate = (0.2349999994, 0, 0.2143999897)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
             }
 
@@ -161,7 +161,7 @@ def Xform "galbot_one_golf"
                 token visibility = "inherited"
                 quatd xformOp:orient = (1, 0, 0, 0)
                 double3 xformOp:scale = (1, 1, 1)
-                double3 xformOp:translate = (0.2349999994, 0, 0.2425659895)
+                double3 xformOp:translate = (0.2349999994, 0, 0.2143999897)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
             }
         }
@@ -4102,7 +4102,7 @@ def Xform "galbot_one_golf"
             prepend apiSchemas = ["NodeGraphNodeAPI"]
         )
         {
-            custom rel inputs:comPrim = </galbot_one_golf/base_footprint/base_link> (
+            custom rel inputs:comPrim = </galbot_one_golf/base_link> (
                 customData = {
                     dictionary omni = {
                         dictionary graph = {
@@ -4188,7 +4188,7 @@ def Xform "galbot_one_golf"
             token[] inputs:jointNames.connect = </galbot_one_golf/holonomic_controller/usd_setup_holonomic_robot.outputs:wheelDofNames>
             custom double[] inputs:positionCommand
             custom string inputs:robotPath
-            custom rel inputs:targetPrim = </galbot_one_golf/base_footprint> (
+            custom rel inputs:targetPrim = </galbot_one_golf/base_link> (
                 customData = {
                     dictionary omni = {
                         dictionary graph = {

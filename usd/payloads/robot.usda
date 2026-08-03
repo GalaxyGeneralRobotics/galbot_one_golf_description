@@ -119,7 +119,7 @@ over "galbot_one_golf" (
         </galbot_one_golf/joints/wheel_4_passive_9_joint>,
     ]
     prepend rel isaac:physics:robotLinks = [
-        </galbot_one_golf/base_footprint>,
+        </galbot_one_golf/base_link>,
         </galbot_one_golf/leg_link1>,
         </galbot_one_golf/leg_link2>,
         </galbot_one_golf/leg_link3>,
@@ -246,7 +246,7 @@ over "galbot_one_golf" (
         </galbot_one_golf/wheel_4_passive_9/visuals>,
     ]
 
-    over "base_footprint" (
+    over "base_link" (
         prepend apiSchemas = ["IsaacLinkAPI"]
     )
     {
@@ -2309,4 +2309,3 @@ over "galbot_one_golf" (
         }
     }
 }
-

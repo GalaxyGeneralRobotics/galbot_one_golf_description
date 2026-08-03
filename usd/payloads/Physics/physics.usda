@@ -38,11 +38,11 @@ Generated from Composed Stage of root layer /home/galbot/Downloads/galbot_one_go
 
 over "galbot_one_golf"
 {
-    over "base_footprint" (
+    over "base_link" (
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsArticulationRootAPI"]
     )
     {
-        point3f physics:centerOfMass = (0.02643079, 0.0031478503, 0.10375823)
+        point3f physics:centerOfMass = (0.02643079, 0.0031478503, 0.07559223)
         float3 physics:diagonalInertia = (0.35954753, 0.33839372, 0.59155643)
         float physics:mass = 31.73
         quatf physics:principalAxes = (0.93358207, -0.01696257, -0.015557792, 0.35762396)
@@ -73,13 +73,13 @@ over "galbot_one_golf"
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Z"
             custom rel physics:body0
-            prepend rel physics:body0 = </galbot_one_golf/base_footprint>
+            prepend rel physics:body0 = </galbot_one_golf/base_link>
             custom rel physics:body1
             prepend rel physics:body1 = </galbot_one_golf/leg_link1>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             float physics:JointEquivalentInertia = 3.9542305
-            point3f physics:localPos0 = (0.134, 0, 0.16066599)
+            point3f physics:localPos0 = (0.134, 0, 0.13249999)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (-0.13527897, 0.13527891, 0.6940458, 0.6940458)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -916,13 +916,13 @@ over "galbot_one_golf"
             custom double isaacmecanumwheel:radius = 0.1
             uniform token physics:axis = "X"
             custom rel physics:body0
-            prepend rel physics:body0 = </galbot_one_golf/base_footprint>
+            prepend rel physics:body0 = </galbot_one_golf/base_link>
             custom rel physics:body1
             prepend rel physics:body1 = </galbot_one_golf/wheel_1>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             float physics:JointEquivalentInertia = 0.4997348
-            point3f physics:localPos0 = (0.176493, 0.176493, 0.099999994)
+            point3f physics:localPos0 = (0.176493, 0.176493, 0.071833994)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.38268343, 0, 0, -0.9238795)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1193,13 +1193,13 @@ over "galbot_one_golf"
             custom double isaacmecanumwheel:radius = 0.1
             uniform token physics:axis = "X"
             custom rel physics:body0
-            prepend rel physics:body0 = </galbot_one_golf/base_footprint>
+            prepend rel physics:body0 = </galbot_one_golf/base_link>
             custom rel physics:body1
             prepend rel physics:body1 = </galbot_one_golf/wheel_2>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             float physics:JointEquivalentInertia = 0.50026107
-            point3f physics:localPos0 = (-0.176493, 0.176493, 0.099999994)
+            point3f physics:localPos0 = (-0.176493, 0.176493, 0.071833994)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.9238795, 0, 0, -0.38268346)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1470,13 +1470,13 @@ over "galbot_one_golf"
             custom double isaacmecanumwheel:radius = 0.1
             uniform token physics:axis = "X"
             custom rel physics:body0
-            prepend rel physics:body0 = </galbot_one_golf/base_footprint>
+            prepend rel physics:body0 = </galbot_one_golf/base_link>
             custom rel physics:body1
             prepend rel physics:body1 = </galbot_one_golf/wheel_3>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             float physics:JointEquivalentInertia = 0.50015295
-            point3f physics:localPos0 = (-0.176493, -0.176493, 0.099999994)
+            point3f physics:localPos0 = (-0.176493, -0.176493, 0.071833994)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.9238795, 0, 0, 0.38268346)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -1747,13 +1747,13 @@ over "galbot_one_golf"
             custom double isaacmecanumwheel:radius = 0.1
             uniform token physics:axis = "X"
             custom rel physics:body0
-            prepend rel physics:body0 = </galbot_one_golf/base_footprint>
+            prepend rel physics:body0 = </galbot_one_golf/base_link>
             custom rel physics:body1
             prepend rel physics:body1 = </galbot_one_golf/wheel_4>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             float physics:JointEquivalentInertia = 0.4995947
-            point3f physics:localPos0 = (0.176493, -0.176493, 0.099999994)
+            point3f physics:localPos0 = (0.176493, -0.176493, 0.071833994)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.38268343, 0, 0, 0.9238795)
             quatf physics:localRot1 = (1, 0, 0, 0)

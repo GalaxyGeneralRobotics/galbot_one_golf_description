@@ -20,8 +20,8 @@
   </visual>
 
   <worldbody>
-    <body name="base_footprint" childclass="robot" pos="0 0 0.0062">
-      <body name="base_link" pos="0 0 0.028166">
+    <body name="base_link" childclass="robot" pos="0 0 0.034366">
+      <body name="base_footprint" pos="0 0 -0.028166" />
         <body name="omni_chassis_base_link">
           <inertial pos="0.02079 0.00615 0.07261" mass="30.15" diaginertia="0.3317069394 0.32081635568 0.55833152838" />
           <geom name="omni_chassis_base_link_collision" type="mesh" mesh="omni_chassis_base_link_collision_chassis_collision_01" class="collision" />
@@ -494,7 +494,6 @@
             <geom type="mesh" class="visual" name="chassis_lidar_visual_1" mesh="chassis_lidar_mid360_1" material="mtl_meshes_meshes_visual_sensors_mid360_mid360_M_sensors_mid360_blue" />
           </body>
         </body>
-      </body>
     </body>
     <light pos="0 0 2." dir="0 0 -1" directional="true" />
     <geom name="floor" class="floor" size="0 0 0.05" />
