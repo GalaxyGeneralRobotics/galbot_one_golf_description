@@ -190,9 +190,10 @@
   </joint>
   <link name="omni_chassis_base_link">
     <inertial>
-      <origin xyz="0.02079 0.00615 0.07261"/>
-      <mass value="30.15"/>
-      <inertia ixx="0.3317069394" ixy="3.760583e-05" ixz="3.706221e-05" iyy="0.32081635568" iyz="1.303674e-05" izz="0.55833152838"/>
+      <!-- Motors and chassis brackets stay here; rotating outputs live on the wheel links. -->
+      <origin xyz="0.027340944778854 0.008087869667626 0.072854427768648"/>
+      <mass value="22.926"/>
+      <inertia ixx="0.09495588499632361" ixy="0.001252298388256994" ixz="0.0001902740573022943" iyy="0.08031837253490508" iyz="0.00005835914793213606" izz="0.1019001895297286"/>
     </inertial>
     <visual>
       <geometry>
@@ -215,8 +216,8 @@
   <link name="wheel_1">
     <inertial>
       <origin xyz="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07"/>
-      <mass value="4.24803000494366"/>
-      <inertia ixx="0.012235" ixy="-0.0" ixz="0.0" iyy="0.006629" iyz="0.0" izz="0.006629"/>
+      <mass value="1.806"/>
+      <inertia ixx="0.005201566367065" ixy="0.0" ixz="0.0" iyy="0.002818241393321" iyz="0.0" izz="0.002818241393321"/>
     </inertial>
     <visual>
       <geometry>
@@ -288,8 +289,8 @@
   <link name="wheel_2">
     <inertial>
       <origin xyz="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07"/>
-      <mass value="4.24803000494366"/>
-      <inertia ixx="0.012235" ixy="-0.0" ixz="0.0" iyy="0.006629" iyz="0.0" izz="0.006629"/>
+      <mass value="1.806"/>
+      <inertia ixx="0.005201566367065" ixy="0.0" ixz="0.0" iyy="0.002818241393321" iyz="0.0" izz="0.002818241393321"/>
     </inertial>
     <visual>
       <geometry>
@@ -361,8 +362,8 @@
   <link name="wheel_3">
     <inertial>
       <origin xyz="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07"/>
-      <mass value="4.24803000494366"/>
-      <inertia ixx="0.012235" ixy="-0.0" ixz="0.0" iyy="0.006629" iyz="0.0" izz="0.006629"/>
+      <mass value="1.806"/>
+      <inertia ixx="0.005201566367065" ixy="0.0" ixz="0.0" iyy="0.002818241393321" iyz="0.0" izz="0.002818241393321"/>
     </inertial>
     <visual>
       <geometry>
@@ -434,8 +435,8 @@
   <link name="wheel_4">
     <inertial>
       <origin xyz="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07"/>
-      <mass value="4.24803000494366"/>
-      <inertia ixx="0.012235" ixy="-0.0" ixz="0.0" iyy="0.006629" iyz="0.0" izz="0.006629"/>
+      <mass value="1.806"/>
+      <inertia ixx="0.005201566367065" ixy="0.0" ixz="0.0" iyy="0.002818241393321" iyz="0.0" izz="0.002818241393321"/>
     </inertial>
     <visual>
       <geometry>

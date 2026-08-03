@@ -4,6 +4,9 @@
   <xacro:arg name="wheel_name" default="omniwheel_10"/>
   <xacro:arg name="enable_passive_wheels" default="false"/>
   <xacro:property name="PI" value="3.1415926535897931"/>
+  <!-- Measured rotating output assembly: 2.268 - 0.380 - 0.082 kg. -->
+  <xacro:property name="omniwheel_output_mass" value="1.806"/>
+  <xacro:property name="omniwheel_passive_roller_mass" value="0.05"/>
 
   <!-- 被动轮宏定义 -->
   <xacro:macro name="passive_wheel" params="parent_link passive_wheel_name radius angle sphere_radius:='0.08'">
@@ -11,8 +14,8 @@
     <link name="${passive_wheel_name}">
       <inertial>
         <origin xyz="0 0 0"/>
-        <mass value="0.1"/>
-        <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+        <mass value="${omniwheel_passive_roller_mass}"/>
+        <inertia ixx="0.00004" ixy="0.0" ixz="0.0" iyy="0.00004" iyz="0.0" izz="0.00004"/>
       </inertial>
       <collision>
         <geometry>
@@ -85,16 +88,24 @@
   <!-- 轮子宏定义 - 只包含轮子的link -->
   <xacro:macro name="wheel" params="wheel_name
                 inertial_origin_xyz:='0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07'
-                ixx:='0.012235' ixy:='-0.0' ixz:='0.0' iyy:='0.006629' iyz:='0.0' izz:='0.006629'
+                ixx:='0.005201566367065' ixy:='0.0' ixz:='0.0' iyy:='0.002818241393321' iyz:='0.0' izz:='0.002818241393321'
                 passive_wheel_radius:='0.02' wheel_radius:='0.15' num_passive_wheels:='10'
                 wheel_collision_radius:='0.025' wheel_collision_sphere_radius:='0.08'
                 enable_passive_wheels:='false'">
     <!-- 轮子链接 -->
     <link name="${wheel_name}">
       <inertial>
-        <origin xyz="${inertial_origin_xyz}"/>
-        <mass value="4.24803000494366"/>
-        <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+        <xacro:if value="${enable_passive_wheels}">
+          <!-- The ten roller bodies own 0.5 kg of the 1.806 kg assembly. -->
+          <origin xyz="0.003607774235833767 -1.823936035019323e-07 3.968177595042398e-07"/>
+          <mass value="${float(omniwheel_output_mass) - float(num_passive_wheels) * float(omniwheel_passive_roller_mass)}"/>
+          <inertia ixx="0.004489066366996529" ixy="-2.379273632891010e-10" ixz="5.176376880170815e-10" iyy="0.002257285152503005" iyz="-2.616953691508134e-14" izz="0.002257285152547911"/>
+        </xacro:if>
+        <xacro:unless value="${enable_passive_wheels}">
+          <origin xyz="${inertial_origin_xyz}"/>
+          <mass value="${omniwheel_output_mass}"/>
+          <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+        </xacro:unless>
       </inertial>
       <visual>
         <geometry>
