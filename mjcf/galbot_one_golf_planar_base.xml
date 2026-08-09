@@ -231,7 +231,7 @@
                                                         <geom type="mesh" class="visual" name="left_gripper_l_finger_link_visual_2" mesh="left_gripper_l_finger_link_link3_2" material="mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_plastic_black" />
                                                       </body>
                                                     </body>
-                                                    <body name="left_gripper_tcp_link" pos="0.13996 0 0" quat="0.7071 0.7071 0 0" />
+                                                    <body name="left_gripper_tcp_link" pos="0.13996 0 0" quat="0.7071 -0.7071 0 0" />
                                                   </body>
                                                 </body>
                                               </body>
@@ -397,7 +397,7 @@
                                                         <geom type="mesh" class="visual" name="right_gripper_l_finger_link_visual_2" mesh="left_gripper_l_finger_link_link3_2" material="mtl_meshes_meshes_visual_end_effectors_galbot_gripper_link3_M_end_effectors_galbot_gripper_link3_plastic_black" />
                                                       </body>
                                                     </body>
-                                                    <body name="right_gripper_tcp_link" pos="0.13996 0 0" quat="0.7071 0.7071 0 0" />
+                                                    <body name="right_gripper_tcp_link" pos="0.13996 0 0" quat="0.7071 -0.7071 0 0" />
                                                   </body>
                                                 </body>
                                               </body>

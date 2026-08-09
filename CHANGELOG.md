@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Correct both gripper TCP frames by removing an unintended 180-degree X-axis
+  flip relative to the original Golf convention, consistently across Xacro,
+  URDF, MJCF, and USD.
 - Use `base_link` as the robot root across Xacro, URDF, MJCF, and USD assets.
 - Make `base_footprint` a direct fixed child while preserving MJCF and USD
   physical placement, joint anchors, and controller targets.

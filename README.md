@@ -81,6 +81,13 @@ MJCF base variants:
 | --- |
 | ![Galbot One Golf MJCF visual model](docs/.images/galbot_one_golf_mjcf.png) |
 
+## TCP frame
+
+Both gripper TCP links use the same transform in Xacro, URDF, MJCF, and USD:
+translation `(0.13996, 0, 0)` from the gripper base and rotation `(-pi/2, 0, 0)`
+in roll-pitch-yaw order. Run `python3 scripts/validate_tcp_frames.py` after changing
+any generated description.
+
 ## USD
 
 The main USD entry point is `usd/galbot_one_golf.usda`. Related payloads,

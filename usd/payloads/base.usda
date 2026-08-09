@@ -873,7 +873,7 @@ def Xform "galbot_one_golf"
 
                     def Xform "left_gripper_tcp_link"
                     {
-                        quatd xformOp:orient = (0.7071067690849304, 0.7071067690849304, 0, 0)
+                        quatd xformOp:orient = (0.7071067690849304, -0.7071067690849304, 0, 0)
                         double3 xformOp:scale = (1, 1, 1)
                         double3 xformOp:translate = (0.13996000587940216, 0, 0)
                         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
@@ -1906,7 +1906,7 @@ def Xform "galbot_one_golf"
 
                     def Xform "right_gripper_tcp_link"
                     {
-                        quatd xformOp:orient = (0.7071067690849304, 0.7071067690849304, 0, 0)
+                        quatd xformOp:orient = (0.7071067690849304, -0.7071067690849304, 0, 0)
                         double3 xformOp:scale = (1, 1, 1)
                         double3 xformOp:translate = (0.13996000587940216, 0, 0)
                         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
