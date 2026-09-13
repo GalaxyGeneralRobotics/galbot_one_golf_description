@@ -14,5 +14,5 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/validate_tcp_frames.py
-      - run: python3 -m pip install usd-core==26.8
+      - run: python3 -m pip install usd-core==26.8 numpy scipy
       - run: python3 scripts/validate_gripper_collisions.py

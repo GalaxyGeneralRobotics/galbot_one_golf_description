@@ -1270,21 +1270,21 @@ def Xform "galbot_one_golf"
             instanceable = false
         )
         {
-            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics> (
-                bindMaterialAs = "strongerThanDescendants"
+            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_shell_physics> (
+                bindMaterialAs = "weakerThanDescendants"
             )
 
-            def Xform "link_3_collision_01" (
+            def Mesh "link_3_collision_01" (
                 instanceable = true
-                prepend references = @./instances.usda@</Instances/mesh_71>
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_01_shell>
             )
             {
                 uniform token purpose = "guide"
             }
 
-            def Xform "link_3_collision_02" (
+            def Mesh "link_3_collision_02" (
                 instanceable = true
-                prepend references = @./instances.usda@</Instances/mesh_72>
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_02_shell>
             )
             {
                 uniform token purpose = "guide"
@@ -1296,6 +1296,24 @@ def Xform "galbot_one_golf"
             )
             {
                 uniform token purpose = "guide"
+            }
+
+            def Mesh "link_3_collision_01_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_01_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
+            }
+
+            def Mesh "link_3_collision_02_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_02_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
             }
         }
     }
@@ -1525,13 +1543,13 @@ def Xform "galbot_one_golf"
             instanceable = false
         )
         {
-            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics> (
-                bindMaterialAs = "strongerThanDescendants"
+            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_shell_physics> (
+                bindMaterialAs = "weakerThanDescendants"
             )
 
             def Mesh "link_3_right_collision_01" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_01>
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_01_shell>
             )
             {
                 uniform token purpose = "guide"
@@ -1539,7 +1557,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_02" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_02>
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_02_shell>
             )
             {
                 uniform token purpose = "guide"
@@ -1551,6 +1569,24 @@ def Xform "galbot_one_golf"
             )
             {
                 uniform token purpose = "guide"
+            }
+
+            def Mesh "link_3_right_collision_01_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_01_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
+            }
+
+            def Mesh "link_3_right_collision_02_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_02_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
             }
         }
     }
@@ -2385,21 +2421,21 @@ def Xform "galbot_one_golf"
             instanceable = false
         )
         {
-            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics> (
-                bindMaterialAs = "strongerThanDescendants"
+            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_shell_physics> (
+                bindMaterialAs = "weakerThanDescendants"
             )
 
-            def Xform "link_3_collision_01" (
+            def Mesh "link_3_collision_01" (
                 instanceable = true
-                prepend references = @./instances.usda@</Instances/mesh_71>
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_01_shell>
             )
             {
                 uniform token purpose = "guide"
             }
 
-            def Xform "link_3_collision_02" (
+            def Mesh "link_3_collision_02" (
                 instanceable = true
-                prepend references = @./instances.usda@</Instances/mesh_72>
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_02_shell>
             )
             {
                 uniform token purpose = "guide"
@@ -2411,6 +2447,24 @@ def Xform "galbot_one_golf"
             )
             {
                 uniform token purpose = "guide"
+            }
+
+            def Mesh "link_3_collision_01_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_01_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
+            }
+
+            def Mesh "link_3_collision_02_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_collision_02_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
             }
         }
     }
@@ -2640,13 +2694,13 @@ def Xform "galbot_one_golf"
             instanceable = false
         )
         {
-            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics> (
-                bindMaterialAs = "strongerThanDescendants"
+            rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_shell_physics> (
+                bindMaterialAs = "weakerThanDescendants"
             )
 
             def Mesh "link_3_right_collision_01" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_01>
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_01_shell>
             )
             {
                 uniform token purpose = "guide"
@@ -2654,7 +2708,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_02" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_02>
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_02_shell>
             )
             {
                 uniform token purpose = "guide"
@@ -2666,6 +2720,24 @@ def Xform "galbot_one_golf"
             )
             {
                 uniform token purpose = "guide"
+            }
+
+            def Mesh "link_3_right_collision_01_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_01_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
+            }
+
+            def Mesh "link_3_right_collision_02_pad" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                instanceable = true
+                prepend references = @./finger_contact_regions.usda@</link_3_right_collision_02_pad>
+            )
+            {
+                rel material:binding:physics = </galbot_one_golf/VisualMaterials/M_gripper_physics>
             }
         }
     }
@@ -4216,6 +4288,15 @@ def Xform "galbot_one_golf"
 
     def Scope "VisualMaterials"
     {
+        def Material "M_gripper_shell_physics" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.2
+            float physics:restitution = 0
+            float physics:staticFriction = 0.3
+        }
+
         def Material "M_gripper_physics" (
             prepend apiSchemas = ["PhysicsMaterialAPI"]
         )

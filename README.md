@@ -93,10 +93,17 @@ any generated description.
 The main USD entry point is `usd/galbot_one_golf.usda`. Related payloads,
 textures, and example scene files are stored under `usd/`.
 
-Each gripper finger uses the three authored collision STL pieces, with a separate
-convex hull per piece. The fingertip physics material uses static/dynamic friction
-of `1.5` and restitution of `0`. Validate the collision geometry and material
-bindings with `python3 scripts/validate_gripper_collisions.py` (requires `usd-core`).
+Each gripper finger retains the envelope of the three authored collision STL
+hulls. The two inner gripping faces are split into 1 mm thick pads extending
+inward, with static/dynamic friction `1.5/1.5`; the remaining shell uses `0.3/0.2`.
+Both materials have zero restitution. The split preserves the opening and full
+gripping surface without overlapping collider interiors. Contact friction also
+depends on the other object's material and the engine's friction combine mode.
+
+With `usd-core`, `numpy`, and `scipy` installed, run
+`python3 scripts/build_finger_contact_regions.py` to regenerate the split meshes
+from the source STL files, and `python3 scripts/validate_gripper_collisions.py`
+to check geometry and material bindings.
 
 ## Package Layout
 
