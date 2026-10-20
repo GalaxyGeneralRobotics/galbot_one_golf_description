@@ -1531,7 +1531,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_01" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_01>
+                prepend references = @./instances.usda@</Instances/link_3_right_collision_01>
             )
             {
                 uniform token purpose = "guide"
@@ -1539,7 +1539,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_02" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_02>
+                prepend references = @./instances.usda@</Instances/link_3_right_collision_02>
             )
             {
                 uniform token purpose = "guide"
@@ -1547,7 +1547,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_03" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_03>
+                prepend references = @./instances.usda@</Instances/link_3_right_collision_03>
             )
             {
                 uniform token purpose = "guide"
@@ -2646,7 +2646,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_01" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_01>
+                prepend references = @./instances.usda@</Instances/link_3_right_collision_01>
             )
             {
                 uniform token purpose = "guide"
@@ -2654,7 +2654,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_02" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_02>
+                prepend references = @./instances.usda@</Instances/link_3_right_collision_02>
             )
             {
                 uniform token purpose = "guide"
@@ -2662,7 +2662,7 @@ def Xform "galbot_one_golf"
 
             def Mesh "link_3_right_collision_03" (
                 instanceable = true
-                prepend references = @./right_finger_collisions.usda@</link_3_right_collision_03>
+                prepend references = @./instances.usda@</Instances/link_3_right_collision_03>
             )
             {
                 uniform token purpose = "guide"

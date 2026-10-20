@@ -2062,6 +2062,33 @@ def Scope "Instances"
         }
     }
 
+    def Mesh "link_3_right_collision_01" (
+        prepend references = @./geometries.usd@</Geometries/link_3_right_collision_01>
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+    )
+    {
+        uniform token physics:approximation = "convexHull"
+        uniform token purpose = "guide"
+    }
+
+    def Mesh "link_3_right_collision_02" (
+        prepend references = @./geometries.usd@</Geometries/link_3_right_collision_02>
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+    )
+    {
+        uniform token physics:approximation = "convexHull"
+        uniform token purpose = "guide"
+    }
+
+    def Mesh "link_3_right_collision_03" (
+        prepend references = @./geometries.usd@</Geometries/link_3_right_collision_03>
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+    )
+    {
+        uniform token physics:approximation = "convexHull"
+        uniform token purpose = "guide"
+    }
+
     def Xform "mesh_74" (
         prepend references = @./geometries.usd@</Geometries/mesh_74>
     )

@@ -81,22 +81,13 @@ MJCF base variants:
 | --- |
 | ![Galbot One Golf MJCF visual model](docs/.images/galbot_one_golf_mjcf.png) |
 
-## TCP frame
 
-Both gripper TCP links use the same transform in Xacro, URDF, MJCF, and USD:
-translation `(0.13996, 0, 0)` from the gripper base and rotation `(-pi/2, 0, 0)`
-in roll-pitch-yaw order. Run `python3 scripts/validate_tcp_frames.py` after changing
-any generated description.
 
 ## USD
 
 The main USD entry point is `usd/galbot_one_golf.usda`. Related payloads,
 textures, and example scene files are stored under `usd/`.
 
-Each gripper finger uses the three authored collision STL pieces, with a separate
-convex hull per piece. The fingertip physics material uses static/dynamic friction
-of `1.5` and restitution of `0`. Validate the collision geometry and material
-bindings with `python3 scripts/validate_gripper_collisions.py` (requires `usd-core`).
 
 ## Package Layout
 
